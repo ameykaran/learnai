@@ -32,6 +32,7 @@ class MathKeywordExtractor:
         self.keywords = self._load_keywords()
         self.nlp = None
         self.fuzzy_threshold = 80  # Minimum fuzzy match score
+        self.confidence = 0.7  # Confidence threshold for keyword acceptance
 
     def _load_keywords(self) -> List[str]:
         """Load keywords from CSV file."""
@@ -233,7 +234,7 @@ class MathKeywordExtractor:
         return matches
 
     def extract_keywords(self, text: str, use_ner: bool = True,
-                        use_fuzzy: bool = True, top_k: int = 5) -> List[Tuple[str, float]]:
+                        use_fuzzy: bool = True, top_k: int = 5) -> List[str]:
         """Extract keywords using both NER and fuzzy matching."""
         all_keywords = {}
 
@@ -262,7 +263,12 @@ class MathKeywordExtractor:
 
         # Sort by confidence and return top results
         sorted_keywords = sorted(all_keywords.items(), key=lambda x: x[1], reverse=True)
-        return sorted_keywords[:top_k]
+
+        # Filter out keywords below confidence threshold
+        sorted_keywords = [(kw, conf) for kw, conf in sorted_keywords if conf >= self.confidence]
+
+        keywords = [kw for kw, _ in sorted_keywords]
+        return keywords[:top_k]
 
 
 

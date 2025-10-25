@@ -18,7 +18,6 @@ import chromadb
 
 from schema import Chunk, Metadata
 
-
 class RAGSystem:
     """
     A hybrid Retrieval-Augmented Generation system combining vector search with metadata filtering.
