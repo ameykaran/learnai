@@ -1,0 +1,400 @@
+{
+  "metadata": {
+    "source_url": "class12_ncert_textbook.pdf",
+    "source_type": "textbook",
+    "total_chunks": 17,
+    "token_usage": {
+      "prompt_tokens": 2639,
+      "completion_tokens": 4926,
+      "total_tokens": 7565,
+      "api_calls": 2
+    }
+  },
+  "chunks": [
+    {
+      "id": "9ff04490-16b2-4884-9e1b-55458eec6e05",
+      "text": "**Solution** Let b stand for boy and g for girl. The sample space of the experiment is\n\n$$S = \\{(b, b), (g, b), (b, g), (g, g)\\}$$\n\nLet E and F denote the following events:\n\nE: 'both the children are boys'\n\nF: 'at least one of the child is a boy'\n\nThen \n$$E = \\{(b,b)\\} \\text{ and } F = \\{(b,b), (g,b), (b,g)\\}$$\n Now \n$$E \\cap F = \\{(b,b)\\}$$\n Thus \n$$P(F) = \\frac{3}{4} \\text{ and } P(E \\cap F) = \\frac{1}{4}$$\n\nTherefore  $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{1}{4}}{\\frac{3}{4}} = \\frac{1}{3}$",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability",
+          "Sample Space",
+          "Events",
+          "Calculating Probability"
+        ],
+        "chunk_type": "worked_solution",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Basic Probability",
+          "Set Theory (Intersection)",
+          "Sample Space Definition"
+        ]
+      }
+    },
+    {
+      "id": "c83977bf-bbab-4d11-87bd-c2b47e2c661b",
+      "text": "**Example 3** Ten cards numbered 1 to 10 are placed in a box, mixed up thoroughly and then one card is drawn randomly. If it is known that the number on the drawn card is more than 3, what is the probability that it is an even number?",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability"
+        ],
+        "chunk_type": "practice_problem",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Basic Probability"
+        ]
+      }
+    },
+    {
+      "id": "d6f3181a-cd46-4c62-add9-be331bf917a7",
+      "text": "**Solution** Let A be the event 'the number on the card drawn is even' and B be the event 'the number on the card drawn is greater than 3'. We have to find P(A|B).\n\nNow, the sample space of the experiment is  $S = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$ \n\nThen \n$$A = \\{2, 4, 6, 8, 10\\}, B = \\{4, 5, 6, 7, 8, 9, 10\\}$$\n and \n$$A \\cap B = \\{4, 6, 8, 10\\}$$\n Also \n$$P(A) = \\frac{5}{10}, P(B) = \\frac{7}{10} \\text{ and } P(A \\cap B) = \\frac{4}{10}$$\n\nThen  $P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{\\frac{4}{10}}{\\frac{7}{10}} = \\frac{4}{7}$",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability",
+          "Sample Space",
+          "Events",
+          "Calculating Probability"
+        ],
+        "chunk_type": "worked_solution",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Basic Probability",
+          "Set Theory (Intersection)",
+          "Sample Space Definition"
+        ]
+      }
+    },
+    {
+      "id": "bf193073-4b8d-417f-a580-8270d0003360",
+      "text": "**Example 4** In a school, there are 1000 students, out of which 430 are girls. It is known that out of 430, 10% of the girls study in class XII. What is the probability that a student chosen randomly studies in Class XII given that the chosen student is a girl?",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability"
+        ],
+        "chunk_type": "practice_problem",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Basic Probability",
+          "Percentages"
+        ]
+      }
+    },
+    {
+      "id": "b1ff1aba-2f93-49fa-a4fc-5d9d81b682d4",
+      "text": "**Solution** Let E denote the event that a student chosen randomly studies in Class XII and F be the event that the randomly chosen student is a girl. We have to find P (EIF).\n\n$$P(E \\cap F) = \\frac{2}{36}$$\n\nHence, the required probability\n\n$$P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{2}{36}}{\\frac{5}{36}} = \\frac{2}{5}$$",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability",
+          "Events",
+          "Calculating Probability"
+        ],
+        "chunk_type": "worked_solution",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Basic Probability",
+          "Understanding Events"
+        ]
+      }
+    },
+    {
+      "id": "8a23b88a-adac-435d-a875-af5a49765506",
+      "text": "For the conditional probability discussed above, we have considered the elementary events of the experiment to be equally likely and the corresponding definition of the probability of an event was used. However, the same definition can also be used in the general case where the elementary events of the sample space are not equally likely, the probabilities  $P(E \\cap F)$  and P(F) being calculated accordingly. Let us take up the following example.",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability",
+          "Equally Likely Events",
+          "Non-Equally Likely Events"
+        ],
+        "chunk_type": "explanation",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Conditional Probability Definition",
+          "Elementary Events"
+        ]
+      }
+    },
+    {
+      "id": "4818131d-9e52-4e3f-87b2-5f34834f71b0",
+      "text": "Example 7 Consider the experiment of tossing a coin. If the coin shows head, toss it again but if it shows tail, then throw a die. Find the conditional probability of the event that 'the die shows a number greater than 4' given that 'there is at least one tail' (H,T)",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability",
+          "Compound Events"
+        ],
+        "chunk_type": "practice_problem",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Conditional Probability",
+          "Understanding Sequential Experiments"
+        ]
+      }
+    },
+    {
+      "id": "5ab51146-3a53-490a-8d89-bec21c0cb6bb",
+      "text": "**Solution** The outcomes of the experiment can be represented in following diagrammatic manner called the 'tree diagram'.\n\nThe sample space of the experiment may be described as\n\n$$S = \\{(H,H), (H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)\\}$$\n\nwhere (H, H) denotes that both the tosses result into head and (T, i) denote the first toss result into a tail and the number i appeared on the die for i = 1,2,3,4,5,6.\n\nThus, the probabilities assigned to the 8 elementary events\n\n$$(H, H), (H, T), (T, 1), (T, 2), (T, 3), (T, 4), (T, 5), (T, 6)$$\n\nare \n$$\\frac{1}{4}$$\n,  $\\frac{1}{4}$ ,  $\\frac{1}{12}$ ,  $\\frac{1}{12}$ ,  $\\frac{1}{12}$ ,  $\\frac{1}{12}$ ,  $\\frac{1}{12}$  respectively which is clear from the Fig 13.2.",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Conditional Probability",
+          "Sample Space",
+          "Tree Diagrams",
+          "Non-Equally Likely Events",
+          "Assigning Probabilities"
+        ],
+        "chunk_type": "worked_solution",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Basic Probability",
+          "Sample Space",
+          "Tree Diagrams"
+        ]
+      }
+    },
+    {
+      "id": "56b81744-5b03-4016-b096-4ac86e30bac8",
+      "text": "![](_page_1_Figure_16.jpeg)",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability"
+        ],
+        "subtopics": [
+          "Tree Diagrams",
+          "Sample Space Representation"
+        ],
+        "chunk_type": "visualization",
+        "difficulty_level": "basic",
+        "prerequisites": []
+      }
+    },
+    {
+      "id": "821f11b1-2512-4074-af39-82486280eb54",
+      "text": "$$P(X = 9) = P({\\{(3,6), (4,5), (5,4), (6,3)\\}}}) = \\frac{4}{36}$$\n\n$$P(X = 10) = P({\\{(4,6), (5,5), (6,4)\\}}}) = \\frac{3}{36}$$\n\n$$P(X = 11) = P({\\{(5,6), (6,5)\\}}}) = \\frac{2}{36}$$\n\n$$P(X = 12) = P({\\{(6,6)\\}}}) = \\frac{1}{36}$$",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Probability Distribution",
+          "Random Variables",
+          "Sample Space",
+          "Calculating Probabilities"
+        ],
+        "chunk_type": "explanation",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Basic Probability",
+          "Sample Space",
+          "Random Variables"
+        ]
+      }
+    },
+    {
+      "id": "feac9875-f9d7-469f-8c06-811a09591125",
+      "text": "The probability distribution of X is\n\n| $\\mathbf{X}$ or $\\mathbf{x}_i$ | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| $P(X)$ or $p_i$ | $\\frac{1}{36}$ | $\\frac{2}{36}$ | $\\frac{3}{36}$ | $\\frac{4}{36}$ | $\\frac{5}{36}$ | $\\frac{6}{36}$ | $\\frac{5}{36}$ | $\\frac{4}{36}$ | $\\frac{3}{36}$ | $\\frac{2}{36}$ | $\\frac{1}{36}$ |",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Probability Distribution",
+          "Random Variables"
+        ],
+        "chunk_type": "visualization",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Random Variables"
+        ]
+      }
+    },
+    {
+      "id": "77b8d83a-d781-4ba2-912d-abe2489f2e06",
+      "text": "Therefore,\n\n$$\\mu = E(X) = \\sum_{i=1}^{n} x_i p_i = 2 \\times \\frac{1}{36} + 3 \\times \\frac{2}{36} + 4 \\times \\frac{3}{36}$$\n\n$$+ 6 \\times \\frac{5}{36} + 7 \\times \\frac{6}{36} + 8 \\times \\frac{5}{36} + 9 \\times \\frac{4}{36} + 10 \\times \\frac{3}{36} + 11 \\times \\frac{2}{36} + 12 \\times \\frac{1}{36}$$\n\n$$= \\frac{2 + 6 + 12 + 20 + 30 + 42 + 40 + 36 + 30 + 22 + 12}{36} = 7$$\n\nThus, the mean of the sum of the numbers that appear on throwing two fair dice is 7.",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Expected Value",
+          "Mean of a Random Variable",
+          "Probability Distribution"
+        ],
+        "chunk_type": "worked_solution",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Probability Distribution",
+          "Random Variables",
+          "Summation Notation"
+        ]
+      }
+    },
+    {
+      "id": "bce14439-1c01-42dc-a1d4-879949a984a4",
+      "text": "## 13.6.3 Variance of a random variable\n\nThe mean of a random variable does not give us information about the variability in the values of the random variable. In fact, if the variance is small, then the values of the random variable are close",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Variance",
+          "Random Variables",
+          "Measures of Dispersion"
+        ],
+        "chunk_type": "explanation",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Expected Value",
+          "Random Variables"
+        ]
+      }
+    },
+    {
+      "id": "399f215d-f74e-4ad2-847d-e1d1c774048d",
+      "text": "\\times \\frac{4}{36} + 10 \\times \\frac{3}{36} + 11 \\times \\frac{2}{36} + 12 \\times \\frac{1}{36}\n\n$$= \\frac{2 + 6 + 12 + 20 + 30 + 42 + 40 + 36 + 30 + 22 + 12}{36} = 7$$\n\nThus, the mean of the sum of the numbers that appear on throwing two fair dice is 7.",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Random Variables"
+        ],
+        "subtopics": [
+          "Expected Value",
+          "Mean of a Random Variable",
+          "Discrete Probability Distributions"
+        ],
+        "chunk_type": "worked_solution",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Expected Value Calculation",
+          "Discrete Probability Distributions",
+          "Basic Probability (Dice Rolls)"
+        ]
+      }
+    },
+    {
+      "id": "32340bd9-8914-48c5-8c0c-6366684ade93",
+      "text": "## 13.6.3 Variance of a random variable\n\nThe mean of a random variable does not give us information about the variability in the values of the random variable. In fact, if the variance is small, then the values of the random variable are close to the mean. Also random variables with different probability distributions can have equal means, as shown in the following distributions of X and Y.",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Random Variables",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Variance Introduction",
+          "Variability",
+          "Limitations of Mean"
+        ],
+        "chunk_type": "explanation",
+        "difficulty_level": "basic",
+        "prerequisites": [
+          "Mean of a Random Variable"
+        ]
+      }
+    },
+    {
+      "id": "e09c828e-36fa-48f8-ab57-867ce29bf1de",
+      "text": "| X    | 1             | 2             | 3             | 4             |\n|------|---------------|---------------|---------------|---------------|\n| P(X) | $\\frac{1}{8}$ | $\\frac{2}{8}$ | $\\frac{3}{8}$ | $\\frac{2}{8}$ |\n\n| Y    | -1            | 0             | 4             | 5             | 6             |\n|------|---------------|---------------|---------------|---------------|---------------|\n| P(Y) | $\\frac{1}{8}$ | $\\frac{2}{8}$ | $\\frac{3}{8}$ | $\\frac{1}{8}$ | $\\frac{1}{8}$ |\n\nClearly \n$$E(X) = 1 \\times \\frac{1}{8} + 2 \\times \\frac{2}{8} + 3 \\times \\frac{3}{8} + 4 \\times \\frac{2}{8} = \\frac{22}{8} = 2.75$$\n\nand \n$$E(Y) = -1 \\times \\frac{1}{8} + 0 \\times \\frac{2}{8} + 4 \\times \\frac{3}{8} + 5 \\times \\frac{1}{8} = 6 \\times \\frac{1}{8} = \\frac{22}{8} = 2.75$$\n\nThe variables X and Y are different, however their means are same. It is also easily observable from the diagramatic representation of these distributions (Fig 13.5).\n\n![](_page_3_Figure_5.jpeg)\n\nTo distinguish X from Y, we require a measure of the extent to which the values of the random variables spread out. In Statistics, we have studied that the variance is a measure of the spread or scatter in data. Likewise, the variability or spread in the values of a random variable may be measured by variance.",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Random Variables",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Mean of a Random Variable",
+          "Discrete Probability Distributions",
+          "Need for Variance",
+          "Variability"
+        ],
+        "chunk_type": "example",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Expected Value Calculation",
+          "Discrete Probability Distributions"
+        ]
+      }
+    },
+    {
+      "id": "4b843298-be6c-4c02-ab52-636453a1df12",
+      "text": "**Definition 7** Let X be a random variable whose possible values  $x_1, x_2,...,x_n$  occur with probabilities  $p(x_1), p(x_2),..., p(x_n)$  respectively.\n\nLet  $\\mu = E(X)$  be the mean of X. The variance of X, denoted by Var(X) or  $\\sigma_x^2$  is defined as\n\n$$\\sigma_x^2 = \\text{Var}(X) = \\sum_{i=1}^n (x_i - \\mu)^2 p(x_i)$$\n\nor equivalently  $\\sigma_x^2 = E(X - \\mu)^2$",
+      "metadata": {
+        "source_url": "class12_ncert_textbook.pdf",
+        "source_type": "textbook",
+        "topics": [
+          "Probability",
+          "Random Variables",
+          "Statistics"
+        ],
+        "subtopics": [
+          "Variance",
+          "Formula for Variance",
+          "Expected Value"
+        ],
+        "chunk_type": "definition",
+        "difficulty_level": "intermediate",
+        "prerequisites": [
+          "Expected Value",
+          "Discrete Probability Distributions",
+          "Summation Notation"
+        ]
+      }
+    }
+  ]
+}
