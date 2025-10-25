@@ -386,8 +386,8 @@ def batch_process_files(
 if __name__ == "__main__":
     # Single file processing example
     process_file(
-        input_md_path="../ncertFullChapter/probabilityTes1.md",
-        output_json_path="extracted_chunks-test.json",
+        input_md_path="../data/probabilityncert.md",
+        output_json_path="extracted_chunks.json",
         source_url="class12_ncert_textbook.pdf",
         source_type="textbook"
     )

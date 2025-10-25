@@ -16,7 +16,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from sentence_transformers import SentenceTransformer
 import chromadb
 
-from schema import Chunk, Metadata
+from rag.schema import Chunk, Metadata
 
 class RAGSystem:
     """
@@ -34,7 +34,7 @@ class RAGSystem:
     """
     
     # Define which metadata fields are lists vs scalars
-    LIST_FIELDS = {"topics", "subtopics", "prerequisites"}
+    LIST_FIELDS = {"topics", "prerequisites"}
     SCALAR_FIELDS = {"source_url", "source_type", "chunk_type", "difficulty_level"}
     
     def __init__(self, db_path: str = "./chroma_db", model_name: str = 'all-MiniLM-L6-v2'):
@@ -51,9 +51,7 @@ class RAGSystem:
             Embedding model loaded.
             ChromaDB collection 'educational_chunks' loaded/created from ./my_db.
             0 chunks currently in the database.
-        """
-        print("Initializing RAG System...")
-        
+        """        
         # Initialize the embedding model
         self.embedding_model = SentenceTransformer(model_name)
         print("Embedding model loaded.")
@@ -90,7 +88,7 @@ class RAGSystem:
         
         Args:
             data: List of strings to serialize
-            tag: Tag name to identify the list type (e.g., "TOPICS", "SUBTOPICS")
+            tag: Tag name to identify the list type (e.g., "TOPICS", "PREREQS")
             
         Returns:
             Tagged string representation of the list, or empty string if list is empty
@@ -135,7 +133,7 @@ class RAGSystem:
             Cleaned text without metadata tags
         """
         doc_text = text
-        for tag in ["TOPICS", "SUBTOPICS", "PREREQS"]:
+        for tag in ["TOPICS", "PREREQS"]:
             start_tag = f" <META_{tag}:,"
             end_tag = ",> "
             while start_tag in doc_text:
@@ -178,7 +176,6 @@ class RAGSystem:
             # 1. Append serialized list metadata to document text
             doc_text = chunk.text
             doc_text += self._serialize_list(chunk.metadata.topics, "TOPICS")
-            doc_text += self._serialize_list(chunk.metadata.subtopics, "SUBTOPICS")
             doc_text += self._serialize_list(chunk.metadata.prerequisites, "PREREQS")
             documents.append(doc_text)
             
@@ -212,7 +209,7 @@ class RAGSystem:
         
         This method automatically routes filters to the appropriate ChromaDB filter type:
         - Scalar fields (source_url, chunk_type, etc.) → where filter
-        - List fields (topics, subtopics, prerequisites) → where_document filter
+        - List fields (topics, prerequisites) → where_document filter
         
         Args:
             filters: Dictionary of filter conditions
@@ -240,7 +237,6 @@ class RAGSystem:
                 # List metadata: search in serialized document tags
                 tag_mapping = {
                     "topics": "TOPICS",
-                    "subtopics": "SUBTOPICS",
                     "prerequisites": "PREREQS"
                 }
                 tag = tag_mapping[key]
@@ -266,7 +262,7 @@ class RAGSystem:
         if where_document_conditions:
             where_document_filter = (
                 where_document_conditions[0] if len(where_document_conditions) == 1 
-                else {"$and": where_document_conditions}
+                else {"$or": where_document_conditions}
             )
         
         return (where_filter, where_document_filter)
@@ -327,6 +323,29 @@ class RAGSystem:
             where_document=where_document_filter
         )
         
+        # Progressively relax the query if no results found
+        if len(results['ids'][0]) == 0 and filters:
+            if verbose:
+                print("No results found with current filters. Relaxing filters...")
+            # First, remove list-based filters
+            where_filter_relaxed, _ = self._build_filters({
+                k: v for k, v in filters.items() if k in self.SCALAR_FIELDS
+            })
+            results = self.collection.query(
+                query_embeddings=[query_embedding],
+                n_results=k,
+                where=where_filter_relaxed
+            )
+
+            # If still no results, remove all filters
+            if len(results['ids'][0]) == 0:
+                if verbose:
+                    print("No results found after removing list-based filters. Removing all filters...")
+                results = self.collection.query(
+                    query_embeddings=[query_embedding],
+                    n_results=k
+                )
+
         # Reconstruct Chunk objects from results
         cleaned_results = []
         for i in range(len(results['ids'][0])):
@@ -340,7 +359,6 @@ class RAGSystem:
             
             # Extract list fields from serialized tags
             metadata_dict['topics'] = self._deserialize_list(original_doc, "TOPICS")
-            metadata_dict['subtopics'] = self._deserialize_list(original_doc, "SUBTOPICS")
             metadata_dict['prerequisites'] = self._deserialize_list(original_doc, "PREREQS")
 
             # Create Chunk object
@@ -412,7 +430,6 @@ def load_chunks_from_json(filepath: str) -> List[Chunk]:
                     "chunk_type": "...",
                     "difficulty_level": "...",
                     "topics": [...],
-                    "subtopics": [...],
                     "prerequisites": [...]
                 }
             },
@@ -424,6 +441,8 @@ def load_chunks_from_json(filepath: str) -> List[Chunk]:
 
     chunks = []
     for item in data:
+        topics = [t.lower().strip() for t in item['metadata'].get('topics', [])]
+        prereqs = [p.lower().strip() for p in item['metadata'].get('prerequisites', [])]
         chunk = Chunk(
             id=uuid.uuid4().hex,
             text=item['text'],
@@ -432,9 +451,8 @@ def load_chunks_from_json(filepath: str) -> List[Chunk]:
                 source_type=item['metadata']['source_type'],
                 chunk_type=item['metadata']['chunk_type'],
                 difficulty_level=item['metadata']['difficulty_level'],
-                topics=item['metadata'].get('topics', []),
-                subtopics=item['metadata'].get('subtopics', []),
-                prerequisites=item['metadata'].get('prerequisites', [])
+                topics=topics,
+                prerequisites=prereqs
             )
         )
         chunks.append(chunk)

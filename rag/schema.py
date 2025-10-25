@@ -7,7 +7,7 @@ class Metadata(BaseModel):
     source_url: str
     source_type: str
     topics: List[str]
-    subtopics: List[str]
+    # subtopics: List[str]
     chunk_type: Literal["definition", "example", "explanation", "proof", "visualization",
                         "practice_problem", "worked_solution", "analogy", "misconception"]
     difficulty_level: Literal["basic", "intermediate", "advanced"]

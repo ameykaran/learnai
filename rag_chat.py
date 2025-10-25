@@ -1,10 +1,14 @@
 from keyword_extractor.keyword_extractor import KeywordExtractor
-from rag.rag_system import RAGSystem
+from rag.rag_system import RAGSystem, initialize_rag_system
 import dspy
-
-
 from typing import List, Literal
+from dotenv import load_dotenv
 
+# Load environment variables (API keys, etc.)
+load_dotenv()
+
+# Configuration constants
+MAX_RETRIES = 3        # Number of retries for failed API calls
 
 class MetadataExtractor(dspy.Signature):
     query: str = dspy.InputField(
@@ -12,8 +16,6 @@ class MetadataExtractor(dspy.Signature):
     
     chunk_type: Literal["definition", "example", "explanation", "proof", "visualization", "practice_problem", "worked_solution", "analogy", "misconception"] = dspy.OutputField(
         desc="Type of chunk to extract.")
-    difficulty_level: Literal["basic", "intermediate", "advanced"] = dspy.OutputField(
-        desc="Difficulty level of the chunk."
 
 
 class RAGChat:
@@ -24,20 +26,20 @@ class RAGChat:
         # Configure DSPy with Gemini LLM
         self.lm = dspy.LM(
             model="gemini/gemini-2.5-flash",
-            api_key=gemini_api_key or "",  # Uses env variable if not provided
-            max_tokens=chunk_size * 3,     # Allow extra tokens for structured output
+            max_tokens=5000 * 3,     # Allow extra tokens for structured output
             num_retries=MAX_RETRIES,
-            temperature=temperature
+            temperature=0.2
         )
-        dspy.configure(lm=lm)
+        dspy.configure(lm=self.lm)
         dspy.settings.configure(track_usage=True)
 
 
     def chat(self, user_input: str) -> str:
         keywords=self.keyword_extractor.extract_keywords(user_input)
         extractor = dspy.Predict(MetadataExtractor)
-        filters={"topics": keywords, "difficulty_level": extractor.difficulty_level, "chunk_type": extractor.chunk_type}
-        print("Applying filters:", filters)
+        extractor_output = extractor(query=user_input)
+        filters={"topics": [kw.lower() for kw in keywords], 
+                  "chunk_type": extractor_output.chunk_type}
 
         response=self.rag_system.query(user_input, filters=filters, k=3)
 
@@ -47,13 +49,17 @@ class RAGChat:
 if __name__ == "__main__":
     # Example usage
     rag_system = RAGSystem(db_path="./rag/prob_db")
+    # initialize_rag_system(rag_system, chunks_file="rag/extracted_chunks.json")
 
-    extractor = KeywordExtractor(
+    keyword_extractor = KeywordExtractor(
         keywords_file="keyword_extractor/probability_keywords.csv",
         model_path="keyword_extractor/math_ner_model"
     )
     rag_chat = RAGChat(rag_system, keyword_extractor)
 
-    user_query = "Explain the concept of derivatives in calculus."
-    answer = rag_chat.chat(user_query)
-    print("RAG Chat Response:", answer)
+    while True:
+        user_query = input("Enter your question (or 'exit' to quit): ")
+        if user_query.lower() == 'exit':
+            break
+        answer = rag_chat.chat(user_query)
+        print("RAG Chat Response:", answer)
