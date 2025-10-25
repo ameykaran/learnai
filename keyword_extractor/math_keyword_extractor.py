@@ -25,8 +25,8 @@ import numpy as np
 class MathKeywordExtractor:
     """Extract mathematical keywords using NER + fuzzy matching."""
 
-    def __init__(self, keywords_file: str = "chunker/probability_keywords.csv",
-                 model_path: str = "chunker/math_ner_model"):
+    def __init__(self, keywords_file: str = "probability_keywords.csv",
+                 model_path: str = "math_ner_model"):
         self.keywords_file = keywords_file
         self.model_path = model_path
         self.keywords = self._load_keywords()
@@ -265,86 +265,6 @@ class MathKeywordExtractor:
         return sorted_keywords[:top_k]
 
 
-class SQLRetriever:
-    """Simple SQL-like retrieval system for demonstration."""
-
-    def __init__(self, db_path: str = "chunker/knowledge_base.db"):
-        self.db_path = db_path
-        self._init_db()
-
-    def _init_db(self):
-        """Initialize SQLite database with sample data."""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-
-        # Create table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS knowledge_chunks (
-                id INTEGER PRIMARY KEY,
-                content TEXT,
-                topic TEXT,
-                metadata TEXT
-            )
-        """)
-
-        # Insert sample data
-        sample_data = [
-            ("Conditional probability is the probability of an event given that another event has occurred...",
-             "conditional probability", "{'difficulty': 'intermediate', 'category': 'probability'}"),
-            ("Joint probability refers to the probability of two or more events occurring simultaneously...",
-             "joint probability", "{'difficulty': 'intermediate', 'category': 'probability'}"),
-            ("Bayes theorem provides a way to update probabilities when new evidence is presented...",
-             "bayes theorem", "{'difficulty': 'advanced', 'category': 'probability'}"),
-            ("Normal distribution is a continuous probability distribution that is symmetric around the mean...",
-             "normal distribution", "{'difficulty': 'intermediate', 'category': 'distributions'}"),
-            ("Expected value is the average value of a random variable over many trials...",
-             "expected value", "{'difficulty': 'basic', 'category': 'statistics'}"),
-        ]
-
-        cursor.executemany(
-            "INSERT OR IGNORE INTO knowledge_chunks (content, topic, metadata) VALUES (?, ?, ?)",
-            sample_data
-        )
-
-        conn.commit()
-        conn.close()
-
-    def retrieve_chunks(self, keywords: List[str], top_k: int = 3) -> List[Dict]:
-        """Retrieve knowledge chunks based on keywords."""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-
-        results = []
-
-        for keyword in keywords:
-            cursor.execute(
-                "SELECT content, topic, metadata FROM knowledge_chunks WHERE topic LIKE ? OR content LIKE ?",
-                (f"%{keyword}%", f"%{keyword}%")
-            )
-
-            rows = cursor.fetchall()
-            for content, topic, metadata in rows:
-                results.append({
-                    "content": content,
-                    "topic": topic,
-                    "metadata": metadata,
-                    "matched_keyword": keyword
-                })
-
-        conn.close()
-
-        # Remove duplicates and limit results
-        unique_results = []
-        seen_content = set()
-        for result in results:
-            if result["content"] not in seen_content:
-                unique_results.append(result)
-                seen_content.add(result["content"])
-                if len(unique_results) >= top_k:
-                    break
-
-        return unique_results
-
 
 def main():
     """Main function to demonstrate the system."""
@@ -360,17 +280,6 @@ def main():
         training_data = extractor.generate_training_data(num_examples=500)
         extractor.train_ner_model(training_data, n_iter=10)
 
-    # Initialize retriever
-    retriever = SQLRetriever()
-
-    # Test queries
-    test_queries = [
-        "I want to learn about conditional probability",
-        "Can you explain Bayes theorem?",
-        "What is normal distribution?",
-        "Help me with expected value and variance",
-        "I need information on joint probability distribution"
-    ]
 
     print("\n" + "="*60)
     print("TESTING MATH KEYWORD EXTRACTION SYSTEM")
