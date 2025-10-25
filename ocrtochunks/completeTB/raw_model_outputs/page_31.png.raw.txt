@@ -1,0 +1,209 @@
+```json
+[
+  {
+    "text": "Note If $X_i$ is one of the possible values of a random variable X, the statement $X = x_i$ is true only at some point (s) of the sample space. Hence, the probability that X takes value $x_i$ is always nonzero, i.e. $P(X = x_i) \\ne 0$.",
+    "page_number": 25,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Properties of random variables"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random variables",
+        "Sample space"
+      ]
+    }
+  },
+  {
+    "text": "Also for all possible values of the random variable X, all elements of the sample space are covered. Hence, the sum of all the probabilities in a probability distribution must be one.",
+    "page_number": 25,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability distribution properties"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability distribution"
+      ]
+    }
+  },
+  {
+    "text": "Example 24 Two cards are drawn successively with replacement from a well-shuffled deck of 52 cards. Find the probability distribution of the number of aces.",
+    "page_number": 25,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability distribution",
+        "Card problems"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability of events",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "Solution The number of aces is a random variable. Let it be denoted by X. Clearly, X can take the values 0, 1, or 2. Now, since the draws are done with replacement, therefore, the two draws form independent experiments. Therefore,",
+    "page_number": 25,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Worked example setup"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Random variables",
+        "Independent events"
+      ]
+    }
+  },
+  {
+    "text": "$P(X = 0) = P(\\text{non-ace and non-ace})$\n$= P(\\text{non-ace}) \\times P(\\text{non-ace})$\n$= \\frac{48}{52} \\times \\frac{48}{52} = \\frac{144}{169}$",
+    "page_number": 25,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability calculation"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability of independent events"
+      ]
+    }
+  },
+  {
+    "text": "$P(X = 1) = P(\\text{ace and non-ace or non-ace and ace})$\n$= P(\\text{ace and non-ace}) + P(\\text{non-ace and ace})$\n$= P(\\text{ace}) \\cdot P(\\text{non-ace}) + P(\\text{non-ace}) \\cdot P(\\text{ace})$\n$= \\frac{4}{52} \\times \\frac{48}{52} + \\frac{48}{52} \\times \\frac{4}{52} = \\frac{24}{169}$",
+    "page_number": 25,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability calculation"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability of mutually exclusive events",
+        "Probability of independent events"
+      ]
+    }
+  },
+  {
+    "text": "$P(X = 2) = P (\\text{ace and ace})$\n$= \\frac{4}{52} \\times \\frac{4}{52} = \\frac{1}{169}$",
+    "page_number": 25,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability calculation"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability of independent events"
+      ]
+    }
+  },
+  {
+    "text": "Thus, the required probability distribution is\n\n| X | 0 | 1 | 2 |\n|---|---|---|---|\n| P(X) | $\\frac{144}{169}$ | $\\frac{24}{169}$ | $\\frac{1}{169}$ |",
+    "page_number": 25,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability distribution table"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability calculations"
+      ]
+    }
+  },
+  {
+    "text": "Example 25 Find the probability distribution of number of doublets in three throws of a pair of dice.",
+    "page_number": 25,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_31.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability distribution",
+        "Dice problems"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability of events",
+        "Binomial distribution (implied)"
+      ]
+    }
+  }
+]
+```

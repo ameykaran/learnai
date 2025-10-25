@@ -1,0 +1,135 @@
+```json
+[
+  {
+    "text": "Thus, we can also write the conditional probability of E given that F has occurred as\n$$P(E|F) = \\frac{\\text{Number of elementary events favourable to } E \\cap F}{\\text{Number of elementary events which are favourable to } F}$$\n$$= \\frac{n(E \\cap F)}{n(F)}$$",
+    "page_number": 23,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability Theory"
+      ]
+    }
+  },
+  {
+    "text": "Dividing the numerator and the denominator by total number of elementary events of the sample space, we see that $P(E|F)$ can also be written as\n$$P(E|F) = \\frac{\\frac{n(E \\cap F)}{n(S)}}{\\frac{n(F)}{n(S)}} = \\frac{P(E \\cap F)}{P(F)} \\quad ... (1)$$\nNote that (1) is valid only when $P(F) \\neq 0$ i.e., $F \\neq \\phi$ (Why?)",
+    "page_number": 23,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability Theory"
+      ]
+    }
+  },
+  {
+    "text": "Thus, we can define the conditional probability as follows :\nDefinition 1 If E and F are two events associated with the same sample space of a random experiment, the conditional probability of the event E given that F has occurred, i.e. $P(E|F)$ is given by\n$$P(E|F) = \\frac{P(E \\cap F)}{P(F)} \\quad \\text{provided } P(F) \\neq 0$$",
+    "page_number": 23,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability Theory"
+      ]
+    }
+  },
+  {
+    "text": "13.2.1 Properties of conditional probability",
+    "page_number": 23,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability",
+        "Properties of Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Let E and F be events of a sample space S of an experiment, then we have\nProperty 1 $P(S|F) = P(F|F) = 1$\nWe know that\n$$P(S|F) = \\frac{P(S \\cap F)}{P(F)} = \\frac{P(F)}{P(F)} = 1$$\n$$P(F|F) = \\frac{P(F \\cap F)}{P(F)} = \\frac{P(F)}{P(F)} = 1$$",
+    "page_number": 23,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability",
+        "Properties of Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Conditional Probability",
+        "Set Theory (Intersection)"
+      ]
+    }
+  },
+  {
+    "text": "Also\nThus\nProperty 2 If A and B are any two events of a sample space S and F is an event of S such that $P(F) \\neq 0$, then\n$$P((A \\cup B)|F) = P(A|F) + P(B|F) - P((A \\cap B)|F)$$",
+    "page_number": 23,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability",
+        "Properties of Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Conditional Probability",
+        "Set Theory (Union, Intersection)"
+      ]
+    }
+  }
+]
+```

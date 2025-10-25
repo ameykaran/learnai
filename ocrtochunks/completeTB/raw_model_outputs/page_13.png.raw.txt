@@ -1,0 +1,175 @@
+```json
+[
+  {
+    "text": "Definition 2 Two events E and F are said to be independent, if\n$P(F|E) = P(F)$ provided $P(E) \\neq 0$\nand $P(E|F) = P(E)$ provided $P(F) \\neq 0$\nThus, in this definition we need to have $P(E) \\neq 0$ and $P(F) \\neq 0$",
+    "page_number": 5,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent Events",
+        "Conditional Probability"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Now, by the multiplication rule of probability, we have\n$P(E \\cap F) = P(E) \\cdot P(F|E)$ ... (1)",
+    "page_number": 5,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Multiplication Rule"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "If E and F are independent, then (1) becomes\n$P(E \\cap F) = P(E) \\cdot P(F)$ ... (2)",
+    "page_number": 5,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent Events"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Independent Events"
+      ]
+    }
+  },
+  {
+    "text": "Thus, using (2), the independence of two events is also defined as follows:\nDefinition 3 Let E and F be two events associated with the same random experiment, then E and F are said to be independent if\n$P(E \\cap F) = P(E) \\cdot P(F)$",
+    "page_number": 5,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent Events"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Remarks\n(i) Two events E and F are said to be dependent if they are not independent, i.e. if\n$P(E \\cap F) \\neq P(E) \\cdot P(F)$",
+    "page_number": 5,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Dependent Events"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Independent Events"
+      ]
+    }
+  },
+  {
+    "text": "(ii) Sometimes there is a confusion between independent events and mutually exclusive events. Term ‘independent’ is defined in terms of ‘probability of events’ whereas mutually exclusive is defined in term of events (subset of sample space).\nMoreover, mutually exclusive events never have an outcome common, but independent events, may have common outcome. Clearly, ‘independent’ and ‘mutually exclusive’ do not have the same meaning.\nIn other words, two independent events having nonzero probabilities of occurrence can not be mutually exclusive, and conversely, i.e. two mutually exclusive events having nonzero probabilities of occurrence can not be independent.",
+    "page_number": 5,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent Events",
+        "Mutually Exclusive Events",
+        "Misconceptions"
+      ],
+      "chunk_type": "misconception",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Independent Events",
+        "Mutually Exclusive Events"
+      ]
+    }
+  },
+  {
+    "text": "(iii) Two experiments are said to be independent if for every pair of events E and F, where E is associated with the first experiment and F with the second experiment, the probability of the simultaneous occurrence of the events E and F when the two experiments are performed is the product of $P(E)$ and $P(F)$ calculated separately on the basis of two experiments, i.e., $P(E \\cap F) = P(E) \\cdot P(F)$.",
+    "page_number": 5,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent Experiments",
+        "Product Rule"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Independent Events"
+      ]
+    }
+  },
+  {
+    "text": "(iv) Three events A, B and C are said to be mutually independent, if\n$P(A \\cap B) = P(A) P(B)$\n$P(A \\cap C) = P(A) P(C)$\n$P(B \\cap C) = P(B) P(C)$\nand\n$P(A \\cap B \\cap C) = P(A) P(B) P(C)$",
+    "page_number": 5,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_13.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Mutually Independent Events"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Independent Events"
+      ]
+    }
+  }
+]
+```

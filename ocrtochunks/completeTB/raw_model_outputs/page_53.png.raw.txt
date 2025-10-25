@@ -1,0 +1,209 @@
+```json
+[
+  {
+    "text": "PROBABILITY 583",
+    "page_number": 49,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "5. An urn contains 25 balls of which 10 balls bear a mark 'X' and the remaining 15 bear a mark 'Y'. A ball is drawn at random from the urn, its mark is noted down and it is replaced. If 6 balls are drawn in this way, find the probability that\n(i) all will bear 'X' mark.\n(ii) not more than 2 will bear 'Y' mark.\n(iii) at least one ball will bear 'Y' mark.\n(iv) the number of balls with 'X' mark and 'Y' mark will be equal.",
+    "page_number": 49,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Bernoulli Trials",
+        "Binomial Distribution"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "6. In a hurdle race, a player has to cross 10 hurdles. The probability that he will clear each hurdle is $\\frac{5}{6}$. What is the probability that he will knock down fewer than 2 hurdles?",
+    "page_number": 49,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Binomial Distribution"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Binomial Probability Formula"
+      ]
+    }
+  },
+  {
+    "text": "7. A die is thrown again and again until three sixes are obtained. Find the probabil-ity of obtaining the third six in the sixth throw of the die.",
+    "page_number": 49,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Negative Binomial Distribution"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Geometric Distribution",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "8. If a leap year is selected at random, what is the chance that it will contain 53 tuesdays?",
+    "page_number": 49,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Days and Dates"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Calendar knowledge"
+      ]
+    }
+  },
+  {
+    "text": "9. An experiment succeeds twice as often as it fails. Find the probability that in the next six trials, there will be atleast 4 successes.",
+    "page_number": 49,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Binomial Distribution"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Binomial Probability Formula"
+      ]
+    }
+  },
+  {
+    "text": "10. How many times must a man toss a fair coin so that the probability of having at least one head is more than 90%?",
+    "page_number": 49,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Bernoulli Trials"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Complementary Probability"
+      ]
+    }
+  },
+  {
+    "text": "11. In a game, a man wins a rupee for a six and loses a rupee for any other number when a fair die is thrown. The man decided to throw a die thrice but to quit as and when he gets a six. Find the expected value of the amount he wins / loses.",
+    "page_number": 49,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Expected Value"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability of Events",
+        "Expected Value Formula"
+      ]
+    }
+  },
+  {
+    "text": "12. Suppose we have four boxes A,B,C and D containing coloured marbles as given below:\n\nMarble colour\n\n| Box | Red | White | Black |\n|:---:|:---:|:-----:|:-----:|\n| A   | 1   | 6     | 3     |\n| B   | 6   | 2     | 2     |\n| C   | 8   | 1     | 1     |\n| D   | 0   | 6     | 4     |\n\nOne of the boxes has been selected at random and a single marble is drawn from it. If the marble is red, what is the probability that it was drawn from box A?, box B?, box C?",
+    "page_number": 49,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Bayes' Theorem"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Conditional Probability",
+        "Total Probability"
+      ]
+    }
+  },
+  {
+    "text": "2019-20",
+    "page_number": 49,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_53.png",
+      "source_type": "image",
+      "topics": null,
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  }
+]
+```

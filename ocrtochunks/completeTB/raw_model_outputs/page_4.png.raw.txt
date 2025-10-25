@@ -1,0 +1,169 @@
+```json
+[
+  {
+    "text": "In particular, if $A$ and $B$ are disjoint events, then\n$P((A \\cup B)|F) = P(A|F) + P(B|F)$",
+    "page_number": 34,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Properties of Probability"
+      ],
+      "subtopics": [
+        "Addition Rule for Disjoint Events (Conditional)"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "We have\n$P((A \\cup B)|F) = \\frac{P[(A \\cup B) \\cap F]}{P(F)}$\n$= \\frac{P[(A \\cap F) \\cup (B \\cap F)]}{P(F)}$ (by distributive law of union of sets over intersection)\n$= \\frac{P(A \\cap F)+P(B \\cap F)-P(A \\cap B \\cap F)}{P(F)}$\n$= \\frac{P(A \\cap F)}{P(F)} + \\frac{P(B \\cap F)}{P(F)} - \\frac{P[(A \\cap B) \\cap F]}{P(F)}$\n$= P(A|F) + P(B|F) - P((A \\cap B)|F)$",
+    "page_number": 34,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Properties of Probability"
+      ],
+      "subtopics": [
+        "Derivation of General Addition Rule for Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Definition of Conditional Probability",
+        "Set Theory (Distributive Law)",
+        "General Addition Rule for Probability"
+      ]
+    }
+  },
+  {
+    "text": "When $A$ and $B$ are disjoint events, then\n$A \\cap B = \\phi$\n$\\Rightarrow P((A \\cap B)|F) = 0$\nThus,\n$P((A \\cup B)|F) = P(A|F) + P(B|F)$",
+    "page_number": 34,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Disjoint Events"
+      ],
+      "subtopics": [
+        "Addition Rule for Disjoint Events (Conditional)"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Disjoint Events"
+      ]
+    }
+  },
+  {
+    "text": "Property 3 $P(E'|F) = 1 - P(E|F)$\nFrom Property 1, we know that $P(S|F) = 1$\n$\\Rightarrow P(E \\cup E'|F) = 1$ since $S = E \\cup E'$\n$\\Rightarrow P(E|F) + P(E'|F) = 1$ since $E$ and $E'$ are disjoint events\nThus, $P(E'|F) = 1 - P(E|F)$",
+    "page_number": 34,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Properties of Probability"
+      ],
+      "subtopics": [
+        "Complement Rule for Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Complementary Events"
+      ]
+    }
+  },
+  {
+    "text": "Let us now take up some examples.",
+    "page_number": 34,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [],
+      "subtopics": [],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 1 If $P(A) = \\frac{7}{13}$, $P(B) = \\frac{9}{13}$ and $P(A \\cap B) = \\frac{4}{13}$, evaluate $P(A|B)$.",
+    "page_number": 34,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Calculating Conditional Probability"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Solution We have $P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{\\frac{4}{13}}{\\frac{9}{13}} = \\frac{4}{9}$",
+    "page_number": 34,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Calculating Conditional Probability"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Example 2 A family has two children. What is the probability that both the children are boys given that at least one of them is a boy ?",
+    "page_number": 34,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Real-world Applications of Conditional Probability"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Sample Space",
+        "Events"
+      ]
+    }
+  }
+]
+```

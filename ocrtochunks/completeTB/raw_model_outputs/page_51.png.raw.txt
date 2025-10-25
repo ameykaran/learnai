@@ -1,0 +1,100 @@
+```json
+[
+  {
+    "text": "Therefore, $1 - P(x=0) > 0.99$\nor $1 - ^n C_0 \\frac{1}{4^n} > 0.99$\nor $^n C_0 \\frac{1}{4^n} < 0.01$ i.e. $\\frac{1}{4^n} < 0.01$\nor $4^n > \\frac{1}{0.01} = 100$ ... (1)\nThe minimum value of $n$ to satisfy the inequality (1) is 4.\nThus, the shooter must fire 4 times.",
+    "page_number": 47,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_51.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Inequalities"
+      ],
+      "subtopics": [
+        "Binomial Probability",
+        "Minimum trials"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Binomial Distribution",
+        "Solving Inequalities"
+      ]
+    }
+  },
+  {
+    "text": "Example 36 A and B throw a die alternatively till one of them gets a ‘6’ and wins the game. Find their respective probabilities of winning, if A starts first.",
+    "page_number": 47,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_51.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Games of Chance"
+      ],
+      "subtopics": [
+        "Geometric Probability",
+        "Conditional Probability"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Solution Let S denote the success (getting a ‘6’) and F denote the failure (not getting a ‘6’).",
+    "page_number": 47,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_51.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Games of Chance"
+      ],
+      "subtopics": [
+        "Geometric Probability",
+        "Defining Events"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Thus, $P(S) = \\frac{1}{6}, P(F) = \\frac{5}{6}$\nP(A wins in the first throw) = $P(S) = \\frac{1}{6}$\nA gets the third throw, when the first throw by A and second throw by B result into failures.\nTherefore, P(A wins in the 3rd throw) = $P(FFS) = P(F)P(F)P(S) = \\frac{5}{6} \\times \\frac{5}{6} \\times \\frac{1}{6} = (\\frac{5}{6})^2 \\times \\frac{1}{6}$\nP(A wins in the 5th throw) = $P (FFFFS) = (\\frac{5}{6})^4 (\\frac{1}{6})$ and so on.\nHence, P(A wins) = $\\frac{1}{6} + (\\frac{5}{6})^2 (\\frac{1}{6}) + (\\frac{5}{6})^4 (\\frac{1}{6}) + ...$\n$= \\frac{\\frac{1}{6}}{1 - \\frac{25}{36}} = \\frac{6}{11}$",
+    "page_number": 47,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_51.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Games of Chance",
+        "Infinite Series"
+      ],
+      "subtopics": [
+        "Geometric Probability",
+        "Sum of Geometric Series"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Geometric Series"
+      ]
+    }
+  }
+]
+```

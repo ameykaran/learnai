@@ -1,0 +1,73 @@
+{
+  "sdk_http_response": {
+    "headers": {
+      "content-type": "application/json; charset=UTF-8",
+      "vary": "Origin, X-Origin, Referer",
+      "content-encoding": "gzip",
+      "date": "Sat, 25 Oct 2025 13:04:37 GMT",
+      "server": "scaffolding on HTTPServer2",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "server-timing": "gfet4t7; dur=39028",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+      "transfer-encoding": "chunked"
+    },
+    "body": null
+  },
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "video_metadata": null,
+            "thought": null,
+            "inline_data": null,
+            "file_data": null,
+            "thought_signature": null,
+            "function_call": null,
+            "code_execution_result": null,
+            "executable_code": null,
+            "function_response": null,
+            "text": "```json\n[\n  {\n    \"text\": \"1.1 PROBABILITY MODELS\\n\\nProbability theory is concerned with the analysis of random phenomena. The outcome of a random experiment cannot be determined with certainty, but the set of all possible outcomes can be described. For example, if we flip a coin, the outcome could be Heads or Tails. If we roll a die, the outcome could be any integer from 1 to 6. A probability model is a mathematical description of such an experiment. It provides a formal framework for understanding and predicting the behavior of random events. The most common framework for probability is based on measure theory, which provides a rigorous foundation for defining probabilities on a wide variety of sets, including continuous spaces like $\\\\mathbb{R}^n$. However, for introductory purposes, a more intuitive understanding of probability can often suffice. We will, however, introduce the formal definitions early in the book.\\n\\nThe basic building blocks of a probability model are the sample space, the set of all possible outcomes, and the events, subsets of the sample space whose probability we want to quantify. For example, for a coin toss, the sample space is $\\\\Omega = \\\\{H, T\\\\}$, and an event could be \\\"the coin lands Heads.\\\" In a more complex scenario, such as selecting a real number from the interval $[0, 1]$, the sample space is $\\\\Omega = [0, 1]$, and an event might be \\\"the selected number is in $(a, b)$,\\\" where $0 \\\\le a < b \\\\le 1$. The collection of all such events for which we can assign a probability is denoted by $\\\\mathcal{F}$.\",\n    \"page_number\": 2,\n    \"chunk_index\": 0,\n    \"chunk_bbox\": null,\n    \"metadata\": {\n      \"source_url\": null,\n      \"source_type\": \"textbook\",\n      \"topics\": [\n        \"Probability\"\n      ],\n      \"subtopics\": [\n        \"probability models\",\n        \"random phenomena\",\n        \"sample space\",\n        \"events\"\n      ],\n      \"chunk_type\": \"section_introduction\",\n      \"difficulty_level\": \"basic\",\n      \"prerequisites\": [\n        \"basic set theory\"\n      ]\n    }\n  },\n  {\n    \"text\": \"Definition 1.1. A probability model is a triple $(\\\\Omega, \\\\mathcal{F}, P)$ where\\n1.  $\\\\Omega$ is the sample space, the set of all possible outcomes.\\n2.  $\\\\mathcal{F}$ is a $\\\\sigma$-field of events on $\\\\Omega$, which means:\\n    (a) $\\\\emptyset \\\\in \\\\mathcal{F}$ and $\\\\Omega \\\\in \\\\mathcal{F}$.\\n    (b) If $A \\\\in \\\\mathcal{F}$, then $A^c \\\\in \\\\mathcal{F}$. (Closure under complementation)\\n    (c) If $(A_i)_{i=1}^\\\\infty$ is a sequence of events in $\\\\mathcal{F}$, then $\\\\bigcup_{i=1}^\\\\infty A_i \\\\in \\\\mathcal{F}$. (Closure under countable unions)\\n3.  $P: \\\\mathcal{F} \\\\to \\\\mathbb{R}$ is a probability measure (or probability distribution) satisfying the following axioms:\\n    (P1) $P(\\\\Omega) = 1$.\\n    (P2) $P(A) \\\\ge 0$ for all $A \\\\in \\\\mathcal{F}$.\\n    (P3) If $(A_i)_{i=1}^\\\\infty$ is a sequence of disjoint events in $\\\\mathcal{F}$ (i.e., $A_i \\\\cap A_j = \\\\emptyset$ for $i \\\\ne j$), then\\n    $$P\\\\left(\\\\bigcup_{i=1}^\\\\infty A_i\\\\right) = \\\\sum_{i=1}^\\\\infty P(A_i).$$\",\n    \"page_number\": 2,\n    \"chunk_index\": 1,\n    \"chunk_bbox\": null,\n    \"metadata\": {\n      \"source_url\": null,\n      \"source_type\": \"textbook\",\n      \"topics\": [\n        \"Probability\"\n      ],\n      \"subtopics\": [\n        \"probability model\",\n        \"sample space\",\n        \"sigma-field\",\n        \"event space\",\n        \"probability measure\",\n        \"axioms of probability\",\n        \"Kolmogorov's axioms\"\n      ],\n      \"chunk_type\": \"definition\",\n      \"difficulty_level\": \"basic\",\n      \"prerequisites\": [\n        \"set theory\",\n        \"functions\"\n      ]\n    }\n  },\n  {\n    \"text\": \"The set $\\\\Omega$ is called the sample space. Its elements $\\\\omega \\\\in \\\\Omega$ are called outcomes, sample points, or realizations. An event is a subset of $\\\\Omega$ to which a probability is assigned. For mathematical convenience, not all subsets of $\\\\Omega$ are necessarily events. For example, in the continuous setting, it is generally not possible to assign probabilities to all subsets of $\\\\mathbb{R}$. The collection of events $\\\\mathcal{F}$ is thus a subcollection of all subsets of $\\\\Omega$ that satisfies certain properties. These properties, listed in Definition 1.1.2(a)-(c), ensure that $\\\\mathcal{F}$ is closed under the standard set operations that arise in probability theory (complements, unions, intersections). A collection of events $\\\\mathcal{F}$ that satisfies (1) and (2) is called a $\\\\sigma$-field.\",\n    \"page_number\": 2,\n    \"chunk_index\": 2,\n    \"chunk_bbox\": null,\n    \"metadata\": {\n      \"source_url\": null,\n      \"source_type\": \"textbook\",\n      \"topics\": [\n        \"Probability\"\n      ],\n      \"subtopics\": [\n        \"sample space\",\n        \"outcomes\",\n        \"events\",\n        \"sigma-field\",\n        \"set operations\"\n      ],\n      \"chunk_type\": \"explanation\",\n      \"difficulty_level\": \"basic\",\n      \"prerequisites\": [\n        \"set theory\",\n        \"definition of probability model\"\n      ]\n    }\n  },\n  {\n    \"text\": \"The function $P$ is called a probability measure (or probability distribution). It maps events in $\\\\mathcal{F}$ to real numbers in the interval $[0, 1]$. The three axioms (P1)-(P3) are often referred to as Kolmogorov's axioms of probability. These axioms ensure that the probability measure behaves in a consistent and intuitive way.\",\n    \"page_number\": 2,\n    \"chunk_index\": 3,\n    \"chunk_bbox\": null,\n    \"metadata\": {\n      \"source_url\": null,\n      \"source_type\": \"textbook\",\n      \"topics\": [\n        \"Probability\"\n      ],\n      \"subtopics\": [\n        \"probability measure\",\n        \"probability distribution\",\n        \"Kolmogorov's axioms\"\n      ],\n      \"chunk_type\": \"explanation\",\n      \"difficulty_level\": \"basic\",\n      \"prerequisites\": [\n        \"functions\",\n        \"definition of probability measure\"\n      ]\n    }\n  },\n  {\n    \"text\": \"Example 1.1 (Coin toss)\\nConsider a single toss of a fair coin.\\n1.  The sample space is $\\\\Omega = \\\\{H, T\\\\}$, where $H$ denotes Heads and $T$ denotes Tails.\\n2.  The $\\\\sigma$-field of events is $\\\\mathcal{F} = \\\\{\\\\emptyset, \\\\{H\\\\}, \\\\{T\\\\}, \\\\{H, T\\\\}\\\\}$.\\n3.  The probability measure $P$ is defined by:\\n    $P(\\\\{H\\\\}) = 1/2$\\n    $P(\\\\{T\\\\}) = 1/2$\\n    From (P1)-(P3), we can derive $P(\\\\emptyset) = 0$ and $P(\\\\{H, T\\\\}) = 1$.\",\n    \"page_number\": 2,\n    \"chunk_index\": 4,\n    \"chunk_bbox\": null,\n    \"metadata\": {\n      \"source_url\": null,\n      \"source_type\": \"textbook\",\n      \"topics\": [\n        \"Probability\"\n      ],\n      \"subtopics\": [\n        \"coin toss\",\n        \"discrete probability\",\n        \"sample space\",\n        \"event space\",\n        \"probability measure\",\n        \"example application\"\n      ],\n      \"chunk_type\": \"example\",\n      \"difficulty_level\": \"basic\",\n      \"prerequisites\": [\n        \"definition of probability model\"\n      ]\n    }\n  }\n]\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "citation_metadata": null,
+      "finish_message": null,
+      "token_count": null,
+      "finish_reason": "STOP",
+      "url_context_metadata": null,
+      "avg_logprobs": null,
+      "grounding_metadata": null,
+      "index": 0,
+      "logprobs_result": null,
+      "safety_ratings": null
+    }
+  ],
+  "create_time": null,
+  "model_version": "gemini-2.5-flash",
+  "prompt_feedback": null,
+  "response_id": "5cr8aILLDtSl1e8P8ofQ-Qo",
+  "usage_metadata": {
+    "cache_tokens_details": null,
+    "cached_content_token_count": null,
+    "candidates_token_count": 1980,
+    "candidates_tokens_details": null,
+    "prompt_token_count": 292,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 292
+      }
+    ],
+    "thoughts_token_count": 3866,
+    "tool_use_prompt_token_count": null,
+    "tool_use_prompt_tokens_details": null,
+    "total_token_count": 6138,
+    "traffic_type": null
+  },
+  "automatic_function_calling_history": [],
+  "parsed": null
+}

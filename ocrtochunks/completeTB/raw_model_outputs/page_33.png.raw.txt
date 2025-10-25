@@ -1,0 +1,169 @@
+```json
+[
+  {
+    "text": "PROBABILITY 563",
+    "page_number": 563,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": null,
+      "chunk_type": null,
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 26 Let $X$ denote the number of hours you study during a randomly selected school day. The probability that $X$ can take the values $x$, has the following form, where $k$ is some unknown constant.\n$$P(X = x) = \\begin{cases} 0.1, & \\text{if } x = 0 \\\\ kx, & \\text{if } x=1\\text{ or }2 \\\\ k(5-x), & \\text{if } x=3\\text{ or }4 \\\\ 0, & \\text{otherwise} \\end{cases}$$",
+    "page_number": 563,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Distribution"],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": ["Basic probability", "Discrete random variables"]
+    }
+  },
+  {
+    "text": "(a) Find the value of $k$.",
+    "page_number": 563,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Distribution"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Properties of probability distributions"]
+    }
+  },
+  {
+    "text": "(b) What is the probability that you study at least two hours ? Exactly two hours? At most two hours?",
+    "page_number": 563,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Calculation"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Interpreting probability events"]
+    }
+  },
+  {
+    "text": "Solution The probability distribution of X is",
+    "page_number": 563,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Distribution"],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "| X | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| P(X) | 0.1 | k | 2k | 2k | k |",
+    "page_number": 563,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Distribution"],
+      "chunk_type": "visualization",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "(a) We know that\n$$\\sum_{i=1}^{n} p_i = 1$$\nTherefore $0.1 + k + 2k + 2k + k = 1$\ni.e. $k = 0.15$",
+    "page_number": 563,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Distribution", "Finding unknown constants"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Sum of probabilities equals 1"]
+    }
+  },
+  {
+    "text": "(b) P(you study at least two hours) $= P(X \\ge 2)$\n$= P(X = 2) + P (X = 3) + P (X = 4)$\n$= 2k + 2k + k = 5k = 5 \\times 0.15 = 0.75$",
+    "page_number": 563,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Calculation", "Events"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Understanding 'at least'", "Sum rule for probabilities"]
+    }
+  },
+  {
+    "text": "P(you study exactly two hours) $= P(X = 2)$\n$= 2k = 2 \\times 0.15 = 0.3$",
+    "page_number": 563,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Calculation", "Events"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Understanding 'exactly'"]
+    }
+  },
+  {
+    "text": "P(you study at most two hours) $= P(X \\le 2)$\n$= P(X = 0) + P(X = 1) + P(X = 2)$\n$= 0.1 + k + 2k = 0.1 + 3k = 0.1 + 3 \\times 0.15$\n$= 0.55$",
+    "page_number": 563,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Probability Calculation", "Events"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Understanding 'at most'", "Sum rule for probabilities"]
+    }
+  },
+  {
+    "text": "13.6.2 Mean of a random variable\nIn many problems, it is desirable to describe some feature of the random variable by means of a single number that can be computed from its probability distribution. Few such numbers are mean, median and mode. In this section, we shall discuss mean only. Mean is a measure of location or central tendency in the sense that it roughly locates a middle or average value of the random variable.",
+    "page_number": 563,
+    "chunk_index": 10,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_33.png",
+      "source_type": "image",
+      "topics": ["Probability", "Random Variables"],
+      "subtopics": ["Mean", "Measures of central tendency"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": ["Understanding random variables and probability distributions"]
+    }
+  }
+]
+```

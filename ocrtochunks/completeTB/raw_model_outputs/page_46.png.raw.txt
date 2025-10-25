@@ -1,0 +1,122 @@
+```json
+[
+  {
+    "text": "$$= {^{10}C_6 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_7 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_8 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_9 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_{10} \\left(\\frac{1}{2}\\right)^{10}}$$\n$$= \\left[ \\left(\\frac{10!}{6!\\times4!}\\right) + \\left(\\frac{10!}{7!\\times3!}\\right) + \\left(\\frac{10!}{8!\\times2!}\\right) + \\left(\\frac{10!}{9!\\times1!}\\right) + \\left(\\frac{10!}{10!}\\right) \\right] \\frac{1}{2^{10}} = \\frac{193}{512}$$",
+    "page_number": 41,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_46.png",
+      "source_type": "image",
+      "topics": [
+        "Binomial Distribution",
+        "Probability"
+      ],
+      "subtopics": [
+        "Calculating Probabilities",
+        "Combinations"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Binomial Probability Formula",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "(iii) P(at most six heads) $= P(X \\le 6)$\n$$= P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)$$\n$$+ P(X = 4) + P(X = 5) + P(X = 6)$$\n$$= \\left(\\frac{1}{2}\\right)^{10} + {^{10}C_1 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_2 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_3 \\left(\\frac{1}{2}\\right)^{10}}$$\n$$+ {^{10}C_4 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_5 \\left(\\frac{1}{2}\\right)^{10} + ^{10}C_6 \\left(\\frac{1}{2}\\right)^{10}}$$\n$$= \\frac{848}{1024} = \\frac{53}{64}$$",
+    "page_number": 41,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_46.png",
+      "source_type": "image",
+      "topics": [
+        "Binomial Distribution",
+        "Probability"
+      ],
+      "subtopics": [
+        "Calculating Cumulative Probabilities"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Binomial Probability Formula",
+        "Summation of Probabilities"
+      ]
+    }
+  },
+  {
+    "text": "Example 32 Ten eggs are drawn successively with replacement from a lot containing 10% defective eggs. Find the probability that there is at least one defective egg.",
+    "page_number": 41,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_46.png",
+      "source_type": "image",
+      "topics": [
+        "Binomial Distribution",
+        "Probability"
+      ],
+      "subtopics": [
+        "Problem Statement",
+        "Defective Items"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": []
+    }
+  },
+  {
+    "text": "Solution Let X denote the number of defective eggs in the 10 eggs drawn. Since the drawing is done with replacement, the trials are Bernoulli trials. Clearly, X has the\nbinomial distribution with $n = 10$ and $p = \\frac{10}{100} = \\frac{1}{10}$.\nTherefore $q = 1-p = \\frac{9}{10}$.\nNow P(at least one defective egg) $= P(X \\ge 1) = 1 - P(X = 0)$\n$$= 1 - {^{10}C_0 \\left(\\frac{9}{10}\\right)^{10} = 1 - \\frac{9^{10}}{10^{10}}}$$",
+    "page_number": 41,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_46.png",
+      "source_type": "image",
+      "topics": [
+        "Binomial Distribution",
+        "Probability"
+      ],
+      "subtopics": [
+        "Defective Items",
+        "Complementary Probability"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Bernoulli Trials",
+        "Binomial Probability Formula",
+        "Complement Rule"
+      ]
+    }
+  },
+  {
+    "text": "EXERCISE 13.5\n1. A die is thrown 6 times. If 'getting an odd number' is a success, what is the\nprobability of\n(i) 5 successes? (ii) at least 5 successes?\n(iii) at most 5 successes?",
+    "page_number": 41,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_46.png",
+      "source_type": "image",
+      "topics": [
+        "Binomial Distribution",
+        "Probability"
+      ],
+      "subtopics": [
+        "Dice Rolls",
+        "Success and Failure",
+        "Cumulative Probabilities"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Binomial Probability Formula"
+      ]
+    }
+  }
+]
+```

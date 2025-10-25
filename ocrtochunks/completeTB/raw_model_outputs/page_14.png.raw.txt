@@ -1,0 +1,96 @@
+```json
+[
+  {
+    "text": "If at least one of the above is not true for three given events, we say that the events are not independent.",
+    "page_number": 6,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_14.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Independence of Events"
+      ],
+      "subtopics": [
+        "Dependent Events"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Independent Events"
+      ]
+    }
+  },
+  {
+    "text": "Example 10 A die is thrown. If E is the event ‘the number appearing is a multiple of 3’ and F be the event ‘the number appearing is even’ then find whether E and F are independent ?\nSolution We know that the sample space is $S = \\{1, 2, 3, 4, 5, 6\\}$\nNow $E = \\{3, 6\\}, F = \\{2, 4, 6\\}$ and $E \\cap F = \\{6\\}$\nThen $P(E) = \\frac{2}{6} = \\frac{1}{3}$, $P(F) = \\frac{3}{6} = \\frac{1}{2}$ and $P(E \\cap F) = \\frac{1}{6}$\nClearly $P(E \\cap F) = P(E). P(F)$\nHence E and F are independent events.",
+    "page_number": 6,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_14.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Independence of Events"
+      ],
+      "subtopics": [
+        "Checking Independence"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Sample Space",
+        "Events",
+        "Probability Calculation"
+      ]
+    }
+  },
+  {
+    "text": "Example 11 An unbiased die is thrown twice. Let the event A be ‘odd number on the first throw’ and B the event ‘odd number on the second throw’. Check the independence of the events A and B.\nSolution If all the 36 elementary events of the experiment are considered to be equally likely, we have\n$P(A) = \\frac{18}{36} = \\frac{1}{2}$ and $P(B) = \\frac{18}{36} = \\frac{1}{2}$\nAlso $P(A \\cap B) = P(\\text{odd number on both throws})$\n$$= \\frac{9}{36} = \\frac{1}{4}$$\nNow $P(A) P(B) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$\nClearly $P(A \\cap B) = P(A) \\times P(B)$\nThus, A and B are independent events",
+    "page_number": 6,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_14.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Independence of Events"
+      ],
+      "subtopics": [
+        "Checking Independence"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Sample Space for Multiple Events",
+        "Probability Calculation"
+      ]
+    }
+  },
+  {
+    "text": "Example 12 Three coins are tossed simultaneously. Consider the event E ‘three heads or three tails’, F ‘at least two heads’ and G ‘at most two heads’. Of the pairs (E,F), (E,G) and (F,G), which are independent? which are dependent?\nSolution The sample space of the experiment is given by\n$S = \\{\\text{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}\\}$\nClearly $E = \\{\\text{HHH, TTT}\\}$, $F = \\{\\text{HHH, HHT, HTH, THH}\\}$",
+    "page_number": 6,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_14.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Independence of Events"
+      ],
+      "subtopics": [
+        "Checking Independence"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Sample Space for Coin Tosses",
+        "Defining Events"
+      ]
+    }
+  }
+]
+```

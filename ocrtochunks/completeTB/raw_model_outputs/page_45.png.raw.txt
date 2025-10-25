@@ -1,0 +1,368 @@
+```json
+[
+  {
+    "text": "distribution of number of successes X can be written as\n\n| X | 0 | 1 | 2 | ... | x | ... | n |\n|---|---|---|---|---|---|---|---|\n| P(X) | ${^nC_0 q^n}$ | ${^nC_1 q^{n-1}p^1}$ | ${^nC_2 q^{n-2}p^2}$ | | ${^nC_x q^{n-x}p^x}$ | | ${^nC_n p^n}$ |",
+    "page_number": 40,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "binomial probability mass function",
+        "table representation"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "combinations",
+        "basic probability"
+      ]
+    }
+  },
+  {
+    "text": "The above probability distribution is known as binomial distribution with parameters $n$ and $p$, because for given values of $n$ and $p$, we can find the complete probability distribution.",
+    "page_number": 40,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "definition",
+        "parameters"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "discrete probability distributions"
+      ]
+    }
+  },
+  {
+    "text": "The probability of $x$ successes $P(X = x)$ is also denoted by $P(x)$ and is given by\n$$P(x) = {^nC_x q^{n-x}p^x}, \\quad x = 0, 1,..., n. \\quad (q = 1-p)$$",
+    "page_number": 40,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "probability mass function",
+        "formula"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "combinations",
+        "basic probability"
+      ]
+    }
+  },
+  {
+    "text": "This $P(x)$ is called the probability function of the binomial distribution.",
+    "page_number": 40,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "probability function"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "binomial probability mass function"
+      ]
+    }
+  },
+  {
+    "text": "A binomial distribution with $n$-Bernoulli trials and probability of success in each trial as $p$, is denoted by $B(n, p)$.",
+    "page_number": 40,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "notation",
+        "Bernoulli trials"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Bernoulli trials"
+      ]
+    }
+  },
+  {
+    "text": "Let us now take up some examples.",
+    "page_number": 40,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "examples"
+      ],
+      "subtopics": [
+        "introduction"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 31 If a fair coin is tossed 10 times, find the probability of\n(i) exactly six heads\n(ii) at least six heads\n(iii) at most six heads",
+    "page_number": 40,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "coin toss",
+        "exact probability",
+        "cumulative probability"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "binomial probability formula"
+      ]
+    }
+  },
+  {
+    "text": "Solution The repeated tosses of a coin are Bernoulli trials. Let X denote the number of heads in an experiment of 10 trials.",
+    "page_number": 40,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "Bernoulli trials",
+        "random variable definition"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Bernoulli trials",
+        "random variables"
+      ]
+    }
+  },
+  {
+    "text": "Clearly, X has the binomial distribution with $n = 10$ and $p = \frac{1}{2}$\nTherefore $P(X = x) = {^nC_x q^{n-x}p^x}$, $x = 0, 1, 2,...,n$",
+    "page_number": 40,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "identifying distribution",
+        "parameters"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "binomial distribution definition"
+      ]
+    }
+  },
+  {
+    "text": "Here $n = 10$, $p = \frac{1}{2}$, $q = 1 - p = \frac{1}{2}$",
+    "page_number": 40,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "parameters values"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "fair coin probability"
+      ]
+    }
+  },
+  {
+    "text": "Therefore $$P(X = x) = {^{10}C_x \\left(\\frac{1}{2}\\right)^{10-x} \\left(\\frac{1}{2}\\right)^x} = {^{10}C_x \\left(\\frac{1}{2}\\right)^{10}}$$",
+    "page_number": 40,
+    "chunk_index": 10,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "simplified formula"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "binomial probability formula",
+        "exponent rules"
+      ]
+    }
+  },
+  {
+    "text": "Now (i) $$P(X = 6) = {^{10}C_6 \\left(\\frac{1}{2}\\right)^{10} = \\frac{10!}{6! \\times 4!} \\frac{1}{2^{10}} = \\frac{105}{512}}$$",
+    "page_number": 40,
+    "chunk_index": 11,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "exact probability calculation"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "combinations calculation",
+        "powers of 2"
+      ]
+    }
+  },
+  {
+    "text": "(ii) $P(\\text{at least six heads}) = P(X \\ge 6)$",
+    "page_number": 40,
+    "chunk_index": 12,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "cumulative probability",
+        "at least concept"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "inequalities"
+      ]
+    }
+  },
+  {
+    "text": "$$= P(X = 6) + P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)$$",
+    "page_number": 40,
+    "chunk_index": 13,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "sum of probabilities"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "addition rule of probability"
+      ]
+    }
+  },
+  {
+    "text": "(iii) $P(\\text{at least six heads}) = P(X \\le 6)$",
+    "page_number": 40,
+    "chunk_index": 14,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "cumulative probability",
+        "at most concept"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "inequalities"
+      ]
+    }
+  },
+  {
+    "text": "$$= P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5) + P(X = 6)$$",
+    "page_number": 40,
+    "chunk_index": 15,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_45.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "sum of probabilities"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "addition rule of probability"
+      ]
+    }
+  }
+]
+```

@@ -1,0 +1,244 @@
+```json
+[
+  {
+    "text": "$$P(E') = 1 - P(E) = 0.999$$ $$P(A|E) = P(\\text{Person tested as HIV+ive given that he/she is actually having HIV})$$ $$= 90\\% = \\frac{90}{100} = 0.9$$ and $$P(A|E') = P(\\text{Person tested as HIV+ive given that he/she is actually not having HIV})$$ $$= 1\\% = \\frac{1}{100} = 0.01$$ Now, by Bayes' theorem $$P(E|A) = \\frac{P(E)P(A|E)}{P(E)P(A|E) + P(E')P(A|E')}$$ $$= \\frac{0.001 \\times 0.9}{0.001 \\times 0.9 + 0.999 \\times 0.01}$$ $$= \\frac{0.0009}{0.0009 + 0.00999}$$ $$= \\frac{0.0009}{0.01089}$$ $$= \\frac{90}{1089}$$ $$= 0.083 \\text{ approx.}$$",
+    "page_number": 16,
+    "chunk_index": 0,
+    "chunk_bbox": [
+      319,
+      153,
+      663,
+      479
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Medical Diagnosis",
+        "HIV Testing"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Thus, the probability that a person selected at random is actually having HIV given that he/she is tested HIV+ive is $0.083$.",
+    "page_number": 16,
+    "chunk_index": 1,
+    "chunk_bbox": [
+      131,
+      501,
+      866,
+      536
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Medical Diagnosis",
+        "HIV Testing"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Example 19 In a factory which manufactures bolts, machines A, B and C manufacture respectively $25\\%$, $35\\%$ and $40\\%$ of the bolts. Of their outputs, $5$, $4$ and $2$ percent are respectively defective bolts. A bolt is drawn at random from the product and is found to be defective. What is the probability that it is manufactured by the machine B?",
+    "page_number": 16,
+    "chunk_index": 2,
+    "chunk_bbox": [
+      131,
+      543,
+      867,
+      632
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Manufacturing Quality",
+        "Defective Products"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Solution Let events $B_1$, $B_2$, $B_3$ be the following :\n$B_1$ : the bolt is manufactured by machine A\n$B_2$ : the bolt is manufactured by machine B\n$B_3$ : the bolt is manufactured by machine C",
+    "page_number": 16,
+    "chunk_index": 3,
+    "chunk_bbox": [
+      131,
+      640,
+      545,
+      712
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Manufacturing Quality",
+        "Defective Products"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Clearly, $B_1$, $B_2$, $B_3$ are mutually exclusive and exhaustive events and hence, they represent a partition of the sample space.",
+    "page_number": 16,
+    "chunk_index": 4,
+    "chunk_bbox": [
+      131,
+      720,
+      866,
+      753
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Manufacturing Quality",
+        "Defective Products"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Let the event E be ‘the bolt is defective’.",
+    "page_number": 16,
+    "chunk_index": 5,
+    "chunk_bbox": [
+      163,
+      765,
+      501,
+      780
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Manufacturing Quality",
+        "Defective Products"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "The event E occurs with $B_1$ or with $B_2$ or with $B_3$. Given that,\n$P(B_1) = 25\\% = 0.25$, $P(B_2) = 0.35$ and $P(B_3) = 0.40$",
+    "page_number": 16,
+    "chunk_index": 6,
+    "chunk_bbox": [
+      163,
+      790,
+      715,
+      831
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Manufacturing Quality",
+        "Defective Products"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Again $P(E|B_1) = \\text{Probability that the bolt drawn is defective given that it is manufactured by machine A} = 5\\% = 0.05$\nSimilarly, $P(E|B_2) = 0.04$, $P(E|B_3) = 0.02$.",
+    "page_number": 16,
+    "chunk_index": 7,
+    "chunk_bbox": [
+      163,
+      841,
+      867,
+      882
+    ],
+    "metadata": {
+      "source_url": "page_23.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Manufacturing Quality",
+        "Defective Products"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  }
+]
+```

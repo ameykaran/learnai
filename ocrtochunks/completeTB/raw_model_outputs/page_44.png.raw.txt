@@ -1,0 +1,197 @@
+```json
+[
+  {
+    "text": "and\n$$= P(S) P(S) P(F) + P(S) P(F) P(S) + P(F) P(S) P(S)$$\n$$= p.p.q. + p.q.p + q.p.p = 3p^2q$$\nand $P(X = 3) = P(\\text{three success}) = P (\\{SSS\\})$\n$$= P(S) . P(S) . P(S) = p^3$$",
+    "page_number": 39,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Probability of success",
+        "Probability of failure",
+        "Specific event probabilities"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Thus, the probability distribution of X is\n| X   | 0       | 1         | 2         | 3     |\n|-----|---------|-----------|-----------|-------|\n| P(X) | $q^3$   | $3q^2p$   | $3qp^2$   | $p^3$ |",
+    "page_number": 39,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Probability Distribution"
+      ],
+      "subtopics": [
+        "Discrete Probability Distribution",
+        "Binomial Distribution"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Also, the binomial expansion of $(q + p)^3$ is\n$$q^3 + 3q^2 p + 3qp^2 + p^3$$\nNote that the probabilities of 0, 1, 2 or 3 successes are respectively the 1st, 2nd, 3rd and 4th term in the expansion of $(q+p)^3$.\nAlso, since $q+p = 1$, it follows that the sum of these probabilities, as expected, is 1.",
+    "page_number": 39,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Theorem",
+        "Binomial Distribution"
+      ],
+      "subtopics": [
+        "Expansion of $(q+p)^n$",
+        "Sum of probabilities"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Algebra",
+        "Binomial Theorem"
+      ]
+    }
+  },
+  {
+    "text": "Thus, we may conclude that in an experiment of $n$-Bernoulli trials, the probabilities of $0, 1, 2,..., n$ successes can be obtained as 1st, 2nd,..., $(n+1)^{th}$ terms in the expansion of $(q+p)^n$. To prove this assertion (result), let us find the probability of $x$-successes in an experiment of $n$-Bernoulli trials.",
+    "page_number": 39,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Generalization",
+        "Derivation setup"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Clearly, in case of $x$ successes (S), there will be $(n-x)$ failures (F).\nNow, $x$ successes (S) and $(n-x)$ failures (F) can be obtained in $\\frac{n!}{x!(n-x)!}$ ways.",
+    "page_number": 39,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Combinatorics",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Combinations",
+        "Number of ways"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "In each of these ways, the probability of $x$ successes and $(n-x)$ failures is\n$= P(\\text{x successes}) . P(\\text{n-x failures is})$\n$$\\underbrace{P(S).P(S)...P(S)}_{\\text{x times}} \\cdot \\underbrace{P(F).P(F)...P(F)}_{(n-x) \\text{ times}} = p^x q^{n-x}$$",
+    "page_number": 39,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Independent Events",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Product rule for probabilities",
+        "Probability of specific sequence"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Thus, the probability of $x$ successes in $n$-Bernoulli trials is $$\\frac{n!}{x!(n-x)!} p^x q^{n-x}$$\nor $${}^n C_x p^x q^{n-x}$$",
+    "page_number": 39,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": [
+        "Probability Mass Function",
+        "Binomial probability formula"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Combinations",
+        "Basic Probability"
+      ]
+    }
+  },
+  {
+    "text": "Thus $\\text{P(x successes)} = {}^n C_x p^x q^{n-x}$, $x=0, 1, 2,...,n. (q=1-p)$\nClearly, $\\text{P(x successes), i.e. } {}^n C_x p^x q^{n-x} \\text{ is the } (x+1)^{th} \\text{ term in the binomial}$ expansion of $(q+p)^n$.\nThus, the probability distribution of number of successes in an experiment consisting of $n$ Bernoulli trials may be obtained by the binomial expansion of $(q+p)^n$. Hence, this",
+    "page_number": 39,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_44.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution",
+        "Binomial Theorem"
+      ],
+      "subtopics": [
+        "Probability Mass Function",
+        "Terms of expansion",
+        "Summary"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Binomial Theorem",
+        "Binomial Probability Formula"
+      ]
+    }
+  }
+]
+```

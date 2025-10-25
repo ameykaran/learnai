@@ -1,0 +1,213 @@
+```json
+[
+  {
+    "text": "(ii) When the drawing is done without replacement, the probability of success (i.e., red ball) in first trial is $\\frac{7}{16}$, in 2nd trial is $\\frac{6}{15}$ if the first ball drawn is red or $\\frac{7}{15}$ if the first ball drawn is black and so on. Clearly, the probability of success is not same for all trials, hence the trials are not Bernoulli trials.",
+    "page_number": 573,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "Bernoulli trials"
+      ],
+      "subtopics": [
+        "drawing without replacement",
+        "conditions for Bernoulli trials"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "basic probability",
+        "independent events"
+      ]
+    }
+  },
+  {
+    "text": "13.7.2 Binomial distribution\nConsider the experiment of tossing a coin in which each trial results in success (say, heads) or failure (tails). Let S and F denote respectively success and failure in each trial. Suppose we are interested in finding the ways in which we have one success in six trials.",
+    "page_number": 573,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "introduction",
+        "Bernoulli trials",
+        "success and failure"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "basic probability",
+        "Bernoulli trials"
+      ]
+    }
+  },
+  {
+    "text": "Clearly, six different cases are there as listed below:\nSFFFFF, FSFFFF, FFSFFF, FFFSFF, FFFFSE, FFFFFS.",
+    "page_number": 573,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "outcomes",
+        "combinations"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "success and failure"
+      ]
+    }
+  },
+  {
+    "text": "Similarly, two successes and four failures can have $\\frac{6!}{4!\\times 2!}$ combinations. It will be a lengthy job to list all of these ways. Therefore, calculation of probabilities of 0, 1, 2,..., n number of successes may be lengthy and time consuming. To avoid the lengthy calculations and listing of all the possible cases, for the probabilities of number of successes in n-Bernoulli trials, a formula is derived. For this purpose, let us take the experiment made up of three Bernoulli trials with probabilities $p$ and $q = 1 - p$ for success and failure respectively in each trial. The sample space of the experiment is the set",
+    "page_number": 573,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution",
+        "Bernoulli trials"
+      ],
+      "subtopics": [
+        "combinations",
+        "derivation of formula",
+        "probability calculation"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "combinations",
+        "probability theory"
+      ]
+    }
+  },
+  {
+    "text": "$S = \\{SSS, SSF, SFS, FSS, SFF, FSF, FFS, FFF\\}$",
+    "page_number": 573,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "sample space"
+      ],
+      "subtopics": [
+        "Bernoulli trials"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "The number of successes is a random variable X and can take values 0, 1, 2, or 3.",
+    "page_number": 573,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "random variable"
+      ],
+      "subtopics": [
+        "number of successes"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "The probability distribution of the number of successes is as below :\nP(X = 0) = P(no success)\n= P({FFF}) = P(F) P(F) P(F)\n= $q \\cdot q \\cdot q = q^3$ since the trials are independent",
+    "page_number": 573,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "probability calculation",
+        "independent trials"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "probability of independent events"
+      ]
+    }
+  },
+  {
+    "text": "P(X = 1) = P(one successes)\n= P({SFF, FSF, FFS})\n= P({SFF}) + P({FSF}) + P({FFS})\n= P(S) P(F) P(F) + P(F) P(S) P(F) + P(F) P(F) P(S)\n= $p \\cdot q \\cdot q + q \\cdot p \\cdot q + q \\cdot q \\cdot p = 3pq^2$",
+    "page_number": 573,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "probability calculation",
+        "combinations"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "probability of independent events",
+        "combinations"
+      ]
+    }
+  },
+  {
+    "text": "P(X = 2) = P (two successes)\n= P({SSF, SFS, FSS})\n= P({SSF}) + P ({SFS}) + P({FSS})",
+    "page_number": 573,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_43.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "binomial distribution"
+      ],
+      "subtopics": [
+        "probability calculation",
+        "combinations"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "probability of independent events",
+        "combinations"
+      ]
+    }
+  }
+]
+```

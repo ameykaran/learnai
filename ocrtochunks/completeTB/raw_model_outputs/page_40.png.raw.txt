@@ -1,0 +1,233 @@
+```json
+[
+  {
+    "text": "Y\n-1\n0\n1\nP(Y)\n0.6\n0.1\n0.2",
+    "page_number": 35,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Probability Distributions"
+      ],
+      "subtopics": null,
+      "chunk_type": "visualization",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Z\n3\n2\n1\n0\n-1\nP(Z)\n0.3\n0.2\n0.4\n0.1\n0.05",
+    "page_number": 35,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Probability Distributions"
+      ],
+      "subtopics": null,
+      "chunk_type": "visualization",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "2. An urn contains 5 red and 2 black balls. Two balls are randomly drawn. Let $X$ represent the number of black balls. What are the possible values of $X$? Is $X$ a random variable?",
+    "page_number": 35,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Combinatorics"
+      ],
+      "subtopics": [
+        "Discrete Random Variables",
+        "Urn Problems"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "3. Let $X$ represent the difference between the number of heads and the number of tails obtained when a coin is tossed 6 times. What are possible values of $X$?",
+    "page_number": 35,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Coin Tosses"
+      ],
+      "subtopics": [
+        "Discrete Random Variables"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Coin Toss Probability"
+      ]
+    }
+  },
+  {
+    "text": "4. Find the probability distribution of\n(i) number of heads in two tosses of a coin.\n(ii) number of tails in the simultaneous tosses of three coins.\n(iii) number of heads in four tosses of a coin.",
+    "page_number": 35,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Probability Distributions",
+        "Coin Tosses"
+      ],
+      "subtopics": [
+        "Binomial Distribution"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Coin Toss Probability"
+      ]
+    }
+  },
+  {
+    "text": "5. Find the probability distribution of the number of successes in two tosses of a die, where a success is defined as\n(i) number greater than 4\n(ii) six appears on at least one die",
+    "page_number": 35,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Probability Distributions",
+        "Dice Rolls"
+      ],
+      "subtopics": [
+        "Binomial Distribution",
+        "Defining Success"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Dice Roll Outcomes"
+      ]
+    }
+  },
+  {
+    "text": "6. From a lot of 30 bulbs which include 6 defectives, a sample of 4 bulbs is drawn at random with replacement. Find the probability distribution of the number of defective bulbs.",
+    "page_number": 35,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Probability Distributions",
+        "Sampling"
+      ],
+      "subtopics": [
+        "Binomial Distribution",
+        "Sampling with Replacement"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "7. A coin is biased so that the head is 3 times as likely to occur as tail. If the coin is tossed twice, find the probability distribution of number of tails.",
+    "page_number": 35,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Probability Distributions",
+        "Biased Coin"
+      ],
+      "subtopics": [
+        "Binomial Distribution"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Solving Linear Equations"
+      ]
+    }
+  },
+  {
+    "text": "8. A random variable $X$ has the following probability distribution:\n\n$X$\n0\n1\n2\n3\n4\n5\n6\n7\n$P(X)$\n0\n$k$\n$2k$\n$2k$\n$3k$\n$k^2$\n$2k^2$\n$7k^2+k$",
+    "page_number": 35,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Probability Distributions"
+      ],
+      "subtopics": [
+        "Discrete Random Variables"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Determine\n(i) $k$\n(ii) $P(X < 3)$\n(iii) $P(X > 6)$\n(iv) $P(0 < X < 3)$",
+    "page_number": 35,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_40.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Probability Distributions",
+        "Discrete Random Variables"
+      ],
+      "subtopics": [
+        "Properties of Probability Distributions",
+        "Calculating Probabilities"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Algebra",
+        "Summation"
+      ]
+    }
+  }
+]
+```

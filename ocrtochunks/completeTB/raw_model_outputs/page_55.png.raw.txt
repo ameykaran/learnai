@@ -1,0 +1,184 @@
+```json
+[
+  {
+    "text": "Summary\nThe salient features of the chapter are –",
+    "page_number": 51,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Summary"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "The conditional probability of an event E, given the occurrence of the event F\nis given by $P(E|F) = \\frac{P(E \\cap F)}{P(F)}$, $P(F) \\ne 0$",
+    "page_number": 51,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "$0 \\le P(E|F) \\le 1$, $P(E'|F) = 1 - P(E|F)$\n$P((E \\cup F)|G) = P(E|G) + P(F|G) - P((E \\cap F)|G)$",
+    "page_number": 51,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability",
+        "Properties of Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "$P(E \\cap F) = P(E) P(F|E)$, $P(E) \\ne 0$\n$P(E \\cap F) = P(F) P(E|F)$, $P(F) \\ne 0$",
+    "page_number": 51,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Multiplication Rule"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "If E and F are independent, then\n$P(E \\cap F) = P(E) P(F)$\n$P(E|F) = P(E)$, $P(F) \\ne 0$\n$P(F|E) = P(F)$, $P(E) \\ne 0$",
+    "page_number": 51,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent Events"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "**Theorem of total probability**\nLet $\{E_1, E_2, ..., E_n\}$ be a partition of a sample space and suppose that each of $E_1, E_2, ..., E_n$ has nonzero probability. Let A be any event associated with S,\nthen\n$P(A) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + ... + P(E_n) P(A|E_n)$",
+    "page_number": 51,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Theorem of Total Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Conditional Probability",
+        "Partition of Sample Space"
+      ]
+    }
+  },
+  {
+    "text": "**Bayes' theorem** If $E_1, E_2, ..., E_n$ are events which constitute a partition of sample space S, i.e. $E_1, E_2, ..., E_n$ are pairwise disjoint and $E_1 \\cup E_2 \\cup ... \\cup E_n = S$ and A be any event with nonzero probability, then\n$$P(E_i|A) = \\frac{P(E_i)P(A|E_i)}{\\sum_{j=1}^{n}P(E_j)P(A|E_j)}$$",
+    "page_number": 51,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Bayes' Theorem"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Theorem of Total Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "A random variable is a real valued function whose domain is the sample space of a random experiment.",
+    "page_number": 51,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Random Variables"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "The probability distribution of a random variable X is the system of numbers\n\nX : $x_1$ $x_2$ ... $x_n$\nP(X) : $p_1$ $p_2$ ... $p_n$\n\nwhere, $p_i > 0, \\sum_{i=1}^{n} p_i = 1, i = 1, 2, ..., n$",
+    "page_number": 51,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_55.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Probability Distribution"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random Variables"
+      ]
+    }
+  }
+]
+```

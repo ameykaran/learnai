@@ -1,0 +1,155 @@
+```json
+[
+  {
+    "text": "572 MATHEMATICS\n13.7 Bernoulli Trials and Binomial Distribution\n13.7.1 Bernoulli trials",
+    "page_number": 37,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Many experiments are dichotomous in nature. For example, a tossed coin shows a 'head' or 'tail', a manufactured item can be 'defective' or 'non-defective', the response to a question might be 'yes' or 'no' etc. In such cases, it is customary to call one of the outcomes a 'success' and the other 'not success' or 'failure'. For example, in tossing a coin, if the occurrence of the head is considered a success, then occurrence of tail is a failure.",
+    "page_number": 37,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Dichotomous outcomes",
+        "Success and Failure"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Each time we toss a coin or roll a die or perform any other experiment, we call it a trial. If a coin is tossed, say, 4 times, the number of trials is 4, each having exactly two outcomes, namely, success or failure. The outcome of any trial is independent of the outcome of any other trial. In each of such trials, the probability of success or failure remains constant. Such independent trials which have only two outcomes usually referred as 'success' or 'failure' are called Bernoulli trials.",
+    "page_number": 37,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Trials",
+        "Independence",
+        "Constant probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Definition 8 Trials of a random experiment are called Bernoulli trials, if they satisfy the following conditions :\n(i) There should be a finite number of trials.\n(ii) The trials should be independent.\n(iii) Each trial has exactly two outcomes : success or failure.\n(iv) The probability of success remains the same in each trial.",
+    "page_number": 37,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Conditions for Bernoulli Trials"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "For example, throwing a die 50 times is a case of 50 Bernoulli trials, in which each trial results in success (say an even number) or failure (an odd number) and the probability of success ($p$) is same for all 50 throws. Obviously, the successive throws of the die are independent experiments. If the die is fair and have six numbers 1 to 6 written on six faces, then $p = \\frac{1}{2}$ and $q = 1 - p = \\frac{1}{2} =$ probability of failure.",
+    "page_number": 37,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Example",
+        "Probability of success/failure",
+        "Independence"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 30 Six balls are drawn successively from an urn containing 7 red and 9 black balls. Tell whether or not the trials of drawing balls are Bernoulli trials when after each draw the ball drawn is\n(i) replaced\n(ii) not replaced in the urn.",
+    "page_number": 37,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Application",
+        "Sampling with replacement",
+        "Sampling without replacement"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Bernoulli Trials conditions"
+      ]
+    }
+  },
+  {
+    "text": "Solution\n(i) The number of trials is finite. When the drawing is done with replacement, the probability of success (say, red ball) is $p = \\frac{7}{16}$ which is same for all six trials (draws). Hence, the drawing of balls with replacements are Bernoulli trials.",
+    "page_number": 37,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_42.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": [
+        "Sampling with replacement",
+        "Solution explanation"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Bernoulli Trials conditions"
+      ]
+    }
+  }
+]
+```

@@ -1,0 +1,195 @@
+```json
+[
+  {
+    "text": "A pair of dice is thrown 4 times. If getting a doublet is considered a success, find the probability of two successes.",
+    "page_number": 42,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "There are 5% defective items in a large bulk of items. What is the probability that a sample of 10 items will include not more than one defective item?",
+    "page_number": 42,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "Five cards are drawn successively with replacement from a well-shuffled deck of 52 cards. What is the probability that\n(i) all the five cards are spades?\n(ii) only 3 cards are spades?\n(iii) none is a spade?",
+    "page_number": 42,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution",
+        "Card Games"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "The probability that a bulb produced by a factory will fuse after 150 days of use is 0.05. Find the probability that out of 5 such bulbs\n(i) none\n(ii) not more than one\n(iii) more than one\n(iv) at least one\nwill fuse after 150 days of use.",
+    "page_number": 42,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "A bag consists of 10 balls each marked with one of the digits 0 to 9. If four balls are drawn successively with replacement from the bag, what is the probability that none is marked with the digit 0?",
+    "page_number": 42,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "In an examination, 20 questions of true-false type are asked. Suppose a student tosses a fair coin to determine his answer to each question. If the coin falls heads, he answers 'true'; if it falls tails, he answers 'false'. Find the probability that he answers at least 12 questions correctly.",
+    "page_number": 42,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "Suppose X has a binomial distribution $B \\left(6, \\frac{1}{2}\\right)$. Show that $X = 3$ is the most likely outcome.\n(Hint : $P(X = 3)$ is the maximum among all $P(x_i), x_i = 0,1,2,3,4,5,6)$",
+    "page_number": 42,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "On a multiple choice examination with three possible answers for each of the five questions, what is the probability that a candidate would get four or more correct answers just by guessing?",
+    "page_number": 42,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "text": "A person buys a lottery ticket in 50 lotteries, in each of which his chance of winning a prize is $\\frac{1}{100}$. What is the probability that he will win a prize\n(a) at least once (b) exactly once (c) at least twice?",
+    "page_number": 42,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_47.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution",
+        "Lottery"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Combinations"
+      ]
+    }
+  }
+]
+```

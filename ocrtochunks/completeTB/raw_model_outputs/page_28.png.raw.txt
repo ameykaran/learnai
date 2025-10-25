@@ -1,0 +1,184 @@
+```json
+[
+  {
+    "text": "558 MATHEMATICS",
+    "page_number": 21,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": null,
+      "subtopics": null,
+      "chunk_type": null,
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "(iii) In the experiment of taking out four articles (one after the other) at random from a lot of 20 articles in which 6 are defective, we want to know the number of defectives in the sample of four and not in the particular sequence of defective and nondefective articles.",
+    "page_number": 21,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Sampling", "Defective Items"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "In all of the above experiments, we have a rule which assigns to each outcome of the experiment a single real number. This single real number may vary with different outcomes of the experiment. Hence, it is a variable. Also its value depends upon the outcome of a random experiment and, hence, is called random variable. A random variable is usually denoted by X.",
+    "page_number": 21,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Introduction"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "If you recall the definition of a function, you will realise that the random variable X is really speaking a function whose domain is the set of outcomes (or sample space) of a random experiment. A random variable can take any real value, therefore, its co-domain is the set of real numbers. Hence, a random variable can be defined as follows:",
+    "page_number": 21,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Definition"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": ["Functions", "Sample Space"]
+    }
+  },
+  {
+    "text": "Definition 4 A random variable is a real valued function whose domain is the sample space of a random experiment.",
+    "page_number": 21,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables"],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": ["Functions", "Sample Space"]
+    }
+  },
+  {
+    "text": "For example, let us consider the experiment of tossing a coin two times in succession. The sample space of the experiment is $S = \\{HH, HT, TH, TT\\}$.",
+    "page_number": 21,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Coin Toss Experiment"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": ["Sample Space"]
+    }
+  },
+  {
+    "text": "If X denotes the number of heads obtained, then X is a random variable and for each outcome, its value is as given below : $X(HH) = 2, X(HT) = 1, X(TH) = 1, X(TT) = 0$.",
+    "page_number": 21,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Coin Toss Experiment", "Mapping Outcomes"],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": ["Sample Space", "Random Variables"]
+    }
+  },
+  {
+    "text": "More than one random variables can be defined on the same sample space. For example, let Y denote the number of heads minus the number of tails for each outcome of the above sample space S. Then $Y(HH) = 2, Y(HT) = 0, Y(TH) = 0, Y(TT) = -2$.",
+    "page_number": 21,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Coin Toss Experiment", "Multiple Random Variables"],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": ["Sample Space", "Random Variables"]
+    }
+  },
+  {
+    "text": "Thus, X and Y are two different random variables defined on the same sample space S.",
+    "page_number": 21,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Conclusion"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 22 A person plays a game of tossing a coin thrice. For each head, he is given Rs 2 by the organiser of the game and for each tail, he has to give Rs 1.50 to the organiser. Let X denote the amount gained or lost by the person. Show that X is a random variable and exhibit it as a function on the sample space of the experiment.",
+    "page_number": 21,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Game Theory (simple)", "Coin Toss Experiment"],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": ["Sample Space", "Random Variables"]
+    }
+  },
+  {
+    "text": "Solution X is a number whose values are defined on the outcomes of a random experiment. Therefore, X is a random variable. Now, sample space of the experiment is $S = \\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\\}$",
+    "page_number": 21,
+    "chunk_index": 10,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Random Variables", "Coin Toss Experiment", "Sample Space"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Sample Space", "Random Variables"]
+    }
+  },
+  {
+    "text": "2019-20",
+    "page_number": 21,
+    "chunk_index": 11,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_28.png",
+      "source_type": "image",
+      "topics": null,
+      "subtopics": null,
+      "chunk_type": null,
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  }
+]
+```

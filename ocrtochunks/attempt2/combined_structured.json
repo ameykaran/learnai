@@ -1,0 +1,531 @@
+[
+  {
+    "text": "Solution Let $b$ stand for boy and $g$ for girl. The sample space of the experiment is $S = \{(b, b), (g, b), (b, g), (g, g)\}$.\nLet E and F denote the following events :\nE : ‘both the children are boys’\nF : ‘at least one of the child is a boy’\nThen $E = \{(b, b)\}$ and $F = \{(b, b), (g, b), (b, g)\}$.\nNow $E \cap F = \{(b, b)\}$.\nThus $P(F) = \frac{3}{4}$ and $P(E \cap F) = \frac{1}{4}$.\nTherefore $$P(E \mid F) = \frac{P(E \cap F)}{P(F)} = \frac{\frac{1}{4}}{\frac{3}{4}} = \frac{1}{3}$$",
+    "page_number": 1,
+    "metadata": {
+      "source_url": "page_1.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 0
+  },
+  {
+    "text": "Example 3 Ten cards numbered 1 to 10 are placed in a box, mixed up thoroughly and then one card is drawn randomly. If it is known that the number on the drawn card is more than 3, what is the probability that it is an even number?",
+    "page_number": 1,
+    "metadata": {
+      "source_url": "page_1.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 1
+  },
+  {
+    "text": "Solution Let A be the event ‘the number on the card drawn is even’ and B be the event ‘the number on the card drawn is greater than 3’. We have to find $P(A \mid B)$.\nNow, the sample space of the experiment is $S = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$.\nThen $A = \{2, 4, 6, 8, 10\}, B = \{4, 5, 6, 7, 8, 9, 10\}$.\nand $A \cap B = \{4, 6, 8, 10\}$.\nAlso $P(A) = \frac{5}{10}, P(B) = \frac{7}{10}$ and $P(A \cap B) = \frac{4}{10}$.\nThen $$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{4}{10}}{\frac{7}{10}} = \frac{4}{7}$$",
+    "page_number": 1,
+    "metadata": {
+      "source_url": "page_1.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 2
+  },
+  {
+    "text": "Example 4 In a school, there are 1000 students, out of which 430 are girls. It is known that out of 430, 10% of the girls study in Class XII. What is the probability that a student chosen randomly studies in Class XII given that the chosen student is a girl?",
+    "page_number": 1,
+    "metadata": {
+      "source_url": "page_1.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 3
+  },
+  {
+    "text": "Solution Let E denote the event that a student chosen randomly studies in Class XII and F be the event that the randomly chosen student is a girl. We have to find $P(E \mid F)$.",
+    "page_number": 1,
+    "metadata": {
+      "source_url": "page_1.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 4
+  },
+  {
+    "text": "Therefore\n$$P(E \cap F) = \frac{2}{36}$$\nHence, the required probability\n$$P(E|F) = \frac{P(E \cap F)}{P(F)} = \frac{\frac{2}{36}}{\frac{5}{36}} = \frac{2}{5}$$",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability rules",
+        "Conditional Probability definition"
+      ]
+    },
+    "chunk_index": 0
+  },
+  {
+    "text": "For the conditional probability discussed above, we have considered the elementary events of the experiment to be equally likely and the corresponding definition of the probability of an event was used. However, the same definition can also be used in the general case where the elementary events of the sample space are not equally likely, the probabilities $P(E \cap F)$ and $P(F)$ being calculated accordingly. Let us take up the following example.",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Equally Likely Events",
+        "Non-Equally Likely Events"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Conditional Probability definition"
+      ]
+    },
+    "chunk_index": 1
+  },
+  {
+    "text": "Example 7 Consider the experiment of tossing a coin. If the coin shows head, toss it again but if it shows tail, then throw a die. Find the conditional probability of the event that ‘the die shows a number greater than 4’ given that ‘there is at least one tail’.",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Sample Space",
+        "Tree Diagrams"
+      ],
+      "subtopics": [
+        "Compound Experiments"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Conditional Probability definition",
+        "Constructing Sample Spaces"
+      ]
+    },
+    "chunk_index": 2
+  },
+  {
+    "text": "Solution The outcomes of the experiment can be represented in following diagrammatic manner called the ‘tree diagram’.",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Tree Diagrams",
+        "Sample Space Representation"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 3
+  },
+  {
+    "text": "Fig 13.1",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Tree Diagrams"
+      ],
+      "subtopics": [
+        "Experiment Outcomes"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 4
+  },
+  {
+    "text": "The sample space of the experiment may be described as\n$$S = \{(H,H), (H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)\}$$\nwhere $(H,H)$ denotes that both the tosses result into head and $(T,i)$ denote the first toss result into a tail and the number $i$ appeared on the die for $i = 1,2,3,4,5,6$.",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Sample Space",
+        "Compound Events"
+      ],
+      "subtopics": [
+        "Notation"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Understanding of events and outcomes"
+      ]
+    },
+    "chunk_index": 5
+  },
+  {
+    "text": "Thus, the probabilities assigned to the 8 elementary events\n$$(H,H), (H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)$$\nare $\frac{1}{4}, \frac{1}{4}, \frac{1}{12}, \frac{1}{12}, \frac{1}{12}, \frac{1}{12}, \frac{1}{12}, \frac{1}{12}$ respectively which is clear from the Fig 13.2.",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability Assignment",
+        "Elementary Events",
+        "Tree Diagrams"
+      ],
+      "subtopics": [
+        "Non-Equally Likely Probabilities"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability calculations",
+        "Tree Diagrams"
+      ]
+    },
+    "chunk_index": 6
+  },
+  {
+    "text": "Fig 13.2",
+    "page_number": 2,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Tree Diagrams",
+        "Probability"
+      ],
+      "subtopics": [
+        "Assigned Probabilities"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    },
+    "chunk_index": 7
+  },
+  {
+    "text": "The probabilities for specific values of $X$ (sum of numbers on two fair dice) are calculated as:\n$P(X = 9) = P(\{(3,6), (4,5), (5,4), (6,3)\}) = \frac{4}{36}$\n$P(X = 10) = P(\{(4,6), (5,5), (6,4)\}) = \frac{3}{36}$\n$P(X = 11) = P(\{(5,6), (6,5)\}) = \frac{2}{36}$\n$P(X = 12) = P(\{(6,6)\}) = \frac{1}{36}$",
+    "page_number": 3,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Discrete Random Variables",
+        "Probability Calculation"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic probability",
+        "Sample space"
+      ]
+    },
+    "chunk_index": 0
+  },
+  {
+    "text": "The probability distribution of $X$ (sum of numbers on two fair dice) is:\n\n| $X$ or $x_i$ | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| $P(X)$ or $p_i$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\frac{3}{36}$ | $\frac{4}{36}$ | $\frac{5}{36}$ | $\frac{6}{36}$ | $\frac{5}{36}$ | $\frac{4}{36}$ | $\frac{3}{36}$ | $\frac{2}{36}$ | $\frac{1}{36}$ |",
+    "page_number": 3,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Discrete Random Variables",
+        "Probability Distribution"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability Distribution"
+      ]
+    },
+    "chunk_index": 1
+  },
+  {
+    "text": "Therefore, the mean (expected value) of $X$ is calculated as:\n$$\mu = E(X) = \sum_{i=1}^{n} x_i p_i = 2 \times \frac{1}{36} + 3 \times \frac{2}{36} + 4 \times \frac{3}{36} + 5 \times \frac{4}{36} + 6 \times \frac{5}{36} + 7 \times \frac{6}{36} + 8 \times \frac{5}{36} + 9 \times \frac{4}{36} + 10 \times \frac{3}{36} + 11 \times \frac{2}{36} + 12 \times \frac{1}{36} = \frac{2 + 6 + 12 + 20 + 30 + 42 + 40 + 36 + 30 + 22 + 12}{36} = \frac{252}{36} = 7$$",
+    "page_number": 3,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Expected Value",
+        "Mean of a Random Variable"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability Distribution",
+        "Summation notation"
+      ]
+    },
+    "chunk_index": 2
+  },
+  {
+    "text": "Thus, the mean of the sum of the numbers that appear on throwing two fair dice is 7.",
+    "page_number": 3,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Expected Value",
+        "Mean of a Random Variable"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Expected Value"
+      ]
+    },
+    "chunk_index": 3
+  },
+  {
+    "text": "### 13.6.3 Variance of a random variable\nThe mean of a random variable does not give us information about the variability in the values of the random variable. In fact, if the variance is small, then the values of the random variable are close to the mean. Also random variables with different probability distributions can have equal means, as shown in the following distributions of $X$ and $Y$.",
+    "page_number": 3,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Variance",
+        "Mean of a Random Variable"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Mean of a Random Variable"
+      ]
+    },
+    "chunk_index": 4
+  },
+  {
+    "text": "Table showing an example probability distribution of a random variable $X$:\n\n| $X$ | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| $P(X)$ | $\frac{1}{8}$ | $\frac{2}{8}$ | $\frac{3}{8}$ | $\frac{2}{8}$ |",
+    "page_number": 3,
+    "metadata": {
+      "source_url": "page_3.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Probability Distribution"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability Distribution"
+      ]
+    },
+    "chunk_index": 5
+  },
+  {
+    "text": "A table presenting the probability distribution for a random variable Y. The possible values for Y are -1, 0, 4, 5, 6 with corresponding probabilities $\frac{1}{8}$, $\frac{2}{8}$, $\frac{3}{8}$, $\frac{1}{8}$, $\frac{1}{8}$ respectively.",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Probability Distribution",
+        "Random Variables"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic probability",
+        "Random variables"
+      ]
+    },
+    "chunk_index": 0
+  },
+  {
+    "text": "Clearly $E(X) = 1\times\frac{1}{8} + 2\times\frac{2}{8} + 3\times\frac{3}{8} + 4\times\frac{2}{8} = \frac{22}{8} = 2.75$",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Expected Value"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random variables",
+        "Mean/Expected Value"
+      ]
+    },
+    "chunk_index": 1
+  },
+  {
+    "text": "and $E(Y) = -1\times\frac{1}{8} + 0\times\frac{2}{8} + 4\times\frac{3}{8} + 5\times\frac{1}{8} + 6\times\frac{1}{8} = \frac{22}{8} = 2.75$",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Expected Value"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random variables",
+        "Mean/Expected Value"
+      ]
+    },
+    "chunk_index": 2
+  },
+  {
+    "text": "The variables X and Y are different, however their means are same. It is also easily observable from the diagramatic representation of these distributions (Fig 13.5).",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Expected Value",
+        "Probability Distribution Comparison"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Expected Value",
+        "Probability distributions"
+      ]
+    },
+    "chunk_index": 3
+  },
+  {
+    "text": "Fig 13.5: Bar graph representations of two probability distributions. (i) shows the distribution for random variable X with values 1, 2, 3, 4 and their probabilities. (ii) shows the distribution for random variable Y with values -1, 0, 4, 5, 6 and their probabilities.",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Probability Distribution",
+        "Bar Graphs"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability distributions"
+      ]
+    },
+    "chunk_index": 4
+  },
+  {
+    "text": "To distinguish X from Y, we require a measure of the extent to which the values of the random variables spread out. In Statistics, we have studied that the variance is a measure of the spread or scatter in data. Likewise, the variability or spread in the values of a random variable may be measured by variance.",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Statistics"
+      ],
+      "subtopics": [
+        "Variance",
+        "Spread of Data",
+        "Random Variables"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random variables",
+        "Basic statistics"
+      ]
+    },
+    "chunk_index": 5
+  },
+  {
+    "text": "Definition 7: Let X be a random variable whose possible values $x_1, x_2,...,x_n$ occur with probabilities $p(x_1), p(x_2),..., p(x_n)$ respectively. Let $\mu = E(X)$ be the mean of X. The variance of X, denoted by $\text{Var}(X)$ or $\sigma_x^2$ is defined as $$\sigma_x^2 = \text{Var}(X) = \sum_{i=1}^{n} (x_i - \mu)^2 p(x_i)$$ or equivalently $$\sigma_x^2 = E(X - \mu)^2$$",
+    "page_number": 4,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Variance",
+        "Expected Value",
+        "Random Variables",
+        "Probability Distribution"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random variables",
+        "Expected Value",
+        "Summation notation"
+      ]
+    },
+    "chunk_index": 6
+  }
+]

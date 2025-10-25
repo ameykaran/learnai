@@ -1,0 +1,25 @@
+```json
+{
+  "text": "566 MATHEMATICS\n\n| Y    | -1  | 0   | 4   | 5   | 6   |\n|------|-----|-----|-----|-----|-----|\n| P(Y) | 1/8 | 2/8 | 3/8 | 1/8 | 1/8 |\n\nClearly\n$E(X) = 1 \\times \\frac{1}{8} + 2 \\times \\frac{2}{8} + 3 \\times \\frac{3}{8} + 4 \\times \\frac{2}{8} = \\frac{22}{8} = 2.75$\n\nand\n$E(Y) = -1 \\times \\frac{1}{8} + 0 \\times \\frac{2}{8} + 4 \\times \\frac{3}{8} + 5 \\times \\frac{1}{8} + 6 \\times \\frac{1}{8} = \\frac{22}{8} = 2.75$\n\nThe variables X and Y are different, however their means are same. It is also easily observable from the diagramatic representation of these distributions (Fig 13.5).\n\n(i)\n(ii)\nFig 13.5\n\nTo distinguish X from Y, we require a measure of the extent to which the values of the random variables spread out. In Statistics, we have studied that the variance is a measure of the spread or scatter in data. Likewise, the variability or spread in the values of a random variable may be measured by variance.\n\nDefinition 7 Let X be a random variable whose possible values $x_1, x_2, ..., x_n$ occur with probabilities $p(x_1), p(x_2), ..., p(x_n)$ respectively.\n\nLet $\\mu = E(X)$ be the mean of X. The variance of X, denoted by Var(X) or $\\sigma_x^2$ is defined as\n$$\\sigma_x^2 = \\text{Var}(X)=\\sum_{i=1}^n (x_i-\\mu)^2 p(x_i)$$\nor equivalently\n$$\\sigma_x^2 = E(X - \\mu)^2$$\n\n2019-20",
+  "page_number": 566,
+  "metadata": {
+    "source_url": "page_4.png",
+    "source_type": "image",
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "subtopics": [
+      "Random Variables",
+      "Expected Value",
+      "Variance"
+    ],
+    "chunk_type": "explanation",
+    "difficulty_level": "intermediate",
+    "prerequisites": [
+      "Basic probability",
+      "Understanding of mean/average"
+    ]
+  }
+}
+```

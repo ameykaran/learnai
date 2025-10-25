@@ -1,0 +1,174 @@
+```json
+[
+  {
+    "text": "0.6 and 0.4 respectively. Further, if the first group wins, the probability of introducing a new product is 0.7 and the corresponding probability is 0.3 if the second group wins. Find the probability that the new product introduced was by the second group.",
+    "page_number": 557,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "10. Suppose a girl throws a die. If she gets a 5 or 6, she tosses a coin three times and notes the number of heads. If she gets 1, 2, 3 or 4, she tosses a coin once and notes whether a head or tail is obtained. If she obtained exactly one head, what is the probability that she threw 1, 2, 3 or 4 with the die?",
+    "page_number": 557,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "11. A manufacturer has three machine operators A, B and C. The first operator A produces 1% defective items, where as the other two operators B and C produce 5% and 7% defective items respectively. A is on the job for 50% of the time, B is on the job for 30% of the time and C is on the job for 20% of the time. A defective item is produced, what is the probability that it was produced by A?",
+    "page_number": 557,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "12. A card from a pack of 52 cards is lost. From the remaining cards of the pack, two cards are drawn and are found to be both diamonds. Find the probability of the lost card being a diamond.",
+    "page_number": 557,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "advanced",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "13. Probability that A speaks truth is $\\frac{4}{5}$. A coin is tossed. A reports that a head appears. The probability that actually there was head is\n(A) $\\frac{4}{5}$\n(B) $\\frac{1}{2}$\n(C) $\\frac{1}{5}$\n(D) $\\frac{2}{5}$",
+    "page_number": 557,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "14. If A and B are two events such that $A \\subset B$ and $P(B) \\neq 0$, then which of the following is correct?\n(A) $P(A|B) = \\frac{P(B)}{P(A)}$\n(B) $P(A|B) < P(A)$\n(C) $P(A|B) \\geq P(A)$\n(D) None of these",
+    "page_number": 557,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Set Theory"
+      ],
+      "subtopics": null,
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "13.6 Random Variables and its Probability Distributions",
+    "page_number": 557,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Random Variables",
+        "Probability Distributions"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "We have already learnt about random experiments and formation of sample spaces. In most of these experiments, we were not only interested in the particular outcome that occurs but rather in some number associated with that outcomes as shown in following examples/experiments.",
+    "page_number": 557,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random Experiments",
+        "Sample Spaces"
+      ]
+    }
+  },
+  {
+    "text": "(i) In tossing two dice, we may be interested in the sum of the numbers on the two dice.\n(ii) In tossing a coin 50 times, we may want the number of heads obtained.",
+    "page_number": 557,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_27.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  }
+]
+```

@@ -1,0 +1,259 @@
+```json
+[
+  {
+    "text": "and $G = \\{HHT, HTH, THH, HTT, THT, TTH, TTT\\}$. Also $E \\cap F = \\{HHH\\}$, $E \\cap G = \\{TTT\\}$, $F \\cap G = \\{HHT, HTH, THH\\}$",
+    "page_number": 7,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Sample Space", "Events", "Set Operations"],
+      "subtopics": ["Definition of events", "Intersection of events"],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": ["Basic set theory"]
+    }
+  },
+  {
+    "text": "Therefore $$P(E) = \\frac{2}{8} = \\frac{1}{4}, P(F) = \\frac{4}{8} = \\frac{1}{2}, P(G) = \\frac{7}{8}$$",
+    "page_number": 7,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Probabilities"],
+      "subtopics": ["Calculation of probabilities"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of probability"]
+    }
+  },
+  {
+    "text": "and $$P(E \\cap F) = \\frac{1}{8}, P(E \\cap G) = \\frac{1}{8}, P(F \\cap G) = \\frac{3}{8}$$",
+    "page_number": 7,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Joint Probabilities"],
+      "subtopics": ["Probability of intersection"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of probability", "Set operations"]
+    }
+  },
+  {
+    "text": "Also $$P(E) \\cdot P(F) = \\frac{1}{4} \\times \\frac{1}{2} = \\frac{1}{8}, P(E) \\cdot P(G) = \\frac{1}{4} \\times \\frac{7}{8} = \\frac{7}{32}$$",
+    "page_number": 7,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Product Rule"],
+      "subtopics": ["Multiplication of probabilities"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Probability of individual events"]
+    }
+  },
+  {
+    "text": "and $$P(F) \\cdot P(G) = \\frac{1}{2} \\times \\frac{7}{8} = \\frac{7}{16}$$",
+    "page_number": 7,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Product Rule"],
+      "subtopics": ["Multiplication of probabilities"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": ["Probability of individual events"]
+    }
+  },
+  {
+    "text": "Thus $$P(E \\cap F) = P(E) . P(F)$$ $$P(E \\cap G) \\ne P(E) . P(G)$$ $$P(F \\cap G) \\ne P(F) . P(G)$$",
+    "page_number": 7,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Independence", "Event Dependence"],
+      "subtopics": ["Checking for independence"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Joint Probabilities", "Product Rule"]
+    }
+  },
+  {
+    "text": "Hence, the events (E and F) are independent, and the events (E and G) and (F and G) are dependent.",
+    "page_number": 7,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Independence", "Event Dependence"],
+      "subtopics": ["Conclusion of independence check"],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Definition of independent and dependent events"]
+    }
+  },
+  {
+    "text": "Example 13 Prove that if E and F are independent events, then so are the events E and F'.",
+    "page_number": 7,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Independence", "Complement of an Event"],
+      "subtopics": ["Properties of independent events"],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Definition of independent events", "Definition of complement"]
+    }
+  },
+  {
+    "text": "Solution Since E and F are independent, we have $$P(E \\cap F) = P(E) . P(F) \\quad ....(1)$$",
+    "page_number": 7,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Independence"],
+      "subtopics": ["Proof step: starting assumption"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Definition of independent events"]
+    }
+  },
+  {
+    "text": "From the venn diagram in Fig 13.3, it is clear that $E \\cap F$ and $E \\cap F'$ are mutually exclusive events and also $E =(E \\cap F) \\cup (E \\cap F').$",
+    "page_number": 7,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Set Theory", "Venn Diagrams", "Mutually Exclusive Events", "Probability"],
+      "subtopics": ["Proof step: set relationships"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Set operations", "Venn diagrams"]
+    }
+  },
+  {
+    "text": "Therefore $$P(E) = P(E \\cap F) + P(E \\cap F')$$",
+    "page_number": 7,
+    "chunk_index": 10,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Additive Law of Probability"],
+      "subtopics": ["Proof step: probability of union"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Probability of mutually exclusive events"]
+    }
+  },
+  {
+    "text": "or $$P(E \\cap F') = P(E) - P(E \\cap F)$$",
+    "page_number": 7,
+    "chunk_index": 11,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Set Operations"],
+      "subtopics": ["Proof step: rearranging equation"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "$$= P(E) - P(E) . P(F) \\quad (by (1))$$",
+    "page_number": 7,
+    "chunk_index": 12,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Independence"],
+      "subtopics": ["Proof step: substitution"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Definition of independent events"]
+    }
+  },
+  {
+    "text": "$$= P(E) (1-P(F))$$",
+    "page_number": 7,
+    "chunk_index": 13,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Algebraic Manipulation"],
+      "subtopics": ["Proof step: factoring"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Algebra"]
+    }
+  },
+  {
+    "text": "$$= P(E) . P(F')$$",
+    "page_number": 7,
+    "chunk_index": 14,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Complement of an Event"],
+      "subtopics": ["Proof step: probability of complement"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Probability of complement rule"]
+    }
+  },
+  {
+    "text": "Hence, E and F' are independent",
+    "page_number": 7,
+    "chunk_index": 15,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Probability", "Event Independence"],
+      "subtopics": ["Conclusion of proof"],
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Fig 13.3",
+    "page_number": 7,
+    "chunk_index": 16,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_15.png",
+      "source_type": "image",
+      "topics": ["Set Theory", "Venn Diagrams", "Probability"],
+      "subtopics": ["Visual representation of events"],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  }
+]
+```

@@ -1,0 +1,128 @@
+```json
+[
+  {
+    "text": "Therefore, $P(A) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + \\dots + P(E_n)P(A|E_n)$ or $P(A) = \\sum_{j=1}^{n} P(E_j)P(A|E_j)$",
+    "page_number": 13,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_20.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "law of total probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 15 A person has undertaken a construction job. The probabilities are 0.65 that there will be strike, 0.80 that the construction job will be completed on time if there is no strike, and 0.32 that the construction job will be completed on time if there is a strike. Determine the probability that the construction job will be completed on time.",
+    "page_number": 13,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_20.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "conditional probability",
+        "total probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Solution Let A be the event that the construction job will be completed on time, and B be the event that there will be a strike. We have $P(B) = 0.65$, $P(\\text{no strike}) = P(B') = 1 - P(B) = 1 - 0.65 = 0.35$ $P(A|B) = 0.32$, $P(A|B') = 0.80$",
+    "page_number": 13,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_20.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "conditional probability",
+        "total probability"
+      ],
+      "subtopics": [
+        "event definition",
+        "given probabilities"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "conditional probability"
+      ]
+    }
+  },
+  {
+    "text": "Since events B and B' form a partition of the sample space S, therefore, by theorem on total probability, we have $P(A) = P(B) P(A|B) + P(B') P(A|B')$ $= 0.65 \\times 0.32 + 0.35 \\times 0.8$ $= 0.208 + 0.28 = 0.488$ Thus, the probability that the construction job will be completed in time is 0.488.",
+    "page_number": 13,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_20.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "total probability"
+      ],
+      "subtopics": [
+        "calculation",
+        "conclusion"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "law of total probability"
+      ]
+    }
+  },
+  {
+    "text": "Bayes’ Theorem If $E_1, E_2, \\dots, E_n$ are $n$ non empty events which constitute a partition of sample space S, i.e. $E_1, E_2, \\dots, E_n$ are pairwise disjoint and $E_1 \\cup E_2 \\cup \\dots \\cup E_n = S$ and A is any event of nonzero probability, then $P(E_i|A) = \\frac{P(E_i)P(A|E_i)}{\\sum_{j=1}^{n} P(E_j)P(A|E_j)}$ for any $i = 1, 2, 3, \\dots, n$",
+    "page_number": 13,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_20.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Proof By formula of conditional probability, we know that $P(E_i|A) = \\frac{P(A \\cap E_i)}{P(A)}$ $= \\frac{P(E_i)P(A|E_i)}{P(A)}$ (by multiplication rule of probability) $= \\frac{P(E_i)P(A|E_i)}{\\sum_{j=1}^{n} P(E_j)P(A|E_j)}$ (by the result of theorem of total probability)",
+    "page_number": 13,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_20.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": null,
+      "chunk_type": "proof",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "conditional probability formula",
+        "multiplication rule of probability",
+        "law of total probability"
+      ]
+    }
+  }
+]
+```

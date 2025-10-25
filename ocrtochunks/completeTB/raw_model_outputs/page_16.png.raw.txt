@@ -1,0 +1,184 @@
+```json
+[
+  {
+    "text": "546 MATHEMATICS",
+    "page_number": 8,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Mathematics"],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Note In a similar manner, it can be shown that if the events $E$ and $F$ are independent, then (a) $E'$ and $F$ are independent, (b) $E$ and $F'$ are independent",
+    "page_number": 8,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Properties of Independent Events"],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 14 If $A$ and $B$ are two independent events, then the probability of occurrence of at least one of $A$ and $B$ is given by $1-P(A') P(B')$",
+    "page_number": 8,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Probability of Union", "Complement of an Event"],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Basic Probability", "Independent Events"]
+    }
+  },
+  {
+    "text": "Solution We have\n$P(\\text{at least one of A and B}) = P(A \\cup B)$\n$= P(A) + P(B) - P(A \\cap B)$\n$= P(A) + P(B) - P(A) P(B)$\n$= P(A) + P(B) [1-P(A)]$\n$= P(A) + P(B) P(A')$\n$= 1- P(A') + P(B) P(A')$\n$= 1- P(A') [1-P(B)]$\n$= 1- P(A') P(B')$",
+    "page_number": 8,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Probability of Union", "Complement of an Event", "Worked Example"],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Basic Probability", "Independent Events", "Set Theory in Probability"]
+    }
+  },
+  {
+    "text": "EXERCISE 13.2",
+    "page_number": 8,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Exercises"],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "1. If $P(A) = \\frac{3}{5}$ and $P(B) = \\frac{1}{5}$, find $P(A \\cap B)$ if A and B are independent events.",
+    "page_number": 8,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Intersection of Events"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of Independent Events"]
+    }
+  },
+  {
+    "text": "2. Two cards are drawn at random and without replacement from a pack of 52 playing cards. Find the probability that both the cards are black.",
+    "page_number": 8,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Conditional Probability", "Dependent Events", "Playing Cards", "Sampling without replacement"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Basic Probability", "Conditional Probability"]
+    }
+  },
+  {
+    "text": "3. A box of oranges is inspected by examining three randomly selected oranges drawn without replacement. If all the three oranges are good, the box is approved for sale, otherwise, it is rejected. Find the probability that a box containing 15 oranges out of which 12 are good and 3 are bad ones will be approved for sale.",
+    "page_number": 8,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Conditional Probability", "Sampling without replacement", "Combinations"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Basic Probability", "Combinations", "Conditional Probability"]
+    }
+  },
+  {
+    "text": "4. A fair coin and an unbiased die are tossed. Let $A$ be the event ‘head appears on the coin’ and $B$ be the event ‘3 on the die’. Check whether $A$ and $B$ are independent events or not.",
+    "page_number": 8,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Sample Space", "Coin Toss", "Die Roll"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of Independent Events"]
+    }
+  },
+  {
+    "text": "5. A die marked 1, 2, 3 in red and 4, 5, 6 in green is tossed. Let $A$ be the event, ‘the number is even,’ and $B$ be the event, ‘the number is red’. Are $A$ and $B$ independent?",
+    "page_number": 8,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Sample Space", "Die Roll"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Definition of Independent Events", "Sample Space"]
+    }
+  },
+  {
+    "text": "6. Let $E$ and $F$ be events with $P(E) = \\frac{3}{5}$, $P(F) = \\frac{3}{10}$ and $P(E \\cap F) = \\frac{1}{5}$. Are $E$ and $F$ independent?",
+    "page_number": 8,
+    "chunk_index": 10,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Independent Events", "Intersection of Events"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of Independent Events"]
+    }
+  },
+  {
+    "text": "2019-20",
+    "page_number": 8,
+    "chunk_index": 11,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_16.png",
+      "source_type": "image",
+      "topics": null,
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  }
+]
+```

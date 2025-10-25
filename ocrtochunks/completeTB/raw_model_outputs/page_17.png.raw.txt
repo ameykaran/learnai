@@ -1,0 +1,229 @@
+```json
+[
+  {
+    "text": "7. Given that the events A and B are such that $P(A) = \\frac{1}{2}$, $P(A \\cup B) = \\frac{3}{5}$ and $P(B) = p$. Find $p$ if they are (i) mutually exclusive (ii) independent.",
+    "page_number": 9,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Mutually exclusive events",
+        "Independent events",
+        "Probability of union"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Formulas for union of events"
+      ]
+    }
+  },
+  {
+    "text": "8. Let A and B be independent events with $P(A) = 0.3$ and $P(B) = 0.4$. Find (i) $P(A \\cap B)$ (ii) $P(A \\cup B)$ (iii) $P(A|B)$ (iv) $P(B|A)$",
+    "page_number": 9,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent events",
+        "Probability of intersection",
+        "Probability of union",
+        "Conditional probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Formulas for independent events",
+        "Conditional probability definition"
+      ]
+    }
+  },
+  {
+    "text": "9. If A and B are two events such that $P(A) = \\frac{1}{4}$, $P(B) = \\frac{1}{2}$ and $P(A \\cap B) = \\frac{1}{8}$, find P (not A and not B).",
+    "page_number": 9,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Intersection of events",
+        "Complement of events",
+        "De Morgan's laws"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Probability of complement",
+        "Probability of union/intersection"
+      ]
+    }
+  },
+  {
+    "text": "10. Events A and B are such that $P(A) = \\frac{1}{2}$, $P(B) = \\frac{7}{12}$ and $P(\\text{not A or not B}) = \\frac{1}{4}$. State whether A and B are independent ?",
+    "page_number": 9,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent events",
+        "Complement of events",
+        "De Morgan's laws"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Definition of independent events",
+        "De Morgan's laws"
+      ]
+    }
+  },
+  {
+    "text": "11. Given two independent events A and B such that $P(A) = 0.3$, $P(B) = 0.6$. Find (i) $P(A \\text{ and } B)$ (ii) $P(A \\text{ and not } B)$ (iii) $P(A \\text{ or } B)$ (iv) $P(\\text{neither A nor } B)$",
+    "page_number": 9,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent events",
+        "Probability of intersection",
+        "Probability of union",
+        "Complement of events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Formulas for independent events",
+        "Probability of complement"
+      ]
+    }
+  },
+  {
+    "text": "12. A die is tossed thrice. Find the probability of getting an odd number at least once.",
+    "page_number": 9,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Compound events",
+        "Complementary events",
+        "Die rolls"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Probability of independent trials",
+        "Probability of complement"
+      ]
+    }
+  },
+  {
+    "text": "13. Two balls are drawn at random with replacement from a box containing 10 black and 8 red balls. Find the probability that (i) both balls are red. (ii) first ball is black and second is red. (iii) one of them is black and other is red.",
+    "page_number": 9,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Drawing with replacement",
+        "Compound events",
+        "Combinatorics"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Multiplication rule for independent events"
+      ]
+    }
+  },
+  {
+    "text": "14. Probability of solving specific problem independently by A and B are $\\frac{1}{2}$ and $\\frac{1}{3}$ respectively. If both try to solve the problem independently, find the probability that (i) the problem is solved (ii) exactly one of them solves the problem.",
+    "page_number": 9,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent events",
+        "Probability of union",
+        "Compound events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Formulas for independent events",
+        "Probability of complement"
+      ]
+    }
+  },
+  {
+    "text": "15. One card is drawn at random from a well shuffled deck of 52 cards. In which of the following cases are the events E and F independent ?\n(i) E : 'the card drawn is a spade'\nF : 'the card drawn is an ace'\n(ii) E : 'the card drawn is black'\nF : 'the card drawn is a king'\n(iii) E : 'the card drawn is a king or queen'\nF : 'the card drawn is a queen or jack'.",
+    "page_number": 9,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_17.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Independent events",
+        "Deck of cards",
+        "Conditional probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability concepts",
+        "Properties of a deck of cards",
+        "Definition of independent events"
+      ]
+    }
+  }
+]
+```

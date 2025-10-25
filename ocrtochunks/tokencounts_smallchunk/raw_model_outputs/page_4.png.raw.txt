@@ -1,0 +1,160 @@
+```json
+[
+  {
+    "text": "Y\nP(Y)\n-1\n$\\frac{1}{8}$\n0\n$\\frac{2}{8}$\n4\n$\\frac{3}{8}$\n5\n$\\frac{1}{8}$\n6\n$\\frac{1}{8}$",
+    "page_number": 4,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability Distribution"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Clearly\n$E(X) = 1 \\times \\frac{1}{8} + 2 \\times \\frac{2}{8} + 3 \\times \\frac{3}{8} + 4 \\times \\frac{2}{8} = \\frac{22}{8} = 2.75$",
+    "page_number": 4,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Expected Value"
+      ],
+      "subtopics": [
+        "Mean of a Random Variable"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability Distributions",
+        "Expected Value"
+      ]
+    }
+  },
+  {
+    "text": "and\n$E(Y) = -1 \\times \\frac{1}{8} + 0 \\times \\frac{2}{8} + 4 \\times \\frac{3}{8} + 5 \\times \\frac{1}{8} + 6 \\times \\frac{1}{8} = \\frac{22}{8} = 2.75$",
+    "page_number": 4,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Expected Value"
+      ],
+      "subtopics": [
+        "Mean of a Random Variable"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Probability Distributions",
+        "Expected Value"
+      ]
+    }
+  },
+  {
+    "text": "The variables X and Y are different, however their means are same. It is also easily observable from the diagramatic representation of these distributions (Fig 13.5).",
+    "page_number": 4,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Expected Value",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Mean of a Random Variable",
+        "Probability Distribution"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Expected Value",
+        "Probability Distributions"
+      ]
+    }
+  },
+  {
+    "text": "Fig 13.5\nBar charts representing the probability distributions of X (i) and Y (ii).",
+    "page_number": 4,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Probability Distribution",
+        "Bar Chart"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "To distinguish X from Y, we require a measure of the extent to which the values of the random variables spread out. In Statistics, we have studied that the variance is a measure of the variability or spread in the values of a random variable may be measured by variance.",
+    "page_number": 4,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Variance"
+      ],
+      "subtopics": [
+        "Measure of Spread",
+        "Variability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Expected Value",
+        "Probability Distributions"
+      ]
+    }
+  },
+  {
+    "text": "Definition 7 Let X be a random variable whose possible values $x_1, x_2,...,x_n$ occur with probabilities $p(x_1), p(x_2),..., p(x_n)$ respectively.\nLet $\\mu = E(X)$ be the mean of X. The variance of X, denoted by $\\text{Var}(X)$ or $\\sigma_x^2$ is defined as\n$$ \\sigma_x^2 = \\text{Var}(X) = \\sum_{i=1}^{n} (x_i - \\mu)^2 p(x_i) $$\nor equivalently\n$$ \\sigma_x^2 = E(X - \\mu)^2 $$",
+    "page_number": 4,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "Variance"
+      ],
+      "subtopics": [
+        "Definition of Variance",
+        "Formula for Variance"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random Variables",
+        "Probability Distributions",
+        "Expected Value"
+      ]
+    }
+  }
+]
+```

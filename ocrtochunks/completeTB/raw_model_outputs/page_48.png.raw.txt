@@ -1,0 +1,169 @@
+```json
+[
+  {
+    "text": "578 MATHEMATICS",
+    "page_number": 43,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["header"],
+      "subtopics": [],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": []
+    }
+  },
+  {
+    "text": "11. Find the probability of getting 5 exactly twice in 7 throws of a die.",
+    "page_number": 43,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "binomial distribution"],
+      "subtopics": ["dice rolls"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["basic probability", "combinations"]
+    }
+  },
+  {
+    "text": "12. Find the probability of throwing at most 2 sixes in 6 throws of a single die.",
+    "page_number": 43,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "binomial distribution"],
+      "subtopics": ["dice rolls"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["basic probability", "combinations"]
+    }
+  },
+  {
+    "text": "13. It is known that 10% of certain articles manufactured are defective. What is the probability that in a random sample of 12 such articles, 9 are defective?",
+    "page_number": 43,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "binomial distribution"],
+      "subtopics": ["defective items", "sampling"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["basic probability", "percentages", "combinations"]
+    }
+  },
+  {
+    "text": "14. In a box containing 100 bulbs, 10 are defective. The probability that out of a sample of 5 bulbs, none is defective is\n(A) $10^{-1}$\n(B) $\\left(\\frac{1}{2}\\right)^5$\n(C) $\\left(\\frac{9}{10}\\right)^5$\n(D) $\\frac{9}{10}$",
+    "page_number": 43,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "binomial distribution", "sampling"],
+      "subtopics": ["defective items"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["basic probability", "percentages"]
+    }
+  },
+  {
+    "text": "15. The probability that a student is not a swimmer is $\\frac{1}{5}$. Then the probability that out of five students, four are swimmers is\n(A) $^5C_4 \\left(\\frac{4}{5}\\right)^4 \\frac{1}{5}$\n(B) $\\left(\\frac{4}{5}\\right)^4 \\frac{1}{5}$\n(C) $^5C_1 \\frac{1}{5} \\left(\\frac{4}{5}\\right)^4$\n(D) None of these",
+    "page_number": 43,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "binomial distribution"],
+      "subtopics": ["independent events"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["basic probability", "combinations"]
+    }
+  },
+  {
+    "text": "Miscellaneous Examples",
+    "page_number": 43,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability"],
+      "subtopics": ["examples"],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": []
+    }
+  },
+  {
+    "text": "Example 33 Coloured balls are distributed in four boxes as shown in the following table:",
+    "page_number": 43,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "conditional probability"],
+      "subtopics": ["Bayes' theorem"],
+      "chunk_type": "example",
+      "difficulty_level": "advanced",
+      "prerequisites": ["basic probability", "conditional probability"]
+    }
+  },
+  {
+    "text": "Box | Colour | Black | White | Red | Blue\n---|---|---|---|---|---\nI | | 3 | 4 | 5 | 6\nII | | 2 | 2 | 2 | 2\nIII | | 1 | 2 | 3 | 1\nIV | | 4 | 3 | 1 | 5",
+    "page_number": 43,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability"],
+      "subtopics": ["data representation"],
+      "chunk_type": "visualization",
+      "difficulty_level": null,
+      "prerequisites": []
+    }
+  },
+  {
+    "text": "A box is selected at random and then a ball is randomly drawn from the selected box. The colour of the ball is black, what is the probability that ball drawn is from the box III?",
+    "page_number": 43,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": ["probability", "conditional probability", "Bayes' theorem"],
+      "subtopics": ["sampling"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "advanced",
+      "prerequisites": ["basic probability", "conditional probability"]
+    }
+  },
+  {
+    "text": "2019-20",
+    "page_number": 43,
+    "chunk_index": 10,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_48.png",
+      "source_type": "image",
+      "topics": [],
+      "subtopics": [],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": []
+    }
+  }
+]
+```

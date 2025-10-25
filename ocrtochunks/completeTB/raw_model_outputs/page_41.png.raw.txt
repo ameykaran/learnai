@@ -1,0 +1,139 @@
+```json
+[
+  {
+    "text": "9. The random variable $X$ has a probability distribution $P(X)$ of the following form,\n$$P(X)=\\left\\{\\begin{array}{ll}k, & \\text { if } x=0 \\\\ 2k, & \\text { if } x=1 \\\\ 3k, & \\text { if } x=2 \\\\ 0, & \\text { otherwise }\\end{array}\\right.$$\n(a) Determine the value of $k$.\n(b) Find $P(X<2), P(X \\leq 2), P(X \\geq 2)$.",
+    "page_number": 571,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Discrete Probability Distribution", "Random Variables", "Probability Mass Function"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Definition of Probability Distribution", "Sum of Probabilities = 1"]
+    }
+  },
+  {
+    "text": "10. Find the mean number of heads in three tosses of a fair coin.",
+    "page_number": 571,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Expectation", "Binomial Distribution"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Bernoulli Trials", "Expectation of Binomial Distribution"]
+    }
+  },
+  {
+    "text": "11. Two dice are thrown simultaneously. If $X$ denotes the number of sixes, find the expectation of $X$.",
+    "page_number": 571,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Expectation", "Dice Rolls", "Random Variables"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Probability of Events", "Expectation Definition"]
+    }
+  },
+  {
+    "text": "12. Two numbers are selected at random (without replacement) from the first six positive integers. Let $X$ denote the larger of the two numbers obtained. Find $E(X)$.",
+    "page_number": 571,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Expectation", "Sampling without replacement", "Random Variables"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Combinations", "Probability Distribution", "Expectation Definition"]
+    }
+  },
+  {
+    "text": "13. Let $X$ denote the sum of the numbers obtained when two fair dice are rolled. Find the variance and standard deviation of $X$.",
+    "page_number": 571,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Variance", "Standard Deviation", "Dice Rolls", "Random Variables"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Probability Distribution of Sum of Two Dice", "Expectation", "Variance Definition"]
+    }
+  },
+  {
+    "text": "14. A class has 15 students whose ages are 14, 17, 15, 14, 21, 17, 19, 20, 16, 18, 20, 17, 16, 19 and 20 years. One student is selected in such a manner that each has the same chance of being chosen and the age $X$ of the selected student is recorded. What is the probability distribution of the random variable $X$? Find mean, variance and standard deviation of $X$.",
+    "page_number": 571,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability", "Statistics"],
+      "subtopics": ["Empirical Probability Distribution", "Mean", "Variance", "Standard Deviation", "Random Variables"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Frequency Distribution", "Expectation", "Variance Definition"]
+    }
+  },
+  {
+    "text": "15. In a meeting, 70% of the members favour and 30% oppose a certain proposal. A member is selected at random and we take $X=0$ if he opposed, and $X=1$ if he is in favour. Find $E(X)$ and $Var(X)$.",
+    "page_number": 571,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Expectation", "Variance", "Bernoulli Distribution", "Random Variables"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of Expectation", "Definition of Variance"]
+    }
+  },
+  {
+    "text": "Choose the correct answer in each of the following:\n16. The mean of the numbers obtained on throwing a die having written 1 on three faces, 2 on two faces and 5 on one face is\n(A) 1 (B) 2 (C) 5 (D) $\\frac{8}{3}$",
+    "page_number": 571,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Expectation", "Weighted Mean", "Discrete Probability"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": ["Definition of Expectation", "Probability of Events"]
+    }
+  },
+  {
+    "text": "17. Suppose that two cards are drawn at random from a deck of cards. Let $X$ be the number of aces obtained. Then the value of $E(X)$ is\n(A) $\\frac{37}{221}$ (B) $\\frac{5}{13}$ (C) $\\frac{1}{13}$ (D) $\\frac{2}{13}$",
+    "page_number": 571,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_41.png",
+      "source_type": "image",
+      "topics": ["Probability"],
+      "subtopics": ["Expectation", "Hypergeometric Distribution", "Sampling without replacement", "Random Variables"],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": ["Combinations", "Probability Distribution", "Expectation Definition"]
+    }
+  }
+]
+```

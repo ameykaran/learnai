@@ -1,0 +1,98 @@
+```json
+[
+  {
+    "text": "Solution Let $b$ stand for boy and $g$ for girl. The sample space of the experiment is $S = \\{(b, b), (g, b), (b, g), (g, g)\\}$\nLet E and F denote the following events :\nE : ‘both the children are boys’\nF : ‘at least one of the child is a boy’\nThen $E = \\{(b,b)\\}$ and $F = \\{(b,b), (g,b), (b,g)\\}$\nNow $E \\cap F = \\{(b,b)\\}$\nThus $P(F) = \\frac{3}{4}$ and $P(E \\cap F) = \\frac{1}{4}$\nTherefore $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{1/4}{3/4} = \\frac{1}{3}$",
+    "page_number": 45,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_5.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Sample Space",
+        "Events"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 3 Ten cards numbered 1 to 10 are placed in a box, mixed up thoroughly and then one card is drawn randomly. If it is known that the number on the drawn card is more than 3, what is the probability that it is an even number?",
+    "page_number": 45,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_5.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Solution Let A be the event ‘the number on the card drawn is even’ and B be the event ‘the number on the card drawn is greater than 3’. We have to find $P(A|B)$.\nNow, the sample space of the experiment is $S = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$\nThen $A = \\{2, 4, 6, 8, 10\\}$, $B = \\{4, 5, 6, 7, 8, 9, 10\\}$\nand $A \\cap B = \\{4, 6, 8, 10\\}$\nAlso $P(A) = \\frac{5}{10}$, $P(B) = \\frac{7}{10}$ and $P(A \\cap B) = \\frac{4}{10}$\nThen $P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{4/10}{7/10} = \\frac{4}{7}$",
+    "page_number": 45,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_5.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Sample Space",
+        "Events"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 4 In a school, there are 1000 students, out of which 430 are girls. It is known that out of 430, 10% of the girls study in Class XII. What is the probability that a student chosen randomly studies in Class XII given that the chosen student is a girl?",
+    "page_number": 45,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_5.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Solution Let E denote the event that a student chosen randomly studies in Class XII and F be the event that the randomly chosen student is a girl. We have to find $P(E|F)$.",
+    "page_number": 45,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_5.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  }
+]
+```

@@ -1,0 +1,184 @@
+```json
+[
+  {
+    "text": "538 MATHEMATICS\nLet F be the event that ‘there is at least one tail’ and E be the event ‘the die shows a number greater than 4’. Then\n$F = \\{(H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)\\}$\n$E = \\{(T,5), (T,6)\\}$ and $E \\cap F = \\{(T,5), (T,6)\\}$\nNow\n$P(F) = P(\\{(H,T)\\}$) + P($\\{(T,1)\\}$) + P($\\{(T,2)\\}$) + P($\\{(T,3)\\}$)\n+ P($\\{(T,4)\\}$) + P($\\{(T,5)\\}$) + P($\\{(T,6)\\}$)\n$= \\frac{1}{4} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} + \\frac{1}{12} = \\frac{3}{4}$\nand\n$P(E \\cap F) = P(\\{(T,5)\\}$) + P($\\{(T,6)\\}$) $= \\frac{1}{12} + \\frac{1}{12} = \\frac{1}{6}$\nHence\n$P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{1}{6}}{\\frac{3}{4}} = \\frac{2}{9}$",
+    "page_number": 56,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Events",
+        "Sample Space",
+        "Calculating Conditional Probability"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Set Theory"
+      ]
+    }
+  },
+  {
+    "text": "EXERCISE 13.1",
+    "page_number": 56,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "1. Given that E and F are events such that $P(E) = 0.6$, $P(F) = 0.3$ and $P(E \\cap F) = 0.2$, find $P(E|F)$ and $P(F|E)$",
+    "page_number": 56,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Calculating Conditional Probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "2. Compute $P(A|B)$, if $P(B) = 0.5$ and $P(A \\cap B) = 0.32$",
+    "page_number": 56,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability"
+      ],
+      "subtopics": [
+        "Calculating Conditional Probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Definition of Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "3. If $P(A) = 0.8$, $P(B) = 0.5$ and $P(B|A) = 0.4$, find\n(i) $P(A \\cap B)$\n(ii) $P(A|B)$\n(iii) $P(A \\cup B)$",
+    "page_number": 56,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Set Operations in Probability"
+      ],
+      "subtopics": [
+        "Calculating Intersection Probability",
+        "Calculating Union Probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Definition of Conditional Probability",
+        "Addition Rule of Probability"
+      ]
+    }
+  },
+  {
+    "text": "4. Evaluate $P(A \\cup B)$, if $2P(A) = P(B) = \\frac{5}{13}$ and $P(A|B) = \\frac{2}{5}$",
+    "page_number": 56,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Set Operations in Probability"
+      ],
+      "subtopics": [
+        "Calculating Union Probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Definition of Conditional Probability",
+        "Addition Rule of Probability"
+      ]
+    }
+  },
+  {
+    "text": "5. If $P(A) = \\frac{6}{11}$, $P(B) = \\frac{5}{11}$ and $P(A \\cup B) = \\frac{7}{11}$, find\n(i) $P(A \\cap B)$\n(ii) $P(A|B)$\n(iii) $P(B|A)$",
+    "page_number": 56,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Set Operations in Probability"
+      ],
+      "subtopics": [
+        "Calculating Intersection Probability",
+        "Calculating Conditional Probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Definition of Conditional Probability",
+        "Addition Rule of Probability"
+      ]
+    }
+  },
+  {
+    "text": "6. A coin is tossed three times, where\n(i) E : head on third toss , F : heads on first two tosses\n(ii) E : at least two heads , F : at most two heads\n(iii) E : at most two tails , F : at least one tail\nDetermine $P(E|F)$ in Exercises 6 to 9.",
+    "page_number": 56,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_8.png",
+      "source_type": "image",
+      "topics": [
+        "Conditional Probability",
+        "Sample Space"
+      ],
+      "subtopics": [
+        "Coin Toss Experiment",
+        "Defining Events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Defining Sample Space",
+        "Identifying Events",
+        "Calculating Conditional Probability"
+      ]
+    }
+  }
+]
+```

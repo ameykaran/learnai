@@ -1,0 +1,130 @@
+```json
+[
+  {
+    "text": "Then $X(\\text{HHH}) = \\text{Rs } (2 \\times 3) = \\text{Rs } 6$ $X(\\text{HHT}) = X(\\text{HTH}) = X(\\text{THH}) = \\text{Rs } (2 \\times 2 - 1 \\times 1.50) = \\text{Rs } 2.50$ $X(\\text{HTT}) = X(\\text{THT}) = X(\\text{TTH}) = \\text{Rs } (1 \\times 2) - (2 \\times 1.50) = -\\text{Re } 1$ and $X(\\text{TTT}) = -\\text{Rs } (3 \\times 1.50) = -\\text{Rs } 4.50$ where, minus sign shows the loss to the player. Thus, for each element of the sample space, X takes a unique value, hence, X is a function on the sample space whose range is $\\{-1, 2.50, -4.50, 6\\}$",
+    "page_number": 559,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "random variables",
+        "sample space"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Example 23 A bag contains 2 white and 1 red balls. One ball is drawn at random and then put back in the box after noting its colour. The process is repeated again. If X denotes the number of red balls recorded in the two draws, describe X.",
+    "page_number": 559,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "random variables",
+        "probability experiments"
+      ],
+      "subtopics": null,
+      "chunk_type": "example",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Solution Let the balls in the bag be denoted by $w_1, w_2, r$. Then the sample space is $S = \\{w_1 w_1, w_1 w_2, w_2 w_2, w_2 w_1, w_1 r, w_2 r, r w_1, r w_2, r r\\}$ Now, for $\\omega \\in S$, $X(\\omega) = \\text{number of red balls}$",
+    "page_number": 559,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "sample space",
+        "random variables"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Therefore $X(\\{w_1 w_1\\}) = X(\\{w_1 w_2\\}) = X(\\{w_2 w_2\\}) = X(\\{w_2 w_1\\}) = 0$ $X(\\{w_1 r\\}) = X(\\{w_2 r\\}) = X(\\{r w_1\\}) = X(\\{r w_2\\}) = 1$ and $X(\\{r r\\}) = 2$ Thus, X is a random variable which can take values 0, 1 or 2.",
+    "page_number": 559,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "random variables",
+        "range of a random variable"
+      ],
+      "subtopics": null,
+      "chunk_type": "worked_solution",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "13.6.1 Probability distribution of a random variable Let us look at the experiment of selecting one family out of ten families $f_1, f_2, \\dots, f_{10}$ in such a manner that each family is equally likely to be selected. Let the families $f_1, f_2, \\dots, f_{10}$ have 3, 4, 3, 2, 5, 4, 3, 6, 4, 5 members, respectively. Let us select a family and note down the number of members in the family denoting X. Clearly, X is a random variable defined as below :",
+    "page_number": 559,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "probability distribution",
+        "random variables",
+        "sample space"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "$X(f_1) = 3, X(f_2) = 4, X(f_3) = 3, X(f_4) = 2, X(f_5) = 5,$ $X(f_6) = 4, X(f_7) = 3, X(f_8) = 6, X(f_9) = 4, X(f_{10}) = 5$",
+    "page_number": 559,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "random variables"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Thus, X can take any value 2,3,4,5 or 6 depending upon which family is selected. Now, X will take the value 2 when the family $f_4$ is selected. X can take the value 3 when any one of the families $f_1, f_3, f_7$ is selected. Similarly, $X = 4, \\text{ when family } f_2, f_6 \\text{ or } f_9 \\text{ is selected,}$ $X = 5, \\text{ when family } f_5 \\text{ or } f_{10} \\text{ is selected}$ and $X = 6, \\text{ when family } f_8 \\text{ is selected.}$",
+    "page_number": 559,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_4.png",
+      "source_type": "image",
+      "topics": [
+        "random variables",
+        "probability distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  }
+]
+```

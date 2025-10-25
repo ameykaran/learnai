@@ -1,0 +1,202 @@
+```json
+[
+  {
+    "text": "Therefore $P(E \\cap F) = \\frac{2}{36}$ Hence, the required probability $P(E|F) = \\frac{P(E \\cap F)}{P(F)} = \\frac{\\frac{2}{36}}{\\frac{5}{36}} = \\frac{2}{5}$",
+    "page_number": 2,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability",
+        "Conditional probability definition"
+      ]
+    }
+  },
+  {
+    "text": "For the conditional probability discussed above, we have considered the elementary events of the experiment to be equally likely and the corresponding definition of the probability of an an event was used. However, the same definition can also be used in the general case where the elementary events of the sample space are not equally likely, the probabilities $P(E \\cap F)$ and $P(F)$ being calculated accordingly. Let us take up the following example.",
+    "page_number": 2,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability",
+        "Equally likely events"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic probability",
+        "Conditional probability"
+      ]
+    }
+  },
+  {
+    "text": "Example 7 Consider the experiment of tossing a coin. If the coin shows head, toss it again but if it shows tail, then throw a die. Find the conditional probability of the event that ‘the die shows a number greater than 4’ given that ‘there is at least one tail’.",
+    "page_number": 2,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Conditional Probability",
+        "Compound experiments"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic probability",
+        "Sample spaces",
+        "Events"
+      ]
+    }
+  },
+  {
+    "text": "Solution The outcomes of the experiment can be represented in following diagrammatic manner called the ‘tree diagram’.",
+    "page_number": 2,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Tree diagrams"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability experiments"
+      ]
+    }
+  },
+  {
+    "text": "Fig 13.1",
+    "page_number": 2,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Tree diagrams",
+        "Sample spaces"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "The sample space of the experiment may be described as $S = \\{(H,H), (H,T), (T,1), (T,2), (T,3), (T,4), (T,5), (T,6)\\}$ where $(H, H)$ denotes that both the tosses result into head and $(T, i)$ denote the first toss result into a tail and the number $i$ appeared on the die for $i = 1,2,3,4,5,6$.",
+    "page_number": 2,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Sample spaces",
+        "Compound experiments"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Set theory",
+        "Basic probability events"
+      ]
+    }
+  },
+  {
+    "text": "Thus, the probabilities assigned to the 8 elementary events",
+    "page_number": 2,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Assigning probabilities",
+        "Elementary events"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Probability rules"
+      ]
+    }
+  },
+  {
+    "text": "$(H, H)$, $(H, T)$, $(T, 1)$, $(T, 2)$, $(T, 3)$, $(T, 4)$, $(T, 5)$, $(T, 6)$ are $\\frac{1}{4}, \\frac{1}{4}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}, \\frac{1}{12}$ respectively which is clear from the Fig 13.2.",
+    "page_number": 2,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Elementary events",
+        "Probability calculation"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Tree diagrams",
+        "Multiplication rule of probability"
+      ]
+    }
+  },
+  {
+    "text": "Fig 13.2",
+    "page_number": 2,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_2.png",
+      "source_type": "image",
+      "topics": [
+        "Probability"
+      ],
+      "subtopics": [
+        "Tree diagrams",
+        "Probability distributions"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  }
+]
+```

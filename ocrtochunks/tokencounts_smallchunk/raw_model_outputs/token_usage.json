@@ -1,0 +1,200 @@
+{
+  "per_file": [
+    {
+      "filename": "page_1.png",
+      "page_index": 1,
+      "exact_from_model": true,
+      "prompt_token_count": 292,
+      "candidates_token_count": 4146,
+      "total_token_count": 7472,
+      "raw_usage_metadata": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 4146,
+        "candidates_tokens_details": null,
+        "prompt_token_count": 292,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 292
+          }
+        ],
+        "thoughts_token_count": 3034,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 7472,
+        "traffic_type": null
+      },
+      "count_tokens_api": {
+        "sdk_http_response": {
+          "headers": {
+            "content-type": "application/json; charset=UTF-8",
+            "vary": "Origin, X-Origin, Referer",
+            "content-encoding": "gzip",
+            "date": "Sat, 25 Oct 2025 13:03:15 GMT",
+            "server": "scaffolding on HTTPServer2",
+            "x-xss-protection": "0",
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "server-timing": "gfet4t7; dur=558",
+            "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+            "transfer-encoding": "chunked"
+          },
+          "body": null
+        },
+        "total_tokens": 292,
+        "cached_content_token_count": null
+      }
+    },
+    {
+      "filename": "page_2.png",
+      "page_index": 2,
+      "exact_from_model": true,
+      "prompt_token_count": 292,
+      "candidates_token_count": 1980,
+      "total_token_count": 6138,
+      "raw_usage_metadata": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 1980,
+        "candidates_tokens_details": null,
+        "prompt_token_count": 292,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 292
+          }
+        ],
+        "thoughts_token_count": 3866,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 6138,
+        "traffic_type": null
+      },
+      "count_tokens_api": {
+        "sdk_http_response": {
+          "headers": {
+            "content-type": "application/json; charset=UTF-8",
+            "vary": "Origin, X-Origin, Referer",
+            "content-encoding": "gzip",
+            "date": "Sat, 25 Oct 2025 13:03:58 GMT",
+            "server": "scaffolding on HTTPServer2",
+            "x-xss-protection": "0",
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "server-timing": "gfet4t7; dur=128",
+            "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+            "transfer-encoding": "chunked"
+          },
+          "body": null
+        },
+        "total_tokens": 292,
+        "cached_content_token_count": null
+      }
+    },
+    {
+      "filename": "page_3.png",
+      "page_index": 3,
+      "exact_from_model": true,
+      "prompt_token_count": 294,
+      "candidates_token_count": 3407,
+      "total_token_count": 7697,
+      "raw_usage_metadata": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 3407,
+        "candidates_tokens_details": null,
+        "prompt_token_count": 294,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 294
+          }
+        ],
+        "thoughts_token_count": 3996,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 7697,
+        "traffic_type": null
+      },
+      "count_tokens_api": {
+        "sdk_http_response": {
+          "headers": {
+            "content-type": "application/json; charset=UTF-8",
+            "vary": "Origin, X-Origin, Referer",
+            "content-encoding": "gzip",
+            "date": "Sat, 25 Oct 2025 13:04:38 GMT",
+            "server": "scaffolding on HTTPServer2",
+            "x-xss-protection": "0",
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "server-timing": "gfet4t7; dur=544",
+            "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+            "transfer-encoding": "chunked"
+          },
+          "body": null
+        },
+        "total_tokens": 294,
+        "cached_content_token_count": null
+      }
+    },
+    {
+      "filename": "page_4.png",
+      "page_index": 4,
+      "exact_from_model": true,
+      "prompt_token_count": 292,
+      "candidates_token_count": 3497,
+      "total_token_count": 6590,
+      "raw_usage_metadata": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 3497,
+        "candidates_tokens_details": null,
+        "prompt_token_count": 292,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 292
+          }
+        ],
+        "thoughts_token_count": 2801,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 6590,
+        "traffic_type": null
+      },
+      "count_tokens_api": {
+        "sdk_http_response": {
+          "headers": {
+            "content-type": "application/json; charset=UTF-8",
+            "vary": "Origin, X-Origin, Referer",
+            "content-encoding": "gzip",
+            "date": "Sat, 25 Oct 2025 13:05:23 GMT",
+            "server": "scaffolding on HTTPServer2",
+            "x-xss-protection": "0",
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "server-timing": "gfet4t7; dur=558",
+            "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+            "transfer-encoding": "chunked"
+          },
+          "body": null
+        },
+        "total_tokens": 292,
+        "cached_content_token_count": null
+      }
+    }
+  ],
+  "totals": {
+    "files_processed": 4,
+    "entries_produced": 25,
+    "prompt_tokens_sum": 1170,
+    "candidates_tokens_sum": 13030,
+    "total_tokens_sum_from_model": 27897
+  },
+  "notes": {
+    "client": "google-genai",
+    "model": "gemini-2.5-flash",
+    "count_tokens_used": true
+  }
+}

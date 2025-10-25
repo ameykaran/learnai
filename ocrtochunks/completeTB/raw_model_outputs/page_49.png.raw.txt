@@ -1,0 +1,197 @@
+```json
+[
+  {
+    "text": "PROBABILITY 579",
+    "page_number": 44,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": null,
+      "subtopics": null,
+      "chunk_type": null,
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Solution Let $A, E_1, E_2, E_3$ and $E_4$ be the events as defined below : $A :$ a black ball is selected $E_1 :$ box I is selected $E_2 :$ box II is selected $E_3 :$ box III is selected $E_4 :$ box IV is selected",
+    "page_number": 44,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Events",
+        "Defining Events"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "Since the boxes are chosen at random, Therefore $P(E_1) = P(E_2) = P(E_3) = P(E_4) = \\frac{1}{4}$ Also $P(A|E_1) = \\frac{3}{18}$, $P(A|E_2) = \\frac{2}{8}$, $P(A|E_3) = \\frac{1}{7}$ and $P(A|E_4) = \\frac{4}{13}$",
+    "page_number": 44,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Prior Probability",
+        "Conditional Probability",
+        "Likelihood"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "text": "P(box III is selected, given that the drawn ball is black) = $P(E_3|A)$. By Bayes' theorem, $$P(E_3|A) = \\frac{P(E_3) \\cdot P(A|E_3)}{P(E_1)P(A|E_1)+P(E_2)P(A|E_2)+P(E_3)P(A|E_3)+P(E_4)P(A|E_4)}$$ $$ = \\frac{\\frac{1}{4} \\times \\frac{1}{7}}{\\frac{1}{4} \\times \\frac{3}{18} + \\frac{1}{4} \\times \\frac{2}{8} + \\frac{1}{4} \\times \\frac{1}{7} + \\frac{1}{4} \\times \\frac{4}{13}} = 0.165$$",
+    "page_number": 44,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Formula",
+        "Posterior Probability"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Conditional Probability",
+        "Total Probability Theorem"
+      ]
+    }
+  },
+  {
+    "text": "Example 34 Find the mean of the Binomial distribution $B(4, \\frac{1}{3}).$",
+    "page_number": 44,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": [
+        "Mean of Binomial Distribution"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Binomial Distribution Definition"
+      ]
+    }
+  },
+  {
+    "text": "Solution Let X be the random variable whose probability distribution is $B(4, \\frac{1}{3}).$ Here $n=4, p=\\frac{1}{3}$ and $q=1-\\frac{1}{3}=\\frac{2}{3}$ We know that $P(X=x) = {^4C_x} (\\frac{2}{3})^{4-x} (\\frac{1}{3})^x, x=0, 1, 2, 3, 4.$",
+    "page_number": 44,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": [
+        "Parameters of Binomial Distribution",
+        "Probability Mass Function"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Binomial Distribution Definition"
+      ]
+    }
+  },
+  {
+    "text": "i.e. the distribution of X is",
+    "page_number": 44,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": [
+        "Probability Distribution Table"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Binomial Distribution"
+      ]
+    }
+  },
+  {
+    "text": "(Table showing $x_i$, $P(x_i)$, and $x_i P(x_i)$. The table is incomplete, only first two rows are visible.) $$ \\begin{array}{|c|c|c|} \\hline x_i & P(x_i) & x_i P(x_i) \\\\ \\hline 0 & {^4C_0}(\\frac{2}{3})^4 & 0 \\\\ \\hline 1 & {^4C_1}(\\frac{2}{3})^3(\\frac{1}{3}) & {^4C_1}(\\frac{2}{3})^3(\\frac{1}{3}) \\\\ \\hline \\end{array} $$",
+    "page_number": 44,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": [
+        "Probability Distribution Table",
+        "Expected Value Calculation"
+      ],
+      "chunk_type": "visualization",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Binomial Probability Mass Function"
+      ]
+    }
+  },
+  {
+    "text": "2019-20",
+    "page_number": 44,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_49.png",
+      "source_type": "image",
+      "topics": null,
+      "subtopics": null,
+      "chunk_type": null,
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  }
+]
+```

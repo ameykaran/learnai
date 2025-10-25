@@ -1,0 +1,199 @@
+```json
+[
+  {
+    "text": "Assume that the chances of a patient having a heart attack is $40 \\%$. It is also assumed that a meditation and yoga course reduce the risk of heart attack by $30 \\%$ and prescription of certain drug reduces its chances by $25 \\%$. At a time a patient can choose any one of the two options with equal probabilities. It is given that after going through one of the two options the patient selected at random suffers a heart attack. Find the probability that the patient followed a course of meditation and yoga?",
+    "page_number": 584,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "Bayes' theorem"
+      ],
+      "subtopics": [
+        "conditional probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "If each element of a second order determinant is either zero or one, what is the probability that the value of the determinant is positive? (Assume that the individual entries of the determinant are chosen independently, each value being assumed with probability $\\frac{1}{2}$).",
+    "page_number": 584,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "determinants"
+      ],
+      "subtopics": [
+        "independent events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "An electronic assembly consists of two subsystems, say, A and B. From previous testing procedures, the following probabilities are assumed to be known:",
+    "page_number": 584,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability"
+      ],
+      "subtopics": [
+        "system reliability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "$P(A \\text{ fails}) = 0.2$\n$P(B \\text{ fails alone}) = 0.15$\n$P(A \\text{ and } B \\text{ fail}) = 0.15$",
+    "page_number": 584,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability"
+      ],
+      "subtopics": [
+        "system reliability"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Evaluate the following probabilities\n(i) $P(A \\text{ fails}|B \\text{ has failed})$\n(ii) $P(A \\text{ fails alone})$",
+    "page_number": 584,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "conditional probability"
+      ],
+      "subtopics": [
+        "system reliability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Bag I contains $3$ red and $4$ black balls and Bag II contains $4$ red and $5$ black balls. One ball is transferred from Bag I to Bag II and then a ball is drawn from Bag II. The ball so drawn is found to be red in colour. Find the probability that the transferred ball is black.",
+    "page_number": 584,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "Bayes' theorem"
+      ],
+      "subtopics": [
+        "conditional probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Choose the correct answer in each of the following:",
+    "page_number": 584,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "If A and B are two events such that $P(A) \\neq 0$ and $P(B \\mid A) = 1$, then\n(A) $A \\subset B$\n(B) $B \\subset A$\n(C) $B = \\phi$\n(D) $A = \\phi$",
+    "page_number": 584,
+    "chunk_index": 7,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "conditional probability"
+      ],
+      "subtopics": [
+        "set theory"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "If $P(A \\mid B) > P(A)$, then which of the following is correct :\n(A) $P(B \\mid A) < P(B)$\n(B) $P(A \\cap B) < P(A) \\cdot P(B)$\n(C) $P(B \\mid A) > P(B)$\n(D) $P(B \\mid A) = P(B)$",
+    "page_number": 584,
+    "chunk_index": 8,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "conditional probability"
+      ],
+      "subtopics": [
+        "independent events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "If A and B are any two events such that $P(A) + P(B) - P(A \\text{ and } B) = P(A)$, then\n(A) $P(B \\mid A) = 1$\n(B) $P(A \\mid B) = 1$\n(C) $P(B \\mid A) = 0$\n(D) $P(A \\mid B) = 0$",
+    "page_number": 584,
+    "chunk_index": 9,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_54.png",
+      "source_type": "image",
+      "topics": [
+        "probability",
+        "conditional probability"
+      ],
+      "subtopics": [
+        "union of events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": null
+    }
+  }
+]
+```

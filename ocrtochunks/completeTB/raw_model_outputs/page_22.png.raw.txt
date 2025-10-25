@@ -1,0 +1,73 @@
+```json
+[
+  {
+    "text": "552 MATHEMATICS\nSolution Let $E_1$, $E_2$ and $E_3$ be the events that boxes I, II and III are chosen, respectively.\nThen $P(E_1) = P(E_2) = P(E_3) = \\frac{1}{3}$\nAlso, let A be the event that \u2018the coin drawn is of gold\u2019\nThen $P(A|E_1) = P(\\text{a gold coin from bag I}) = \\frac{2}{2} = 1$\n$P(A|E_2) = P(\\text{a gold coin from bag II}) = 0$\n$P(A|E_3) = P(\\text{a gold coin from bag III}) = \\frac{1}{2}$\nNow, the probability that the other coin in the box is of gold\n= the probability that gold coin is drawn from the box I.\n$= P(E_1|A)$\nBy Bayes\u2019 theorem, we know that\n$P(E_1|A) = \\frac{P(E_1)P(A|E_1)}{P(E_1)P(A|E_1)+P(E_2)P(A|E_2)+P(E_3)P(A|E_3)}$\n$= \\frac{\\frac{1}{3} \\times 1}{\\frac{1}{3} \\times 1 + \\frac{1}{3} \\times 0 + \\frac{1}{3} \\times \\frac{1}{2}} = \\frac{2}{3}$",
+    "page_number": 15,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_22.png",
+      "source_type": "image",
+      "topics": [
+        "probability"
+      ],
+      "subtopics": [
+        "Bayes' theorem",
+        "conditional probability"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "basic probability",
+        "conditional probability"
+      ]
+    }
+  },
+  {
+    "text": "Example 18 Suppose that the reliability of a HIV test is specified as follows:\nOf people having HIV, 90% of the test detect the disease but 10% go undetected. Of\npeople free of HIV, 99% of the test are judged HIV\u2013ive but 1% are diagnosed as\nshowing HIV+ive. From a large population of which only 0.1% have HIV, one person\nis selected at random, given the HIV test, and the pathologist reports him/her as\nHIV+ive. What is the probability that the person actually has HIV?",
+    "page_number": 15,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_22.png",
+      "source_type": "image",
+      "topics": [
+        "probability"
+      ],
+      "subtopics": [
+        "Bayes' theorem",
+        "conditional probability"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "basic probability",
+        "conditional probability"
+      ]
+    }
+  },
+  {
+    "text": "Solution Let E denote the event that the person selected is actually having HIV and A\nthe event that the person\u2019s HIV test is diagnosed as +ive. We need to find P(E|A).\nAlso E\u2032 denotes the event that the person selected is actually not having HIV.\nClearly, {E, E\u2032} is a partition of the sample space of all people in the population.\nWe are given that\n$P(E) = 0.1\\% = \\frac{0.1}{100} = 0.001$",
+    "page_number": 15,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_22.png",
+      "source_type": "image",
+      "topics": [
+        "probability"
+      ],
+      "subtopics": [
+        "Bayes' theorem",
+        "conditional probability"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "basic probability",
+        "conditional probability"
+      ]
+    }
+  }
+]
+```

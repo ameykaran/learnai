@@ -1,0 +1,136 @@
+```json
+[
+  {
+    "text": "Let X be a random variable whose possible values $x_1, x_2, x_3, ..., x_n$ occur with probabilities $p_1, p_2, p_3, ..., p_n$ respectively. The mean of X, denoted by $\\mu$, is the number $\\sum_{i=1}^{n} x_i p_i$.",
+    "page_number": 586,
+    "chunk_index": 0,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Mean"
+      ],
+      "subtopics": null,
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "The mean of a random variable X is also called the expectation of X, denoted by E (X).",
+    "page_number": 586,
+    "chunk_index": 1,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Expectation"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Let X be a random variable whose possible values $x_1, x_2, ..., x_n$ occur with probabilities $p(x_1), p(x_2), ..., p(x_n)$ respectively. Let $\\mu = E(X)$ be the mean of X. The variance of X, denoted by Var (X) or $\\sigma_x^2$, is defined as $\\sigma_x^2 = Var(X) = \\sum_{i=1}^{n}(x_i - \\mu)^2 p(x_i)$ or equivalently $\\sigma_x^2 = E (X - \\mu)^2$. The non-negative number $\\sigma_x = \\sqrt{Var(X)} = \\sqrt{\\sum_{i=1}^{n}(x_i - \\mu)^2 p(x_i)}$ is called the standard deviation of the random variable X.",
+    "page_number": 586,
+    "chunk_index": 2,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Variance",
+        "Standard Deviation"
+      ],
+      "subtopics": null,
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Var (X) = E ($X^2$) – $[E(X)]^2$",
+    "page_number": 586,
+    "chunk_index": 3,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Variance"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "Trials of a random experiment are called Bernoulli trials, if they satisfy the following conditions :\n(i) There should be a finite number of trials.\n(ii) The trials should be independent.\n(iii) Each trial has exactly two outcomes : success or failure.\n(iv) The probability of success remains the same in each trial.",
+    "page_number": 586,
+    "chunk_index": 4,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Bernoulli Trials"
+      ],
+      "subtopics": null,
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": null
+    }
+  },
+  {
+    "text": "For Binomial distribution B ($n, p$), P (X = $x$) = $^nC_x q^{n-x} p^x$, $x = 0, 1,..., n$ ($q = 1 - p$)",
+    "page_number": 586,
+    "chunk_index": 5,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "Probability",
+        "Binomial Distribution"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Bernoulli Trials"
+      ]
+    }
+  },
+  {
+    "text": "Historical Note\nThe earliest indication on measurement of chances in game of dice appeared in 1477 in a commentary on Dante’s Divine Comedy. A treatise on gambling named liber de Ludo Alcae, by Geronimo Carden (1501-1576) was published posthumously in 1663. In this treatise, he gives the number of favourable cases for each event when two dice are thrown.",
+    "page_number": 586,
+    "chunk_index": 6,
+    "chunk_bbox": null,
+    "metadata": {
+      "source_url": "page_56.png",
+      "source_type": "image",
+      "topics": [
+        "History of Probability"
+      ],
+      "subtopics": null,
+      "chunk_type": "explanation",
+      "difficulty_level": null,
+      "prerequisites": null
+    }
+  }
+]
+```
