@@ -57,7 +57,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ onReset }) => {
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(null)
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null)
 
-  const API_BASE_URL = 'http://localhost:8000'
+  const API_BASE_URL = 'http://localhost:8001'
 
   useEffect(() => {
     startQuiz()

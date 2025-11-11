@@ -52,9 +52,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onSubmit, isSubmi
             <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
               Question {question.question_number}/25
             </span>
-            <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getDifficultyColor(question.difficulty)}`}>
+            {/* <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getDifficultyColor(question.difficulty)}`}>
               {question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}
-            </span>
+            </span> */}
           </div>
         </div>
 
@@ -83,7 +83,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onSubmit, isSubmi
               }`}>
                 {key}
               </span>
-              <span className="flex-1 pt-1">{value}</span>
+              <span className={`flex-1 pt-1 ${selectedAnswer === key ? 'text-indigo-900' : 'text-gray-700'}`}>
+                {value}
+              </span>
             </div>
           </button>
         ))}
