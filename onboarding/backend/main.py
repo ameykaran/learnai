@@ -8,7 +8,7 @@ from datetime import datetime
 
 from database import get_db, create_tables
 from models import User, QuizSession, Question
-from quiz_algorithm import AdaptiveQuizAlgorithm
+from adaptive_algorithm import ImprovedAdaptiveQuizAlgorithm
 from questions_data import questions_data
 
 app = FastAPI(title="Adaptive Probability Quiz API", version="1.0.0")
@@ -94,7 +94,7 @@ async def start_quiz(request: StartQuizRequest, db: Session = Depends(get_db)):
         db.commit()
 
         # Get the first question
-        algorithm = AdaptiveQuizAlgorithm(db)
+        algorithm = ImprovedAdaptiveQuizAlgorithm(db)
         first_question = algorithm.get_next_question(session_id)
 
         return {
@@ -111,7 +111,7 @@ async def start_quiz(request: StartQuizRequest, db: Session = Depends(get_db)):
 async def get_current_question(session_id: str, db: Session = Depends(get_db)):
     """Get the current question for a quiz session"""
     try:
-        algorithm = AdaptiveQuizAlgorithm(db)
+        algorithm = ImprovedAdaptiveQuizAlgorithm(db)
         question = algorithm.get_next_question(session_id)
 
         if question is None:
@@ -146,7 +146,7 @@ async def get_current_question(session_id: str, db: Session = Depends(get_db)):
 async def submit_answer(request: SubmitAnswerRequest, db: Session = Depends(get_db)):
     """Submit an answer for the current question"""
     try:
-        algorithm = AdaptiveQuizAlgorithm(db)
+        algorithm = ImprovedAdaptiveQuizAlgorithm(db)
         result = algorithm.submit_answer(
             request.session_id,
             request.question_id,
@@ -186,7 +186,7 @@ async def submit_answer(request: SubmitAnswerRequest, db: Session = Depends(get_
 async def get_quiz_results(session_id: str, db: Session = Depends(get_db)):
     """Get results for a completed quiz session"""
     try:
-        algorithm = AdaptiveQuizAlgorithm(db)
+        algorithm = ImprovedAdaptiveQuizAlgorithm(db)
         results = algorithm.get_quiz_results(session_id)
 
         if "error" in results:

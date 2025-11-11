@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, Boolean
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, Boolean, Float, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -38,6 +38,16 @@ class QuizSession(Base):
     session_id = Column(String(100), unique=True, nullable=False)
     current_question_number = Column(Integer, default=1)
     total_questions = Column(Integer, default=25)
+
+    # New adaptive algorithm fields
+    ability = Column(Float, default=0.25)  # Current ability estimate [0,1]
+    asked_ids = Column(JSON, default=list)  # List of question IDs already asked
+    medium_seen = Column(Integer, default=0)  # Count of medium questions asked
+    difficult_seen = Column(Integer, default=0)  # Count of difficult questions asked
+    history = Column(JSON, default=list)  # List of question history with details
+    final_ability = Column(Float, nullable=True)  # Final ability score for debugging
+
+    # Keep legacy fields for backwards compatibility and stats
     current_difficulty = Column(String(10), default="easy")
     easy_correct = Column(Integer, default=0)
     medium_correct = Column(Integer, default=0)
