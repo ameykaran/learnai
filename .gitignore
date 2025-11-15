@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 old
+**/.env
+**/quiz.db
+**/*-lock*
