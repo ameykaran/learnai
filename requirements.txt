@@ -15,3 +15,9 @@ python-dotenv==1.0.0
 
 # Additional utilities
 python-dateutil>=2.8.2
+
+# Content Generation Dependencies
+markdown>=3.4.0
+weasyprint>=59.0
+pyyaml>=6.0
+jinja2>=3.1.0

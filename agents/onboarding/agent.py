@@ -7,7 +7,6 @@ from strands import Agent
 from strands.models import BedrockModel
 from typing import Optional
 import sys
-import os
 import logging
 from pathlib import Path
 # from strands.models.gemini import GeminiModel
@@ -66,9 +65,6 @@ class OnboardingAgent:
         # Create a configured Bedrock model
         model = BedrockModel(
             model_id="us.anthropic.claude-sonnet-4-20250514-v1:0",
-            temperature=0.3,
-            top_p=0.8,
-            stop_sequences=["###", "END"],
             streaming=False,
         )
 
