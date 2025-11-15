@@ -18,9 +18,7 @@ class OnboardingConfig:
     # Model Configuration - using Claude Sonnet 4 on Bedrock
     MODEL_ID = os.getenv(
         "BEDROCK_MODEL_ID",
-        # "anthropic.claude-sonnet-4-20250514-v1:0"
-        # "anthropic.claude-sonnet-4-20250514-v1:0"
-        # f"{AWS_REGION}.anthropic.claude-sonnet-4-20250514-v1:0"
+        "gemini-2.5-flash-lite"
     )
     
     # Agent Configuration

@@ -60,6 +60,9 @@ export default function ChatInterface({
   }
 
   const handleWebSocketMessage = (data: any) => {
+    let parts = [];
+    if (data.content) parts = data.content.split("---").filter(part => part.trim() !== "");
+    console.log("Received parts:", parts);
     switch (data.type) {
       case 'connected':
         setConnected(true)
@@ -78,17 +81,58 @@ export default function ChatInterface({
 
       case 'message':
         setIsTyping(false)
-        addMessage(data.role, data.content, data.metadata)
-        
+
+        parts.forEach(part => {
+          addMessage(data.role, part, data.metadata);
+        });
+
         // Check if mode switched (onboarding complete)
         if (data.metadata?.mode_switched) {
+          // Add a system message about mode switch
+          addMessage('assistant', '---\n\n🎉 **Assessment Complete!** Your learning profile has been created.\n\nYou can now ask me questions about probability and statistics, and I\'ll personalize my responses based on your knowledge level.\n\n---', {
+            agent: 'System',
+            isSystemMessage: true,
+            modeSwitch: true
+          })
           setMode('orchestrator')
           fetchSessionInfo()
         }
         break
 
+      case 'tool_message':
+        // Intermediate message from tool execution
+        // Typing state is managed by typing/typing_off messages
+        
+        parts.forEach(part => {
+          addMessage(data.role, part, data.metadata);
+        });
+
+        // Check if mode switched (onboarding complete)
+        if (data.metadata?.mode_switched) {
+          // Add a system message about mode switch
+          setTimeout(() => {
+            addMessage('assistant', '---\n\n🎉 **Assessment Complete!** Your learning profile has been created.\n\nYou can now ask me questions about probability and statistics, and I\'ll personalize my responses based on your knowledge level.\n\n---', {
+              agent: 'System',
+              isSystemMessage: true,
+              modeSwitch: true
+            })
+          }, 500)
+          setMode('orchestrator')
+          fetchSessionInfo()
+        }
+        break
+
+      case 'done':
+        // All tool messages sent, clear typing indicator
+        setIsTyping(false)
+        break
+
       case 'typing':
         setIsTyping(true)
+        break
+
+      case 'typing_off':
+        setIsTyping(false)
         break
 
       case 'error':

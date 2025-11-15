@@ -134,10 +134,19 @@ class SessionManager:
     def store_profile(self, user_id: str, profile: UserProfile):
         """Store user profile in memory."""
         self.user_profiles[user_id] = profile
+        logger.info(f"💾 Profile stored for user {user_id}: {profile.competence_level} level")
     
     def get_profile(self, user_id: str) -> Optional[UserProfile]:
         """Get user profile."""
         return self.user_profiles.get(user_id)
+    
+    def has_profile(self, user_id: str) -> bool:
+        """Check if user has a profile."""
+        return user_id in self.user_profiles
+    
+    def get_all_profiles(self) -> Dict[str, UserProfile]:
+        """Get all stored profiles (for orchestrator/agent use)."""
+        return self.user_profiles.copy()
 
 # Global session manager
 session_manager = SessionManager()
@@ -365,13 +374,17 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
     
     Supports streaming responses from agents.
     """
+    logger.info(f"🔌 WebSocket connection attempt for session: {session_id}")
+    
     session = session_manager.get_session(session_id)
     
     if not session:
+        logger.warning(f"❌ WebSocket rejected - session not found: {session_id}")
         await websocket.close(code=1008, reason="Session not found")
         return
     
     await websocket_manager.connect(session_id, websocket)
+    logger.info(f"✅ WebSocket connected for session: {session_id} (mode: {session['mode']})")
     
     try:
         # Send welcome message
@@ -407,7 +420,8 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         user_id=user_id,
                         session_id=session_id,
                         message=message_text,
-                        session=session
+                        session=session,
+                        websocket_manager=websocket_manager  # Pass WebSocket manager for streaming
                     )
                 else:
                     response_text, metadata = await handle_orchestrator(
@@ -416,16 +430,25 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         session=session
                     )
                 
-                # Add to history
-                session_manager.add_message(session_id, "assistant", response_text)
+                # Add to history (only if response is not empty)
+                if response_text and response_text.strip():
+                    session_manager.add_message(session_id, "assistant", response_text)
                 
-                # Send response
-                await websocket_manager.send_message(session_id, {
-                    "type": "message",
-                    "role": "assistant",
-                    "content": response_text,
-                    "metadata": metadata
-                })
+                # Send response (only if response is not empty)
+                if response_text and response_text.strip():
+                    await websocket_manager.send_message(session_id, {
+                        "type": "message",
+                        "role": "assistant",
+                        "content": response_text,
+                        "metadata": metadata
+                    })
+                elif metadata.get("tools_sent_messages"):
+                    logger.info("ℹ️  Tools sent messages directly, skipping final response")
+                    # Send a done signal to clear typing indicator
+                    await websocket_manager.send_message(session_id, {
+                        "type": "done",
+                        "metadata": metadata
+                    })
                 
             except Exception as e:
                 await websocket_manager.send_message(session_id, {
@@ -434,20 +457,28 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 })
     
     except WebSocketDisconnect:
+        logger.info(f"🔌 WebSocket disconnected normally: {session_id}")
         websocket_manager.disconnect(session_id)
     except Exception as e:
-        print(f"WebSocket error: {e}")
+        logger.error(f"❌ WebSocket error for session {session_id}: {e}")
         websocket_manager.disconnect(session_id)
 
 # ============================================================================
 # AGENT HANDLERS
 # ============================================================================
 
-async def handle_onboarding(user_id: str, session_id: str, message: str, session: dict) -> tuple:
+async def handle_onboarding(
+    user_id: str, 
+    session_id: str, 
+    message: str, 
+    session: dict,
+    websocket_manager: Optional['ConnectionManager'] = None
+) -> tuple:
     """
     Handle onboarding agent interaction.
     
     Direct connection to onboarding agent for quiz flow.
+    Sends intermediate messages for each tool call if WebSocket is available.
     """
     import logging
     logger = logging.getLogger(__name__)
@@ -465,6 +496,16 @@ async def handle_onboarding(user_id: str, session_id: str, message: str, session
         try:
             agent = OnboardingAgent()
             logger.info("✅ OnboardingAgent created successfully")
+            
+            # Set up profile callback to automatically store profiles
+            def profile_callback(uid: str, profile: UserProfile):
+                logger.info(f"📥 Profile callback triggered for user {uid}")
+                session_manager.store_profile(uid, profile)
+                logger.info(f"✅ Profile stored in orchestrator memory: {profile.competence_level} level")
+            
+            agent.tools_instance.set_profile_callback(profile_callback)
+            logger.info("🔗 Profile callback registered")
+            
             agent_state["onboarding_agent"] = agent
             agent_state["quiz_started"] = False
             session_manager.update_session(session_id, {"agent_state": agent_state})
@@ -476,34 +517,84 @@ async def handle_onboarding(user_id: str, session_id: str, message: str, session
     
     agent = agent_state["onboarding_agent"]
     
+    # Set up tool callback to send intermediate messages
+    # This must be done before each chat call to ensure it's registered
+    if websocket_manager:
+        async def send_tool_message(msg: str):
+            """Send tool output as separate WebSocket message."""
+            try:
+                # Turn off typing indicator before showing tool message
+                await websocket_manager.send_message(session_id, {
+                    "type": "typing_off"
+                })
+                
+                # Send the tool message
+                await websocket_manager.send_message(session_id, {
+                    "type": "tool_message",
+                    "role": "assistant",
+                    "content": msg,
+                    "metadata": {"source": "tool_output", "timestamp": datetime.now().isoformat()}
+                })
+                logger.info(f"📤 Sent tool message via WebSocket ({len(msg)} chars)")
+                
+                # Brief pause for readability
+                await asyncio.sleep(0.1)
+                
+            except Exception as e:
+                logger.error(f"❌ Failed to send tool message: {e}")
+        
+        # Register the async callback
+        agent.tools_instance.set_websocket_callback(send_tool_message)
+        logger.info("🔗 WebSocket callback registered for tool messages")
+    
     # Check if this is the start
     if not agent_state.get("quiz_started"):
         agent_state["quiz_started"] = True
         session_manager.update_session(session_id, {"agent_state": agent_state})
+
+        # Send the initial prompt to start the quiz
+        response = agent.assess_user(user_id=user_id, total_questions=session.get("total_questions"))
         logger.info("🎬 Quiz session started")
-    
+        metadata = {
+            "agent": "OnboardingAgent",
+            "quiz_active": True,
+            "profile_complete": False
+        }
+        return response, metadata
+
     # Send message to agent
     try:
-        response = agent.chat(message, user_id=user_id)
+        logger.info(f"📤 Sending message to agent: {message[:50]}...")
+        response = await agent.chat_async(message, user_id=user_id)
+        logger.info(f"📥 Received response from agent ({len(str(response))} chars)")
     except Exception as e:
-        logger.error(f"❌ Error calling agent.chat(): {e}")
+        logger.error(f"❌ Error calling agent.chat_async(): {e}")
         import traceback
         logger.error(f"Traceback:\n{traceback.format_exc()}")
         raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
     
-    # Check if profile was generated (quiz complete)
+    # Check if profile was generated
+    # The callback should have automatically stored it if finalize_assessment was called
     profile = session_manager.get_profile(user_id)
+    
     if not profile:
-        # Try to get profile from response if quiz is complete
-        # This would be implementation-specific
+        # Also check the tools instance directly in case callback didn't trigger
+        last_profile = agent.tools_instance.get_last_profile()
+        if last_profile and last_profile.user_id == user_id:
+            session_manager.store_profile(user_id, last_profile)
+            profile = last_profile
+            logger.info(f"✅ Profile retrieved from tools and stored: {profile.competence_level} level")
+    
+    if not profile:
         logger.info("ℹ️  No profile found yet (quiz in progress)")
     else:
-        logger.info(f"✅ Profile found: {profile.competence_level}")
+        logger.info(f"✅ Profile available: {profile.competence_level} level")
     
     metadata = {
         "agent": "OnboardingAgent",
         "quiz_active": True,
-        "profile_complete": profile is not None
+        "profile_complete": profile is not None,
+        "tools_sent_messages": websocket_manager is not None  # Flag that tools already sent output
     }
     
     # If profile complete, switch mode
@@ -513,13 +604,19 @@ async def handle_onboarding(user_id: str, session_id: str, message: str, session
         metadata["message"] = "Onboarding complete! Switching to general chat."
         logger.info("🎉 Onboarding complete! Switching to orchestrator mode")
     
-    return response, metadata
+    # If tools sent messages via WebSocket, return minimal response
+    # Otherwise return the full agent response
+    if websocket_manager:
+        return "", metadata  # Empty response since tools already sent everything
+    else:
+        return response, metadata
 
 async def handle_orchestrator(user_id: str, message: str, session: dict) -> tuple:
     """
     Handle orchestrator interaction.
     
     Routes message through orchestrator which delegates to appropriate agents.
+    Other agents can access user profile from session_manager for personalization.
     """
     # Check if user has profile
     profile = session_manager.get_profile(user_id)
@@ -538,14 +635,28 @@ async def handle_orchestrator(user_id: str, message: str, session: dict) -> tupl
         )
     
     # TODO: Implement actual orchestrator agent
-    # For now, return a placeholder
-    response = f"[Orchestrator would process: {message}]\n\n"
-    response += f"Your profile: {profile.competence_level} level\n"
-    response += f"Recommended: {profile.recommended_starting_level}"
+    # For now, return a placeholder showing profile access
+    response = f"[Orchestrator processing message: {message}]\n\n"
+    response += f"📊 Your Learning Profile:\n"
+    response += f"  • Competence Level: {profile.competence_level}\n"
+    response += f"  • Ability Score: {profile.ability_score:.2f}\n"
+    response += f"  • Overall Accuracy: {profile.overall_accuracy:.1f}%\n"
+    response += f"  • Recommended Starting Level: {profile.recommended_starting_level}\n"
+    response += f"  • Learning Pace: {profile.learning_pace}\n\n"
+    
+    if profile.strengths:
+        response += f"💪 Strengths: {', '.join(profile.strengths)}\n"
+    if profile.weaknesses:
+        response += f"📚 Areas for Improvement: {', '.join(profile.weaknesses)}\n\n"
+    
+    response += "ℹ️ This profile is now available to all agents for personalized learning!"
     
     metadata = {
         "agent": "Orchestrator",
-        "user_competence": profile.competence_level
+        "user_competence": profile.competence_level,
+        "ability_score": profile.ability_score,
+        "recommended_level": profile.recommended_starting_level,
+        "profile_available": True
     }
     
     return response, metadata

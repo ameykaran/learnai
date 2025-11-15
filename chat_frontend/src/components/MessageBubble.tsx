@@ -13,6 +13,37 @@ interface MessageBubbleProps {
 export default function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.role === 'user'
   const agent = message.metadata?.agent
+  const isSystemMessage = message.metadata?.isSystemMessage
+  const isModeSwitch = message.metadata?.modeSwitch
+
+  // Special styling for system/mode switch messages
+  if (isSystemMessage || isModeSwitch) {
+    return (
+      <div className="flex justify-center my-6 message-enter">
+        <div className="max-w-3xl w-full px-6 py-4 rounded-xl bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 shadow-lg">
+          <div className="prose prose-sm max-w-none text-center">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeKatex]}
+              components={{
+                hr: () => (
+                  <hr className="border-t-2 border-green-300 my-3" />
+                ),
+                p: ({ children }) => (
+                  <p className="text-gray-800 font-medium">{children}</p>
+                ),
+                strong: ({ children }) => (
+                  <strong className="text-green-700 font-bold">{children}</strong>
+                ),
+              }}
+            >
+              {message.content}
+            </ReactMarkdown>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div

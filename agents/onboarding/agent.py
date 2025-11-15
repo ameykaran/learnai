@@ -7,7 +7,10 @@ from strands import Agent
 from strands.models import BedrockModel
 from typing import Optional
 import sys
+import os
+import logging
 from pathlib import Path
+# from strands.models.gemini import GeminiModel
 
 # Add shared module to path
 shared_path = Path(__file__).parent.parent.parent / "shared"
@@ -20,12 +23,14 @@ from .tools import (
     get_next_question,
     submit_answer,
     get_progress,
-    finalize_assessment
+    finalize_assessment,
+    onboarding_tools  # Import the tools instance
 )
 from shared.models import UserProfile
-import logging
 
+# Set up logger
 logger = logging.getLogger(__name__)
+
 
 class OnboardingAgent:
     """
@@ -47,32 +52,75 @@ class OnboardingAgent:
         self.agent = self._create_agent()
         self.current_user_id = None
         self.current_session_id = None
+        self.tools_instance = onboarding_tools  # Expose tools instance for profile access
     
     def _create_agent(self) -> Agent:
         """Create and configure the Strands agent."""
-        
-        # Create a Bedrock model that supports multimodal inputs
-        bedrock_model = BedrockModel(
-            model_id="us.anthropic.claude-sonnet-4-20250514-v1:0"
+        # model = GeminiModel(
+        #     client_args={
+        #         "api_key": os.getenv("GEMINI_API_KEY")
+        #     },
+        #     model_id=self.config.MODEL_ID,
+        # )
+
+        # Create a configured Bedrock model
+        model = BedrockModel(
+            model_id="us.anthropic.claude-sonnet-4-20250514-v1:0",
+            temperature=0.3,
+            top_p=0.8,
+            stop_sequences=["###", "END"],
+            streaming=False,
         )
 
-        # Create agent with tools and instructions
-        agent = Agent(
-            name=self.config.AGENT_NAME,
-            model=bedrock_model,
-            system_prompt=AGENT_INSTRUCTIONS,
-            tools=[
-                start_assessment,
-                get_next_question,
-                submit_answer,
-                get_progress,
-                finalize_assessment
-            ],
-            description=self.config.AGENT_DESCRIPTION
-        )
-        
+        try:
+            agent = Agent(
+                    name=self.config.AGENT_NAME,
+                    model=model,
+                    system_prompt=AGENT_INSTRUCTIONS,
+                    tools=[
+                        start_assessment,
+                        get_next_question,
+                        submit_answer,
+                        get_progress,
+                        finalize_assessment,
+                    ],
+                    description=self.config.AGENT_DESCRIPTION,
+                )
+            logger.info("✅ Agent created successfully with 5 tools")
+        except Exception as e:
+            logger.error(f"❌ Failed to create Agent/BedrockModel: {e}")
+            raise
+
         return agent
-
+    
+    def assess_user(self, user_id: str, total_questions: Optional[int] = None) -> UserProfile:
+        """
+        Run a complete assessment for a user.
+        
+        This is the main entry point for the orchestrator to initiate onboarding.
+        The agent will guide the user through the assessment and return their profile.
+        
+        Args:
+            user_id: Unique identifier for the user
+            total_questions: Optional override for number of questions
+        
+        Returns:
+            UserProfile object to be stored in orchestrator memory
+        """
+        self.current_user_id = user_id
+        
+        # Initial message to start assessment
+        initial_message = f"Please start an assessment for user {user_id}"
+        if total_questions:
+            initial_message += f" with {total_questions} questions"
+        
+        # Run the agent
+        response = self.chat(initial_message)
+        
+        # Return the generated profile (this would be extracted from agent conversation)
+        # In practice, the orchestrator would monitor tool calls and extract the profile
+        return response
+    
     def chat(self, message: str, **kwargs) -> str:
         """
         Chat interface for interactive assessment.
@@ -85,7 +133,7 @@ class OnboardingAgent:
             Agent's response
         """
         response = self.agent(message, **kwargs)
-        return response
+        return str(response)
     
     async def chat_async(self, message: str, **kwargs) -> str:
         """
@@ -99,7 +147,7 @@ class OnboardingAgent:
             Agent's response
         """
         response = await self.agent.invoke_async(message, **kwargs)
-        return response
+        return str(response)
     
     def __call__(self, message: str, **kwargs) -> str:
         """

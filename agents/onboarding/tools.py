@@ -22,6 +22,15 @@ from models import QuizSession, User
 from adaptive_algorithm import ImprovedAdaptiveQuizAlgorithm
 from shared.models import UserProfile
 
+# Import prompts
+from .prompts import (
+    USER_GREETING,
+    COMPLETION_MESSAGE,
+    get_question_prompt,
+    get_feedback_prompt,
+    get_results_prompt
+)
+
 
 class OnboardingTools:
     """
@@ -33,6 +42,47 @@ class OnboardingTools:
         """Initialize tools with database connection."""
         create_tables()  # Ensure tables exist
         self.current_session = None
+        self.last_profile = None  # Store the last generated profile for retrieval
+        self.profile_callback = None  # Optional callback for profile storage
+        self.websocket_callback = None  # Optional callback for sending intermediate messages
+    
+    def set_websocket_callback(self, callback):
+        """
+        Set a callback function to send intermediate messages via WebSocket.
+        The callback should accept a message string and can be sync or async.
+        """
+        self.websocket_callback = callback
+    
+    def _send_websocket_message(self, message: str):
+        """Send a message via WebSocket if callback is set."""
+        if self.websocket_callback:
+            try:
+                import asyncio
+                import inspect
+                
+                # Check if callback is async
+                if inspect.iscoroutinefunction(self.websocket_callback):
+                    # Create task in event loop
+                    try:
+                        loop = asyncio.get_event_loop()
+                        if loop.is_running():
+                            # If loop is running, create task
+                            asyncio.create_task(self.websocket_callback(message))
+                        else:
+                            # If no loop, run it
+                            loop.run_until_complete(self.websocket_callback(message))
+                    except RuntimeError:
+                        # No event loop, create new one
+                        asyncio.run(self.websocket_callback(message))
+                else:
+                    # Sync callback
+                    self.websocket_callback(message)
+                    
+                print(f"✅ Sent WebSocket message: {message[:100]}...")
+            except Exception as e:
+                print(f"⚠️  WebSocket callback failed: {e}")
+                import traceback
+                traceback.print_exc()
     
     @tool
     def start_assessment(self, user_id: str, total_questions: Optional[int] = None) -> dict:
@@ -89,12 +139,21 @@ class OnboardingTools:
             
             db.close()
             
+            # Format greeting message
+            greeting = USER_GREETING.format(total_questions=quiz_session.total_questions)
+            
+            # Send greeting immediately via WebSocket
+            print(f"🚀 Attempting to send greeting via WebSocket...")
+            self._send_websocket_message(greeting)
+            print(f"✅ Greeting sent successfully")
+            
             return {
                 "status": "success",
                 "session_id": session_id,
                 "user_id": user_id,
                 "total_questions": quiz_session.total_questions,
-                "message": f"Assessment started! You will answer {quiz_session.total_questions} adaptive questions.",
+                "greeting": greeting,
+                "message": f"Assessment ready with {quiz_session.total_questions} questions.",
                 "first_question": first_question
             }
             
@@ -134,7 +193,7 @@ class OnboardingTools:
                     db.close()
                     return {
                         "status": "completed",
-                        "message": "Assessment complete! Use finalize_assessment to get results."
+                        "message": COMPLETION_MESSAGE
                     }
                 else:
                     db.close()
@@ -143,11 +202,32 @@ class OnboardingTools:
                         "message": "No more questions available or session not found."
                     }
             
+            # Get quiz session to determine question number
+            quiz_session = db.query(QuizSession).filter(
+                QuizSession.session_id == session_id
+            ).first()
+            
+            question_num = quiz_session.current_question_number if quiz_session else 1
+            total_questions = quiz_session.total_questions if quiz_session else 25
+            
+            # Format question using prompt template
+            formatted_question = get_question_prompt(
+                question=question,
+                question_num=question_num,
+                total=total_questions
+            )
+            
+            # Send question immediately via WebSocket
+            self._send_websocket_message(formatted_question)
+            
             db.close()
             
             return {
                 "status": "success",
-                "question": question
+                "question": question,
+                "formatted_question": formatted_question,
+                "question_number": question_num,
+                "total_questions": total_questions
             }
             
         except Exception as e:
@@ -191,23 +271,33 @@ class OnboardingTools:
                     "message": result["error"]
                 }
             
+            # Get question explanation if available
+            explanation = result.get("explanation", None)
+            
+            # Format feedback using prompt template
+            feedback = get_feedback_prompt(
+                is_correct=result["is_correct"],
+                correct_answer=result["correct_answer"],
+                explanation=explanation
+            )
+            
+            # Send feedback immediately via WebSocket
+            self._send_websocket_message(feedback)
+            
             # Prepare response
             response = {
                 "status": "success",
                 "is_correct": result["is_correct"],
                 "correct_answer": result["correct_answer"],
-                "is_quiz_complete": result["is_quiz_complete"]
+                "is_quiz_complete": result["is_quiz_complete"],
+                "feedback": feedback
             }
-            
-            # Add feedback message
-            if result["is_correct"]:
-                response["feedback"] = "✓ Correct! Well done."
-            else:
-                response["feedback"] = f"✗ Incorrect. The correct answer was {result['correct_answer']}."
             
             # If quiz is complete, indicate next step
             if result["is_quiz_complete"]:
-                response["message"] = "Assessment complete! Use finalize_assessment to generate your profile."
+                completion_msg = COMPLETION_MESSAGE
+                self._send_websocket_message(completion_msg)
+                response["message"] = completion_msg
                 response["competence_level"] = result.get("competence_level")
             
             db.close()
@@ -310,13 +400,30 @@ class OnboardingTools:
                 session_id=session_id
             )
             
+            # Store profile for retrieval
+            self.last_profile = user_profile
+            
+            # Call callback if registered (for orchestrator to capture profile)
+            if self.profile_callback:
+                try:
+                    self.profile_callback(user_id, user_profile)
+                except Exception as e:
+                    print(f"Warning: Profile callback failed: {e}")
+            
+            # Get profile summary and format with results prompt
+            profile_summary = user_profile.get_summary()
+            formatted_results = get_results_prompt(profile_summary)
+            
+            # Send results immediately via WebSocket
+            self._send_websocket_message(formatted_results)
+            
             db.close()
             
             return {
                 "status": "success",
-                "message": "Assessment finalized successfully!",
+                "message": formatted_results,
                 "user_profile": user_profile.to_dict(),
-                "summary": user_profile.get_summary()
+                "summary": profile_summary
             }
             
         except Exception as e:
@@ -324,6 +431,24 @@ class OnboardingTools:
                 "status": "error",
                 "message": f"Failed to finalize assessment: {str(e)}"
             }
+    
+    def get_last_profile(self) -> Optional[UserProfile]:
+        """
+        Get the last generated profile.
+        Used by orchestrator to retrieve profile after finalization.
+        """
+        return self.last_profile
+    
+    def set_profile_callback(self, callback):
+        """
+        Set a callback function to be called when a profile is generated.
+        The callback should accept (user_id: str, profile: UserProfile).
+        """
+        self.profile_callback = callback
+    
+    def clear_profile(self):
+        """Clear the stored profile."""
+        self.last_profile = None
 
 
 # Create instance for easy import
