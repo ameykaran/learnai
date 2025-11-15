@@ -50,7 +50,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onSubmit, isSubmi
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-4">
             <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
-              Question {question.question_number}/25
+              Question {question.question_number}/{process.env.NEXT_PUBLIC_ONBOARDING_QUESTIONS}
             </span>
             {/* <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getDifficultyColor(question.difficulty)}`}>
               {question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}

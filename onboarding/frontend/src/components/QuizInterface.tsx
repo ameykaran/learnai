@@ -49,6 +49,7 @@ interface QuizInterfaceProps {
 const QuizInterface: React.FC<QuizInterfaceProps> = ({ onReset }) => {
   const [sessionId, setSessionId] = useState<string | null>(null)
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null)
+  const [totalQuestions, setTotalQuestions] = useState<number>(25) // Default value
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -56,9 +57,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ onReset }) => {
   const [showFeedback, setShowFeedback] = useState(false)
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(null)
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null)
-
-  const API_BASE_URL = 'http://localhost:8001'
-
+  const API_BASE_URL: string = process.env.NEXT_PUBLIC_API_BASE_URL
   useEffect(() => {
     startQuiz()
   }, [])
@@ -83,6 +82,9 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ onReset }) => {
       const data = await response.json()
       setSessionId(data.session_id)
       setCurrentQuestion(data.question)
+      if (data.total_questions) {
+        setTotalQuestions(data.total_questions)
+      }
     } catch (err) {
       setError('Failed to start quiz. Please make sure the backend is running.')
     } finally {
@@ -115,6 +117,11 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ onReset }) => {
       }
 
       const data = await response.json()
+
+      // Update total questions if provided
+      if (data.total_questions) {
+        setTotalQuestions(data.total_questions)
+      }
 
       // Show feedback
       setLastAnswerCorrect(data.is_correct)
@@ -198,7 +205,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ onReset }) => {
         <div className="max-w-4xl mx-auto">
           <ProgressBar
             currentQuestion={currentQuestion?.question_number || 1}
-            totalQuestions={25}
+            totalQuestions={totalQuestions}
           />
 
           {showFeedback ? (

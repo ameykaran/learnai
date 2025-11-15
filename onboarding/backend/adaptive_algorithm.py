@@ -1,11 +1,16 @@
 import math
 import random
 import logging
+import os
 from typing import List, Dict, Tuple, Optional
 from datetime import datetime
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from models import Question, QuizSession, UserResponse
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging for ability trace debugging
 logging.basicConfig(level=logging.INFO)
@@ -23,7 +28,7 @@ class ImprovedAdaptiveQuizAlgorithm:
     INITIAL_ABILITY = 0.25  # Starting ability estimate
     MIN_MEDIUM = 4  # Minimum medium questions to attempt
     MIN_DIFFICULT = 2  # Minimum difficult questions to attempt
-    TOTAL_QUESTIONS = 25  # Total quiz length
+    TOTAL_QUESTIONS = int(os.getenv('ONBOARDING_TOTAL_QUESTIONS', '25'))  # Total quiz length (configurable via env var)
 
     # Difficulty score mapping
     DIFFICULTY_SCORES = {

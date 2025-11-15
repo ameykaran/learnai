@@ -5,6 +5,25 @@
 - ✅ Frontend components created and properly configured
 - ✅ Backend API endpoints tested and working
 - ✅ Database populated with 73+ probability questions
+- ✅ Total questions now configurable via environment variable
+
+## ⚙️ CONFIGURATION (Optional):
+
+Before running the application, you can customize the number of questions:
+
+**Backend Configuration:**
+```bash
+cd /home/sree/random/agentSME/chunker/majorprojectfull/lma-major-project-moya-moye/onboarding/backend
+cp .env.example .env
+# Edit .env and change ONBOARDING_TOTAL_QUESTIONS (default is 25)
+```
+
+Example `.env` settings:
+- `ONBOARDING_TOTAL_QUESTIONS=25` - Default assessment (25 questions)
+- `ONBOARDING_TOTAL_QUESTIONS=15` - Quick assessment (15 questions)
+- `ONBOARDING_TOTAL_QUESTIONS=30` - Extended assessment (30 questions)
+
+**Note:** After changing `ONBOARDING_TOTAL_QUESTIONS`, delete `quiz.db` if you want existing sessions to reflect the new value.
 
 ## 📋 SIMPLE STARTUP INSTRUCTIONS:
 
@@ -70,9 +89,9 @@ npm run dev
 
 1. Click "Start Quiz"
 2. Answer questions (starts with easy, adapts based on performance)
-3. Complete 25 questions
+3. Complete the configured number of questions (default: 25)
 4. See your competence level: Easy/Medium/Difficult
 5. View detailed performance breakdown
 6. Option to retake the quiz
 
-The application is now fully functional with the CORS issue resolved!
+The application is now fully functional with the CORS issue resolved and configurable quiz length!

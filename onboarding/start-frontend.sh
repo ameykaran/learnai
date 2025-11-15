@@ -4,7 +4,7 @@ echo "🔧 Starting Adaptive Probability Quiz Frontend..."
 
 # Kill any existing processes
 echo "Stopping existing frontend processes..."
-pkill -f "npm.*dev" 2>/dev/null || true
+pkill -f "pnpm.*dev" 2>/dev/null || true
 pkill -f "next" 2>/dev/null || true
 sleep 2
 
@@ -15,8 +15,8 @@ cd "$(dirname "$0")/frontend"
 echo "Cleaning Next.js cache..."
 rm -rf .next
 echo "Installing/checking dependencies..."
-npm install --silent
+pnpm install --silent
 
 # Start the frontend
 echo "🚀 Starting Next.js development server..."
-npm run dev
+pnpm run dev

@@ -43,7 +43,12 @@ A self-adaptive quiz application built with Next.js frontend and FastAPI backend
 cd backend
 ```
 
-2. Install dependencies (you may need --break-system-packages flag):
+2. (Optional) Configure quiz settings:
+```bash
+# ONBOARDING_TOTAL_QUESTIONS=25  # Default is 25, change as needed
+```
+
+3. Install dependencies (you may need --break-system-packages flag):
 ```bash
 pip install -r requirements.txt --break-system-packages
 ```
@@ -60,6 +65,18 @@ python run.py
 ```
 
 The backend will be available at http://localhost:8000
+
+## Configuration
+
+### Environment Variables
+
+The quiz behavior can be customized using environment variables. Create a `.env` file in the `backend` directory:
+
+- `ONBOARDING_TOTAL_QUESTIONS`: Total number of questions to assess (default: 25)
+  - Example: `ONBOARDING_TOTAL_QUESTIONS=30` for a longer assessment
+  - Example: `ONBOARDING_TOTAL_QUESTIONS=15` for a shorter assessment
+
+**Note**: After changing `ONBOARDING_TOTAL_QUESTIONS`, you may need to delete the existing `quiz.db` file to ensure new quiz sessions use the updated value.
 
 ### Frontend Setup
 

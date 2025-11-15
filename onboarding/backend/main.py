@@ -100,6 +100,7 @@ async def start_quiz(request: StartQuizRequest, db: Session = Depends(get_db)):
         return {
             "session_id": session_id,
             "question": first_question,
+            "total_questions": quiz_session.total_questions,
             "message": "Quiz started successfully"
         }
 
@@ -134,6 +135,7 @@ async def get_current_question(session_id: str, db: Session = Depends(get_db)):
         return {
             "session_id": session_id,
             "question": question,
+            "total_questions": quiz_session.total_questions,
             "message": "Question retrieved successfully"
         }
 
@@ -157,11 +159,17 @@ async def submit_answer(request: SubmitAnswerRequest, db: Session = Depends(get_
         if "error" in result:
             raise HTTPException(status_code=400, detail=result["error"])
 
+        # Get quiz session to retrieve total_questions
+        quiz_session = db.query(QuizSession).filter(
+            QuizSession.session_id == request.session_id
+        ).first()
+
         response_data = {
             "session_id": request.session_id,
             "is_correct": result["is_correct"],
             "correct_answer": result["correct_answer"],
             "is_quiz_complete": result["is_quiz_complete"],
+            "total_questions": quiz_session.total_questions if quiz_session else 25,
             "message": "Answer submitted successfully"
         }
 

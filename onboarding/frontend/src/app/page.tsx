@@ -35,10 +35,10 @@ export default function Home() {
             <h2 className="text-xl font-semibold text-blue-900 mb-4">How it works:</h2>
             <div className="text-left space-y-3 text-blue-800">
               <div className="flex items-start">
-                <span className="bg-blue-200 text-blue-900 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
-                <p>Answer 25 multiple-choice questions about probability</p>
-              </div>
               <div className="flex items-start">
+                <span className="bg-blue-200 text-blue-900 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
+                <p>Answer {process.env.NEXT_PUBLIC_ONBOARDING_QUESTIONS ?? '10'} multiple-choice questions about probability</p>
+              </div>
                 <span className="bg-blue-200 text-blue-900 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
                 <p>Questions adapt to your performance (easy → medium → difficult)</p>
               </div>

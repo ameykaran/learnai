@@ -2,6 +2,11 @@ from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, Bool
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 Base = declarative_base()
 
@@ -37,7 +42,7 @@ class QuizSession(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     session_id = Column(String(100), unique=True, nullable=False)
     current_question_number = Column(Integer, default=1)
-    total_questions = Column(Integer, default=25)
+    total_questions = Column(Integer, default=int(os.getenv('ONBOARDING_TOTAL_QUESTIONS', '25')))
 
     # New adaptive algorithm fields
     ability = Column(Float, default=0.25)  # Current ability estimate [0,1]
