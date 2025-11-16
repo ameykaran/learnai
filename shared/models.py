@@ -185,7 +185,7 @@ class UserProfile:
             questions_answered=total_correct,
             quiz_history=[],  # Can be populated if needed
             onboarding_completed=True,
-            onboarding_completed_at=datetime.utcnow()
+            onboarding_completed_at=datetime.now()
         )
     
     def get_summary(self) -> str:
@@ -210,4 +210,273 @@ Recommendations:
 - Starting Level: {self.recommended_starting_level}
 - Learning Pace: {self.learning_pace}
 - Focus Topics: {', '.join(self.suggested_topics[:3]) if self.suggested_topics else 'Continue with standard curriculum'}
+"""
+
+
+# ============================================================================
+# PROGRESS TRACKING & REPORTING MODELS
+# ============================================================================
+
+@dataclass
+class ProgressSnapshot:
+    """
+    Represents a snapshot of student progress at a specific point in time.
+    Used for time-series analysis and trend identification.
+    """
+    user_id: str
+    timestamp: datetime
+    overall_accuracy: float  # 0-100
+    ability_score: float  # 0-1
+    competence_level: str  # easy/medium/difficult
+    
+    # Difficulty breakdown
+    easy_accuracy: float = 0.0
+    medium_accuracy: float = 0.0
+    difficult_accuracy: float = 0.0
+    
+    # Volume metrics
+    total_questions_attempted: int = 0
+    total_questions_correct: int = 0
+    
+    # Topic-specific
+    topic_scores: Dict[str, float] = field(default_factory=dict)
+    
+    # Activity
+    learning_time_minutes: float = 0.0
+    quiz_attempts_count: int = 0
+    
+    snapshot_type: str = "daily"  # daily, weekly, monthly
+    
+    def to_dict(self) -> dict:
+        """Convert to dictionary."""
+        data = asdict(self)
+        data['timestamp'] = self.timestamp.isoformat()
+        return data
+    
+    @classmethod
+    def from_dict(cls, data: dict) -> "ProgressSnapshot":
+        """Create from dictionary."""
+        if isinstance(data.get('timestamp'), str):
+            data['timestamp'] = datetime.fromisoformat(data['timestamp'])
+        return cls(**data)
+
+
+@dataclass
+class QuizAttempt:
+    """
+    Represents a single quiz attempt for historical tracking.
+    """
+    user_id: str
+    quiz_session_id: str
+    attempted_at: datetime
+    
+    # Performance
+    score: float  # 0-100
+    total_questions: int
+    correct_answers: int
+    
+    # Difficulty distribution
+    easy_correct: int = 0
+    easy_total: int = 0
+    medium_correct: int = 0
+    medium_total: int = 0
+    difficult_correct: int = 0
+    difficult_total: int = 0
+    
+    # Details
+    topics: List[str] = field(default_factory=list)
+    topic_scores: Dict[str, float] = field(default_factory=dict)
+    duration_minutes: float = 0.0
+    quiz_type: str = "practice"  # onboarding, practice, assessment
+    
+    def to_dict(self) -> dict:
+        """Convert to dictionary."""
+        data = asdict(self)
+        data['attempted_at'] = self.attempted_at.isoformat()
+        return data
+    
+    @classmethod
+    def from_dict(cls, data: dict) -> "QuizAttempt":
+        """Create from dictionary."""
+        if isinstance(data.get('attempted_at'), str):
+            data['attempted_at'] = datetime.fromisoformat(data['attempted_at'])
+        return cls(**data)
+
+
+@dataclass
+class TopicMasteryRecord:
+    """
+    Tracks mastery level for a specific topic over time.
+    """
+    user_id: str
+    topic: str
+    mastery_level: float  # 0-1
+    confidence_score: float  # 0-1
+    
+    attempts: int = 0
+    correct_count: int = 0
+    total_count: int = 0
+    
+    first_attempted: Optional[datetime] = None
+    last_attempted: Optional[datetime] = None
+    
+    mastery_history: List[Dict] = field(default_factory=list)  # [{"date": ..., "level": ...}, ...]
+    status: str = "learning"  # learning, mastered, needs_review
+    
+    def to_dict(self) -> dict:
+        """Convert to dictionary."""
+        data = asdict(self)
+        if self.first_attempted:
+            data['first_attempted'] = self.first_attempted.isoformat()
+        if self.last_attempted:
+            data['last_attempted'] = self.last_attempted.isoformat()
+        return data
+    
+    @classmethod
+    def from_dict(cls, data: dict) -> "TopicMasteryRecord":
+        """Create from dictionary."""
+        if isinstance(data.get('first_attempted'), str):
+            data['first_attempted'] = datetime.fromisoformat(data['first_attempted'])
+        if isinstance(data.get('last_attempted'), str):
+            data['last_attempted'] = datetime.fromisoformat(data['last_attempted'])
+        return cls(**data)
+    
+    def get_accuracy(self) -> float:
+        """Calculate accuracy percentage."""
+        if self.total_count == 0:
+            return 0.0
+        return (self.correct_count / self.total_count) * 100
+
+
+@dataclass
+class LearningReport:
+    """
+    Comprehensive learning report for a user over a time period.
+    """
+    user_id: str
+    generated_at: datetime
+    period_start: datetime
+    period_end: datetime
+    
+    # Overall metrics
+    overall_accuracy: float
+    ability_score: float
+    improvement_rate: float  # Percentage improvement over period
+    
+    # Activity summary
+    total_learning_time_minutes: float
+    total_quizzes_taken: int
+    total_questions_attempted: int
+    total_questions_correct: int
+    
+    # Performance by difficulty
+    easy_accuracy: float = 0.0
+    medium_accuracy: float = 0.0
+    difficult_accuracy: float = 0.0
+    
+    # Topic analysis
+    strongest_topics: List[str] = field(default_factory=list)
+    weakest_topics: List[str] = field(default_factory=list)
+    topics_mastered: List[str] = field(default_factory=list)
+    topics_in_progress: List[str] = field(default_factory=list)
+    
+    # Trends
+    progress_trend: str = "stable"  # improving, declining, stable
+    consistency_score: float = 0.0  # 0-1, how consistent performance is
+    
+    # Recommendations
+    recommended_focus_areas: List[str] = field(default_factory=list)
+    suggested_next_steps: List[str] = field(default_factory=list)
+    
+    # Historical data
+    progress_snapshots: List[ProgressSnapshot] = field(default_factory=list)
+    quiz_history: List[QuizAttempt] = field(default_factory=list)
+    topic_mastery: Dict[str, TopicMasteryRecord] = field(default_factory=dict)
+    
+    def to_dict(self) -> dict:
+        """Convert to dictionary."""
+        data = asdict(self)
+        data['generated_at'] = self.generated_at.isoformat()
+        data['period_start'] = self.period_start.isoformat()
+        data['period_end'] = self.period_end.isoformat()
+        data['progress_snapshots'] = [s.to_dict() for s in self.progress_snapshots]
+        data['quiz_history'] = [q.to_dict() for q in self.quiz_history]
+        data['topic_mastery'] = {k: v.to_dict() for k, v in self.topic_mastery.items()}
+        return data
+    
+    def to_json(self) -> str:
+        """Convert to JSON string."""
+        return json.dumps(self.to_dict(), indent=2)
+    
+    @classmethod
+    def from_dict(cls, data: dict) -> "LearningReport":
+        """Create from dictionary."""
+        if isinstance(data.get('generated_at'), str):
+            data['generated_at'] = datetime.fromisoformat(data['generated_at'])
+        if isinstance(data.get('period_start'), str):
+            data['period_start'] = datetime.fromisoformat(data['period_start'])
+        if isinstance(data.get('period_end'), str):
+            data['period_end'] = datetime.fromisoformat(data['period_end'])
+        
+        # Convert nested objects
+        if 'progress_snapshots' in data:
+            data['progress_snapshots'] = [
+                ProgressSnapshot.from_dict(s) if isinstance(s, dict) else s 
+                for s in data['progress_snapshots']
+            ]
+        if 'quiz_history' in data:
+            data['quiz_history'] = [
+                QuizAttempt.from_dict(q) if isinstance(q, dict) else q 
+                for q in data['quiz_history']
+            ]
+        if 'topic_mastery' in data:
+            data['topic_mastery'] = {
+                k: TopicMasteryRecord.from_dict(v) if isinstance(v, dict) else v
+                for k, v in data['topic_mastery'].items()
+            }
+        
+        return cls(**data)
+    
+    def get_summary(self) -> str:
+        """Get a human-readable summary of the report."""
+        period_days = (self.period_end - self.period_start).days
+        
+        return f"""
+Learning Progress Report
+========================
+User ID: {self.user_id}
+Period: {self.period_start.strftime('%Y-%m-%d')} to {self.period_end.strftime('%Y-%m-%d')} ({period_days} days)
+Generated: {self.generated_at.strftime('%Y-%m-%d %H:%M')}
+
+OVERALL PERFORMANCE
+-------------------
+Accuracy: {self.overall_accuracy:.1f}%
+Ability Score: {self.ability_score:.3f}
+Improvement: {self.improvement_rate:+.1f}%
+Trend: {self.progress_trend.upper()}
+Consistency: {self.consistency_score:.2f}
+
+ACTIVITY SUMMARY
+---------------
+Learning Time: {self.total_learning_time_minutes:.0f} minutes
+Quizzes Taken: {self.total_quizzes_taken}
+Questions Attempted: {self.total_questions_attempted}
+Questions Correct: {self.total_questions_correct}
+
+PERFORMANCE BY DIFFICULTY
+------------------------
+Easy: {self.easy_accuracy:.1f}%
+Medium: {self.medium_accuracy:.1f}%
+Difficult: {self.difficult_accuracy:.1f}%
+
+TOPIC MASTERY
+------------
+Mastered ({len(self.topics_mastered)}): {', '.join(self.topics_mastered[:5])}
+In Progress ({len(self.topics_in_progress)}): {', '.join(self.topics_in_progress[:5])}
+Strongest: {', '.join(self.strongest_topics[:3])}
+Needs Focus: {', '.join(self.weakest_topics[:3])}
+
+RECOMMENDATIONS
+--------------
+{chr(10).join(f'• {step}' for step in self.suggested_next_steps[:5])}
 """

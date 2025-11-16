@@ -1,10 +1,12 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { Message } from '@/lib/api'
+import Image from 'next/image'
 
 interface MessageBubbleProps {
   message: Message
@@ -15,6 +17,47 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
   const agent = message.metadata?.agent
   const isSystemMessage = message.metadata?.isSystemMessage
   const isModeSwitch = message.metadata?.modeSwitch
+
+  // Extract chart image URLs from message content and clean content
+  const [chartUrls, setChartUrls] = useState<string[]>([])
+  const [cleanedContent, setCleanedContent] = useState<string>(message.content)
+  const [zoomedImageUrl, setZoomedImageUrl] = useState<string | null>(null)
+  
+  useEffect(() => {
+    const urls: string[] = []
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+    let content = message.content
+    
+    // Pattern 1: Extract URLs from markdown links [text](/generated/report_*.png)
+    const markdownRegex = /\[.*?\]\((\/(?:generated|public)\/report_.*?\.png)\)/g
+    let match
+    while ((match = markdownRegex.exec(message.content)) !== null) {
+      urls.push(`${apiUrl}${match[1]}`)
+      // Remove the markdown link from content
+      content = content.replace(match[0], '')
+    }
+    
+    // Pattern 2: Extract standalone URLs /generated/report_*.png or /public/report_*.png
+    const standaloneRegex = /^(\/(?:generated|public)\/report_.*?\.png)$/gm
+    while ((match = standaloneRegex.exec(message.content)) !== null) {
+      const fullUrl = `${apiUrl}${match[1]}`
+      // Only add if not already in urls array
+      if (!urls.includes(fullUrl)) {
+        urls.push(fullUrl)
+      }
+      // Remove the standalone URL from content
+      content = content.replace(match[0], '')
+    }
+
+    // Clean up extra blank lines
+    content = content.replace(/\n{3,}/g, '\n\n').trim()
+
+    console.log('Extracted chart URLs:', urls)
+    console.log('Cleaned content:', content)
+    
+    setChartUrls(urls)
+    setCleanedContent(content)
+  }, [message.content])
 
   // Special styling for system/mode switch messages
   if (isSystemMessage || isModeSwitch) {
@@ -188,9 +231,85 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
               ),
             }}
           >
-            {message.content}
+            {cleanedContent}
           </ReactMarkdown>
         </div>
+
+        {/* Chart Images */}
+        {chartUrls.length > 0 && (
+          <div className="mt-4 space-y-4">
+            <div className="text-xs font-semibold text-blue-600 mb-2 flex items-center gap-2">
+              📊 Visual Analytics Dashboard
+            </div>
+            {chartUrls.map((url, index) => (
+              <div 
+                key={index} 
+                className="relative w-full rounded-lg overflow-hidden border-2 border-blue-200 shadow-lg bg-white hover:shadow-xl transition-shadow cursor-pointer"
+                onClick={() => setZoomedImageUrl(url)}
+              >
+                <img
+                  src={url}
+                  alt={`Progress Chart ${index + 1}`}
+                  className="w-full h-auto"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  onError={(e) => {
+                    console.error('Failed to load chart:', url)
+                    e.currentTarget.style.display = 'none'
+                  }}
+                />
+                {/* Zoom hint overlay */}
+                <div className="absolute inset-0 hover:bg-opacity-10 transition-all flex items-center justify-center">
+                  <div className="opacity-80 hover:opacity-100 transition-opacity bg-white/90 px-3 py-1 rounded-full text-xs font-medium text-blue-600">
+                    🔍 Click to zoom
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Zoomed Image Modal */}
+        {zoomedImageUrl && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+            onClick={() => setZoomedImageUrl(null)}
+          >
+            <div className="relative max-w-7xl max-h-full">
+
+              {/* Button bar (Close + Download) */}
+              <div className="absolute -top-12 right-0 flex items-center gap-3">
+                {/* Download button */}
+                <a
+                  href={zoomedImageUrl} target='_blank'
+                  download="progress-dashboard.png"
+                  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm font-medium text-blue-600 shadow-lg"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  💾 Download
+                </a>
+
+                {/* Close button */}
+                <button
+                  className="bg-white hover:bg-gray-100 px-4 py-2 rounded-full text-sm font-medium text-blue-600 shadow-lg"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setZoomedImageUrl(null);
+                  }}
+                >
+                  ❌ Close
+                </button>
+              </div>
+
+              {/* Zoomed image */}
+              <img
+                src={zoomedImageUrl}
+                alt="Zoomed Progress Chart"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          </div>
+        )}
 
         {/* Timestamp */}
         <div

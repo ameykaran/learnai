@@ -6,7 +6,7 @@ from typing import List, Dict, Tuple, Optional
 from datetime import datetime
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from agents.onboarding.backend.models import Question, QuizSession, UserResponse
+from database.models import Question, QuizSession, UserResponse
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -266,7 +266,7 @@ class ImprovedAdaptiveQuizAlgorithm:
             quiz_session.is_completed = True
             quiz_session.final_ability = ability_after
             quiz_session.final_competence_level = self._calculate_final_competence(ability_after)
-            quiz_session.completed_at = datetime.utcnow()
+            quiz_session.completed_at = datetime.now()
 
         self.db.commit()
 

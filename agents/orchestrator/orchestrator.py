@@ -13,6 +13,7 @@ from agents.orchestrator.classifier import Classifier
 from agents.retrieval.agent import RAGChatAgent
 from agents.content_generation.agent import ContentGenerator
 from agents.specialist import get_specialist_agent
+from agents.report.agent import ReportAgent
 from shared.models import UserProfile
 
 logger = logging.getLogger(__name__)
@@ -44,15 +45,16 @@ class Orchestrator:
         self.retriever = RAGChatAgent()
         self.content_agent = ContentGenerator()
         self.specialist_agent = None  # Lazy load specialist (heavy model)
+        self.report_agent = None  # Lazy load report agent
         
         # Agent registry for dynamic invocation
         self.agents = {
             "retriever": self.retriever,
             "content_generation": self.content_agent,
             "specialist": lambda: self._get_specialist_agent(),
+            "report": lambda: self._get_report_agent(),
             # Add other agents here as they're implemented
             # "quiz": QuizAgent(),
-            # "report": ReportAgent(),
         }
         
         logger.info("✅ WorkflowOrchestrator initialized with %d agents", len(self.agents))
@@ -63,6 +65,13 @@ class Orchestrator:
             logger.info("Loading specialist math agent (first use)...")
             self.specialist_agent = get_specialist_agent()
         return self.specialist_agent
+    
+    def _get_report_agent(self):
+        """Lazy load the report agent (only when needed)."""
+        if self.report_agent is None:
+            logger.info("Loading report agent (first use)...")
+            self.report_agent = ReportAgent()
+        return self.report_agent
     
     def process_query(
         self,
@@ -334,10 +343,27 @@ class Orchestrator:
         user_profile: Optional[UserProfile]
     ) -> str:
         """Call report generation agent."""
-        if not user_profile:
-            return "Cannot generate report: User profile not found. Please complete onboarding first."
-        
-        return "[Report generation - Implementation needed]"
+        try:
+            # Get the report agent (lazy loaded)
+            report_agent = self._get_report_agent()
+            
+            # Generate comprehensive report
+            # If we have a user_profile, we can use the session_id
+            session_id = user_profile.session_id if user_profile else user_id
+            
+            logger.info("Generating report for user/session: %s", session_id)
+            
+            report = report_agent.generate_report(
+                user_session_id=session_id,
+                days=7,  # Default to 7 days
+                report_type="comprehensive"
+            )
+            
+            return report
+            
+        except Exception as e:
+            logger.error("Report agent error: %s", e, exc_info=True)
+            return f"Unable to generate report. This could be because:\n- No learning data is available yet\n- User profile not found\n\nPlease complete some quizzes first, then request a report again.\n\nError details: {str(e)}"
     
     def _call_specialist(
         self,

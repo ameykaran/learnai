@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from agents.onboarding.backend.models import Base, Question
-from agents.onboarding.backend.questions_data import questions_data
+from database.models import Base, Question
+from database.questions_data import questions_data
 
 import logging
 logger = logging.getLogger(__name__)

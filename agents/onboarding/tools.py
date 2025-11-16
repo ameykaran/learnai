@@ -17,8 +17,8 @@ from datetime import datetime
 import uuid
 
 # Import existing backend components
+from database.models import QuizSession, User
 from database.database import get_db, create_tables
-from agents.onboarding.backend.models import QuizSession, User
 from agents.onboarding.backend.adaptive_algorithm import ImprovedAdaptiveQuizAlgorithm
 from shared.models import UserProfile
 
@@ -134,7 +134,7 @@ class OnboardingTools:
                 'session_id': session_id,
                 'user_id': user_id,
                 'total_questions': quiz_session.total_questions,
-                'started_at': datetime.utcnow()
+                'started_at': datetime.now()
             }
             
             db.close()
