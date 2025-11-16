@@ -16,7 +16,37 @@ module.exports = {
           700: '#0369a1',
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: 'inherit',
+            a: {
+              color: 'inherit',
+              textDecoration: 'underline',
+              '&:hover': {
+                opacity: '0.8',
+              },
+            },
+            'h1, h2, h3, h4, h5, h6': {
+              color: 'inherit',
+              fontWeight: '700',
+            },
+            code: {
+              color: 'inherit',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -60,4 +60,104 @@
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
+  margin: 1em 0;
+}
+
+/* Enhanced markdown rendering */
+.prose {
+  /* Headers */
+  h1 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  h5 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Paragraphs */
+  p {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-style: italic;
+  }
+
+  /* Strong and emphasis */
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  /* Horizontal rules */
+  hr {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+}
+
+/* Inverse prose for user messages */
+.prose-invert {
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+  }
+  
+  blockquote {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
 }

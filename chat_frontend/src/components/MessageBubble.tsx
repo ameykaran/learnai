@@ -73,8 +73,68 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
             remarkPlugins={[remarkGfm, remarkMath]}
             rehypePlugins={[rehypeKatex]}
             components={{
+              // Custom styling for headers
+              h1: ({ node, children, ...props }) => (
+                <h1 className={`text-2xl font-bold mb-2 mt-3 ${isUser ? 'text-white' : 'text-gray-900'}`} {...props}>
+                  {children}
+                </h1>
+              ),
+              h2: ({ node, children, ...props }) => (
+                <h2 className={`text-xl font-bold mb-2 mt-3 ${isUser ? 'text-white' : 'text-gray-900'}`} {...props}>
+                  {children}
+                </h2>
+              ),
+              h3: ({ node, children, ...props }) => (
+                <h3 className={`text-lg font-bold mb-2 mt-2 ${isUser ? 'text-white' : 'text-gray-900'}`} {...props}>
+                  {children}
+                </h3>
+              ),
+              h4: ({ node, children, ...props }) => (
+                <h4 className={`text-base font-bold mb-1 mt-2 ${isUser ? 'text-white' : 'text-gray-900'}`} {...props}>
+                  {children}
+                </h4>
+              ),
+              h5: ({ node, children, ...props }) => (
+                <h5 className={`text-sm font-bold mb-1 mt-2 ${isUser ? 'text-white' : 'text-gray-900'}`} {...props}>
+                  {children}
+                </h5>
+              ),
+              h6: ({ node, children, ...props }) => (
+                <h6 className={`text-xs font-bold mb-1 mt-2 ${isUser ? 'text-white' : 'text-gray-900'}`} {...props}>
+                  {children}
+                </h6>
+              ),
+              // Custom styling for paragraphs
+              p: ({ node, children, ...props }) => (
+                <p className="mb-2 last:mb-0" {...props}>
+                  {children}
+                </p>
+              ),
+              // Custom styling for lists
+              ul: ({ node, children, ...props }) => (
+                <ul className="list-disc pl-5 mb-2 space-y-1" {...props}>
+                  {children}
+                </ul>
+              ),
+              ol: ({ node, children, ...props }) => (
+                <ol className="list-decimal pl-5 mb-2 space-y-1" {...props}>
+                  {children}
+                </ol>
+              ),
+              // Custom styling for blockquotes
+              blockquote: ({ node, children, ...props }) => (
+                <blockquote 
+                  className={`border-l-4 pl-4 italic my-2 ${
+                    isUser ? 'border-blue-300' : 'border-gray-300'
+                  }`} 
+                  {...props}
+                >
+                  {children}
+                </blockquote>
+              ),
               // Custom styling for code blocks
-              code({ node, inline, className, children, ...props }) {
+              code({ node, className, children, ...props }: any) {
+                const inline = !className?.includes('language-')
                 return inline ? (
                   <code
                     className={`${
@@ -110,6 +170,22 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
                   </a>
                 )
               },
+              // Custom styling for strong/bold
+              strong: ({ node, children, ...props }) => (
+                <strong className="font-bold" {...props}>
+                  {children}
+                </strong>
+              ),
+              // Custom styling for emphasis/italic
+              em: ({ node, children, ...props }) => (
+                <em className="italic" {...props}>
+                  {children}
+                </em>
+              ),
+              // Custom styling for horizontal rules
+              hr: ({ node, ...props }) => (
+                <hr className={`my-3 ${isUser ? 'border-blue-400' : 'border-gray-300'}`} {...props} />
+              ),
             }}
           >
             {message.content}
