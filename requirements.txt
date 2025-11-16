@@ -1,0 +1,27 @@
+# Strands Agents Framework
+strands-agents
+
+# AWS Bedrock support (comes with strands but listing for clarity)
+boto3>=1.34.0
+botocore>=1.34.0
+
+# Backend dependencies 
+fastapi==0.104.1
+uvicorn==0.24.0
+sqlalchemy==2.0.23
+pydantic==2.5.0
+python-multipart==0.0.6
+python-dotenv==1.0.0
+
+# Additional utilities
+python-dateutil>=2.8.2
+
+# Content Generation Dependencies
+markdown>=3.4.0
+weasyprint>=59.0
+pyyaml>=6.0
+jinja2>=3.1.0
+
+
+# RAG System
+sentence_transformers>=5.1.0

@@ -14,7 +14,7 @@ import dspy
 from dotenv import load_dotenv
 from google import genai
 
-from schema import Chunk
+from agents.retrieval.backend.schema import Chunk
 
 load_dotenv()
 
