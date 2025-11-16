@@ -5,7 +5,7 @@ strands-agents
 boto3>=1.34.0
 botocore>=1.34.0
 
-# Existing backend dependencies (reused)
+# Backend dependencies 
 fastapi==0.104.1
 uvicorn==0.24.0
 sqlalchemy==2.0.23
@@ -21,3 +21,7 @@ markdown>=3.4.0
 weasyprint>=59.0
 pyyaml>=6.0
 jinja2>=3.1.0
+
+
+# RAG System
+sentence_transformers>=5.1.0
