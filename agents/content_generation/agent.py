@@ -26,6 +26,7 @@ import subprocess
 import tempfile
 
 from agents.content_generation.prompts import AGENT_INSTRUCTIONS
+# from prompts import AGENT_INSTRUCTIONS
 
 logger = logging.getLogger(__name__)
 
@@ -529,7 +530,6 @@ class ContentGenerationAgent(Agent):
             model_id="us.anthropic.claude-sonnet-4-20250514-v1:0",
             streaming=False,
         )
-
 
         try:
             agent = Agent(

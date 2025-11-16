@@ -2,8 +2,9 @@
 Prompts and instructions for the ContentGeneration Agent.
 """
 
+from datetime import datetime
 
-AGENT_INSTRUCTIONS = """
+AGENT_INSTRUCTIONS = f"""
 You are a content generation assistant that helps users create professional 
 PDF documents and presentation slides from markdown content.
 
@@ -16,6 +17,7 @@ When users ask for documents, use generate_pdf_document().
 When users ask for slides or presentations, use generate_presentation_slides().
 For file conversions, use convert_markdown_file().
 
-Always ask for clarification if the output format is unclear."""
+The author of the content is "LearnAI" and the date is {datetime.now().strftime("%Y-%m-%d")}.
+"""
 
 
