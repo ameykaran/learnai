@@ -19,7 +19,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import dspy
 from dotenv import load_dotenv
 
-from schema import Chunk
+from agents.retrieval.backend.schema import Chunk
 
 # Load environment variables (API keys, etc.)
 load_dotenv()
@@ -198,7 +198,8 @@ def extract_metadata_chunks(
 
     # Configure DSPy with Gemini LLM
     lm = dspy.LM(
-        model="gemini/gemini-2.5-flash",
+        # model="gemini/gemini-2.5-flash",
+        model="bedrock/us.anthropic.claude-sonnet-4-20250514-v1:0",
         api_key=gemini_api_key or "",  # Uses env variable if not provided
         max_tokens=chunk_size * 3,     # Allow extra tokens for structured output
         num_retries=MAX_RETRIES,

@@ -16,7 +16,8 @@ from typing import List, Dict, Any, Optional, Tuple
 from sentence_transformers import SentenceTransformer
 import chromadb
 
-from rag.schema import Chunk, Metadata
+from agents.retrieval.backend.schema import Chunk, Metadata
+from agents.retrieval.backend import RETRIEVAL_BACKEND_PATH
 
 class RAGSystem:
     """
@@ -459,7 +460,7 @@ def load_chunks_from_json(filepath: str) -> List[Chunk]:
     return chunks
 
 
-def initialize_rag_system(rag_system: RAGSystem, chunks_file: str = "extracted_chunks.json") -> None:
+def initialize_rag_system(rag_system: RAGSystem, chunks_dir: str = f"{RETRIEVAL_BACKEND_PATH}/chunks") -> None:
     """
     Initialize RAG system with chunks from a JSON file.
     
@@ -467,7 +468,7 @@ def initialize_rag_system(rag_system: RAGSystem, chunks_file: str = "extracted_c
     
     Args:
         rag_system: RAGSystem instance to initialize
-        chunks_file: Path to JSON file containing chunks
+        chunks_dir: Path to directory of JSON file containing chunks
     """
     print("\n" + "="*60)
     print("INITIALIZING RAG SYSTEM")
@@ -476,9 +477,23 @@ def initialize_rag_system(rag_system: RAGSystem, chunks_file: str = "extracted_c
     # Clear existing data
     rag_system.clear_collection()
     
-    # Load and add chunks
-    chunks = load_chunks_from_json(chunks_file)
-    rag_system.add_chunks(chunks)
+    # List all JSON files in the chunks directory
+    import os
+    json_files = [f for f in os.listdir(chunks_dir) if f.endswith('.json')]
+    if not json_files:
+        print(f"No JSON chunk files found in {chunks_dir}. Initialization aborted.")
+        return
+    
+    for json_file in json_files:
+        chunks_file = os.path.join(chunks_dir, json_file)
+        print(f"\nLoading chunks from {chunks_file}...")
+        
+        # Load chunks from JSON
+        chunks = load_chunks_from_json(chunks_file)
+        print(f"Loaded {len(chunks)} chunks from {json_file}.")
+        
+        # Add chunks to RAG system
+        rag_system.add_chunks(chunks)
     
     print("Initialization complete.")
 
@@ -487,7 +502,7 @@ def initialize_rag_system(rag_system: RAGSystem, chunks_file: str = "extracted_c
 
 if __name__ == "__main__":
     # Initialize the system
-    rag_system = RAGSystem(db_path="./prob_db")
+    rag_system = RAGSystem(db_path="./vector_db")
     
     # Load data (comment out if collection is already populated)
     initialize_rag_system(rag_system)

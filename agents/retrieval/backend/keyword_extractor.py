@@ -22,7 +22,7 @@ from rapidfuzz import fuzz, process
 import numpy as np
 
 
-class MathKeywordExtractor:
+class KeywordExtractor:
     """Extract mathematical keywords using NER + fuzzy matching."""
 
     def __init__(self, keywords_file: str = "probability_keywords.csv",
@@ -120,9 +120,11 @@ class MathKeywordExtractor:
                     entities.append((start1, end1, "MATH_KEYWORD"))
                     entities.append((start2, end2, "MATH_KEYWORD"))
                 elif start1 != -1:
-                    entities.append((start1, start1 + len(keyword1), "MATH_KEYWORD"))
+                    entities.append(
+                        (start1, start1 + len(keyword1), "MATH_KEYWORD"))
                 elif start2 != -1:
-                    entities.append((start2, start2 + len(keyword2), "MATH_KEYWORD"))
+                    entities.append(
+                        (start2, start2 + len(keyword2), "MATH_KEYWORD"))
 
             else:
                 # Single keyword sentence
@@ -130,14 +132,15 @@ class MathKeywordExtractor:
                 text = template.format(keyword=keyword)
 
                 start = text.find(keyword)
-                entities = [(start, start + len(keyword), "MATH_KEYWORD")] if start != -1 else []
+                entities = [(start, start + len(keyword),
+                             "MATH_KEYWORD")] if start != -1 else []
 
             training_data.append((text, {"entities": entities}))
 
         return training_data
 
     def train_ner_model(self, training_data: List[Tuple[str, Dict]],
-                       n_iter: int = 30) -> None:
+                        n_iter: int = 30) -> None:
         """Train custom NER model."""
         print(f"Training NER model with {len(training_data)} examples...")
 
@@ -234,7 +237,7 @@ class MathKeywordExtractor:
         return matches
 
     def extract_keywords(self, text: str, use_ner: bool = True,
-                        use_fuzzy: bool = True, top_k: int = 5) -> List[str]:
+                         use_fuzzy: bool = True, top_k: int = 5) -> List[str]:
         """Extract keywords using both NER and fuzzy matching."""
         all_keywords = {}
 
@@ -244,7 +247,8 @@ class MathKeywordExtractor:
             for keyword, confidence in ner_keywords:
                 if keyword in all_keywords:
                     # Take maximum confidence
-                    all_keywords[keyword] = max(all_keywords[keyword], confidence)
+                    all_keywords[keyword] = max(
+                        all_keywords[keyword], confidence)
                 else:
                     all_keywords[keyword] = confidence
 
@@ -262,19 +266,20 @@ class MathKeywordExtractor:
                     all_keywords[keyword] = confidence * 0.8
 
         # Sort by confidence and return top results
-        sorted_keywords = sorted(all_keywords.items(), key=lambda x: x[1], reverse=True)
+        sorted_keywords = sorted(all_keywords.items(),
+                                 key=lambda x: x[1], reverse=True)
 
         # Filter out keywords below confidence threshold
-        sorted_keywords = [(kw, conf) for kw, conf in sorted_keywords if conf >= self.confidence]
+        sorted_keywords = [(kw, conf)
+                           for kw, conf in sorted_keywords if conf >= self.confidence]
 
         keywords = [kw for kw, _ in sorted_keywords]
         return keywords[:top_k]
 
 
-
 def main():
     """Main function to demonstrate the system."""
-    extractor = MathKeywordExtractor()
+    extractor = KeywordExtractor()
 
     if not extractor.keywords:
         print("No keywords loaded. Exiting.")
@@ -285,7 +290,6 @@ def main():
         print("Training new NER model...")
         training_data = extractor.generate_training_data(num_examples=500)
         extractor.train_ner_model(training_data, n_iter=10)
-
 
     print("\n" + "="*60)
     print("TESTING MATH KEYWORD EXTRACTION SYSTEM")
@@ -315,6 +319,9 @@ def main():
             print("No keywords extracted.")
 
         print()
+
+
+__all__ = ["KeywordExtractor"]
 
 
 if __name__ == "__main__":
