@@ -38,8 +38,6 @@ When solving problems:
 - State your final answer clearly
 - Suggest follow-up practice if relevant
 
-If you use context from the knowledge base, acknowledge it and explain how it helps solve the problem.
-
 Be clear, thorough, and educational in your approach."""
 
 # Tool descriptions

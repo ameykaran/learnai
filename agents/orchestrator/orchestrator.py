@@ -12,6 +12,7 @@ import sys
 from agents.orchestrator.classifier import Classifier
 from agents.retrieval.agent import RAGChatAgent
 from agents.content_generation.agent import ContentGenerator
+from agents.specialist import get_specialist_agent
 from shared.models import UserProfile
 
 logger = logging.getLogger(__name__)
@@ -42,17 +43,26 @@ class Orchestrator:
         # Initialize agents
         self.retriever = RAGChatAgent()
         self.content_agent = ContentGenerator()
+        self.specialist_agent = None  # Lazy load specialist (heavy model)
         
         # Agent registry for dynamic invocation
         self.agents = {
             "retriever": self.retriever,
             "content_generation": self.content_agent,
+            "specialist": lambda: self._get_specialist_agent(),
             # Add other agents here as they're implemented
             # "quiz": QuizAgent(),
             # "report": ReportAgent(),
         }
         
         logger.info("✅ WorkflowOrchestrator initialized with %d agents", len(self.agents))
+    
+    def _get_specialist_agent(self):
+        """Lazy load the specialist agent (only when needed)."""
+        if self.specialist_agent is None:
+            logger.info("Loading specialist math agent (first use)...")
+            self.specialist_agent = get_specialist_agent()
+        return self.specialist_agent
     
     def process_query(
         self,
@@ -335,8 +345,30 @@ class Orchestrator:
         retrieved: str,
         user_profile: Optional[UserProfile]
     ) -> str:
-        """Call specialist/math agent."""
-        return "[Specialist agent - Implementation needed]"
+        """Call specialist/math agent for problem solving.
+        
+        Args:
+            query: The mathematical problem or question
+            retrieved: Context from RAG system (examples, formulas, etc.)
+            user_profile: Optional user profile for personalization
+            
+        Returns:
+            Step-by-step solution from the specialist agent
+        """
+        try:
+            # Get the specialist agent (lazy loaded)
+            specialist = self._get_specialist_agent()
+            
+            # Call the agent with problem and context
+            logger.info("Calling specialist agent with query: %s", query[:100])
+            response = specialist(query, context=retrieved)
+            
+            logger.info("Specialist agent response received (%d chars)", len(str(response)))
+            return str(response)
+            
+        except Exception as e:
+            logger.error("Specialist agent error: %s", e, exc_info=True)
+            return f"I encountered an error while solving this problem: {str(e)}"
     
     # ========================================================================
     # RESPONSE SYNTHESIS
@@ -471,17 +503,14 @@ class Orchestrator:
 # FACTORY FUNCTION
 # ============================================================================
 
-def create_workflow_orchestrator(rag_system=None) -> Orchestrator:
+def create_workflow_orchestrator() -> Orchestrator:
     """
     Factory function to create WorkflowOrchestrator instance.
     
-    Args:
-        rag_system: Optional RAG system instance
-        
     Returns:
         Configured WorkflowOrchestrator
     """
-    return Orchestrator(rag_system=rag_system)
+    return Orchestrator()
 
 
 # ============================================================================

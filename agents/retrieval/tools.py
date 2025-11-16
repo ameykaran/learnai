@@ -45,11 +45,7 @@ class RAGChatTools:
         
         # Check if paths exist
         db_path = Path(rag_db_path)
-        logger.info(f"Checking if RAG DB path exists: {db_path.absolute()}")
-        logger.info(f"RAG DB path exists: {db_path.exists()}")
-        if db_path.exists():
-            logger.info(f"Contents of RAG DB directory: {list(db_path.iterdir())}")
-        
+       
         # Initialize RAG system
         logger.info("Initializing RAG system...")
         try:

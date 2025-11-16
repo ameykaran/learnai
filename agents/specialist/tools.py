@@ -30,12 +30,12 @@ def _get_math_model():
         logger.info("Loading tokenizer...")
         tokenizer = AutoTokenizer.from_pretrained(model_id)
         logger.info("✓ Tokenizer loaded")
-        
-        logger.info("Loading model with device_map='auto'...")
+  
+        logger.info("Loading LiquidAI/LFM2-350M-Math model...")
         model = AutoModelForCausalLM.from_pretrained(
             model_id,
             device_map="auto",
-            torch_dtype="auto",
+            dtype="float32",
             # attn_implementation="flash_attention_2"  # uncomment if you have flash_attn
         )
         logger.info("✓ Model loaded successfully")
@@ -126,7 +126,7 @@ def solve_math_problem(
                 f"{problem}"
             )
         
-        logger.info("Combined input length: %d characters", len(combined_input))
+        logger.info("Combined input length: %d characters: %s...", len(combined_input), combined_input[:100])
         logger.debug("Full input: %s", combined_input)
         
         # Create message in chat format

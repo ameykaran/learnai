@@ -1,0 +1,488 @@
+[
+  {
+    "id": "f2e86ab5-4b8d-472b-9b91-3017f2d2feb4",
+    "text": "2. A bag contains 4 red and 4 black balls, another bag contains 2 red and 6 black balls. One of the two bags is selected at random and a ball is drawn from the bag which is found to be red. Find the probability that the ball is drawn from the first bag.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "fe6806eb-ad58-4dc2-923b-770f42f5f925",
+    "text": "3. Of the students in a college, it is known that 60% reside in hostel and 40% are day scholars (not residing in hostel). Previous year results report that 30% of all students who reside in hostel attain A grade and 20% of day scholars attain A grade in their annual examination. At the end of the year, one student is chosen at random from the college and he has an A grade, what is the probability that the student is a hostlier?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "412f6c72-ab69-4808-a9d9-8aee8254b4d5",
+    "text": "4. In answering a question on a multiple choice test, a student either knows the answer or guesses. Let  $\\frac{3}{4}$  be the probability that he knows the answer and  $\\frac{1}{4}$  be the probability that he guesses. Assuming that a student who guesses at the answer will be correct with probability  $\\frac{1}{4}$ . What is the probability that the student knows the answer given that he answered it correctly?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "779d62a8-71cd-451d-8328-eefe8dbda4ea",
+    "text": "5. A laboratory blood test is 99% effective in detecting a certain disease when it is in fact, present. However, the test also yields a false positive result for 0.5% of the healthy person tested (i.e. if a healthy person is tested, then, with probability 0.005, the test will imply he has the disease). If 0.1 percent of the population actually has the disease, what is the probability that a person has the disease given that his test result is positive?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications",
+        "Medical testing probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "4afbe2cf-a95a-4933-8ceb-5fb85ae737cd",
+    "text": "6. There are three coins. One is a two headed coin (having head on both faces), another is a biased coin that comes up heads 75% of the time and third is an unbiased coin. One of the three coins is chosen at random and tossed, it shows heads, what is the probability that it was the two headed coin?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "66eccced-b3aa-4672-9236-fc6cf54fdd9e",
+    "text": "7. An insurance company insured 2000 scooter drivers, 4000 car drivers and 6000 truck drivers. The probability of an accidents are 0.01, 0.03 and 0.15 respectively. One of the insured persons meets with an accident. What is the probability that he is a scooter driver?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "75ec9295-a196-4766-8a20-ab360eec7ae5",
+    "text": "8. A factory has two machines A and B. Past record shows that machine A produced 60% of the items of output and machine B produced 40% of the items. Further, 2% of the items produced by machine A and 1% produced by machine B were defective. All the items are put into one stockpile and then one item is chosen at random from this and is found to be defective. What is the probability that it was produced by machine B?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "fe7b0bd6-9ab7-47de-af5b-cbce62a93cf7",
+    "text": "9. Two groups are competing for the position on the Board of directors of a corporation. The probabilities that the first and the second groups will win are\n\n0.6 and 0.4 respectively. Further, if the first group wins, the probability of introducing a new product is 0.7 and the corresponding probability is 0.3 if the second group wins. Find the probability that the new product introduced was by the second group.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "25e9215a-2f2d-4a43-b65d-fcce66439da6",
+    "text": "10. Suppose a girl throws a die. If she gets a 5 or 6, she tosses a coin three times and notes the number of heads. If she gets 1, 2, 3 or 4, she tosses a coin once and notes whether a head or tail is obtained. If she obtained exactly one head, what is the probability that she threw 1, 2, 3 or 4 with the die?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability",
+        "Binomial Probability"
+      ]
+    }
+  },
+  {
+    "id": "eb418364-68f6-4914-823c-9c411eb6c36c",
+    "text": "11. A manufacturer has three machine operators A, B and C. The first operator A produces 1% defective items, where as the other two operators B and C produce 5% and 7% defective items respectively. A is on the job for 50% of the time, B is on the job for 30% of the time and C is on the job for 20% of the time. A defective item is produced, what is the probability that it was produced by A?",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "c2ac0b7d-728a-42c6-a0d9-a4000353b6d7",
+    "text": "12. A card from a pack of 52 cards is lost. From the remaining cards of the pack, two cards are drawn and are found to be both diamonds. Find the probability of the lost card being a diamond.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications",
+        "Probability with unknown initial conditions"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "advanced",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability",
+        "Combinations"
+      ]
+    }
+  },
+  {
+    "id": "d0394bd2-b34c-45a1-9a84-14602cee49bc",
+    "text": "13. Probability that A speaks truth is 4 $^{5}$ . A coin is tossed. A reports that a head appears. The probability that actually there was head is\n\n(A) \n$$\\frac{4}{5}$$ \n (B)  $\\frac{1}{2}$  (C)  $\\frac{1}{5}$  (D)  $\\frac{2}{5}$",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Bayes' Theorem"
+      ],
+      "subtopics": [
+        "Bayes' Theorem applications",
+        "Truth-telling probability"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability"
+      ]
+    }
+  },
+  {
+    "id": "c4527d17-a52d-4b62-a9ea-388ea7284f52",
+    "text": "14. If A and B are two events such that A ⊂ B and P(B) ≠ 0, then which of the following is correct?\n  - (A) P(B) P(A | B) P(A) $^{=}$ (B) P(A|B) < P(A)\n  - (C) P(A|B) ≥ P(A) (D) None of these",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Conditional Probability",
+        "Set Theory in Probability"
+      ],
+      "subtopics": [
+        "Properties of Conditional Probability",
+        "Subset events"
+      ],
+      "chunk_type": "practice_problem",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Basic Probability",
+        "Conditional Probability",
+        "Set Theory"
+      ]
+    }
+  },
+  {
+    "id": "f316b315-f8e9-45b8-b578-f1e2e0839fc3",
+    "text": "## **13.6 Random Variables and its Probability Distributions**\n\nWe have already learnt about random experiments and formation of sample spaces. In most of these experiments, we were not only interested in the particular outcome that occurs but rather in some number associated with that outcomes as shown in following examples/experiments.\n\n- (i) In tossing two dice, we may be interested in the sum of the numbers on the two dice.\n- (ii) In tossing a coin 50 times, we may want the number of heads obtained.\n\n(iii) In the experiment of taking out four articles (one after the other) at random from a lot of 20 articles in which 6 are defective, we wa",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Probability Distributions"
+      ],
+      "subtopics": [
+        "Introduction to Random Variables",
+        "Motivation for Random Variables"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability",
+        "Sample Space",
+        "Random Experiments"
+      ]
+    }
+  },
+  {
+    "id": "8fde52e7-a506-4b27-bcda-67e4da846d56",
+    "text": "of these experiments, we were not only interested in the particular outcome that occurs but rather in some number associated with that outcomes as shown in following examples/experiments.\n\n- (i) In tossing two dice, we may be interested in the sum of the numbers on the two dice.\n- (ii) In tossing a coin 50 times, we may want the number of heads obtained.\n\n(iii) In the experiment of taking out four articles (one after the other) at random from a lot of 20 articles in which 6 are defective, we want to know the number of defectives in the sample of four and not in the particular sequence of defective and nondefective articles.\n\nIn all of the above experiments, we have a rule which assigns to each outcome of the experiment a single real number. This single real number may vary with different outcomes of the experiment. Hence, it is a variable. Also its value depends upon the outcome of a random experiment and, hence, is called random variable. A random variable is usually denoted by X.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Introduction to Random Variables",
+        "Motivation for Random Variables",
+        "Examples of Random Variables"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability",
+        "Sample Space",
+        "Outcomes of an experiment"
+      ]
+    }
+  },
+  {
+    "id": "f09a84a0-1a98-4a8e-8d8d-0669e559419c",
+    "text": "If you recall the definition of a function, you will realise that the random variable X is really speaking a function whose domain is the set of outcomes (or sample space) of a random experiment. A random variable can take any real value, therefore, its co-domain is the set of real numbers. Hence, a random variable can be defined as follows :\n\n**Definition 4** A random variable is a real valued function whose domain is the sample space of a random experiment.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Definition of Random Variable",
+        "Function definition of Random Variable"
+      ],
+      "chunk_type": "definition",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Functions",
+        "Sample Space",
+        "Real Numbers"
+      ]
+    }
+  },
+  {
+    "id": "ca9eb986-f8d0-48a3-a791-a15c9ea89648",
+    "text": "For example, let us consider the experiment of tossing a coin two times in succession. The sample space of the experiment is S = {HH, HT, TH, TT}.\n\nIf X denotes the number of heads obtained, then X is a random variable and for each outcome, its value is as given below :\n\n$$X(HH) = 2$$\n,  $X(HT) = 1$ ,  $X(TH) = 1$ ,  $X(TT) = 0$ .\n\nMore than one random variables can be defined on the same sample space. For example, let Y denote the number of heads minus the number of tails for each outcome of the above sample space S.\n\nThen \n$$Y(HH) = 2$$\n,  $Y(HT) = 0$ ,  $Y(TH) = 0$ ,  $Y(TT) = -2$ .\n\nThus, X and Y are two different random variables defined on the same sample space S.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Examples of Random Variables",
+        "Defining Random Variables on Sample Space"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Sample Space",
+        "Basic Counting",
+        "Definition of Random Variable"
+      ]
+    }
+  },
+  {
+    "id": "2e7120f7-0ea2-450c-946e-1534ca954c18",
+    "text": "**Example 22** A person plays a game of tossing a coin thrice. For each head, he is given Rs 2 by the organiser of the game and for each tail, he has to give Rs 1.50 to the organiser. Let X denote the amount gained or lost by the person. Show that X is a random variable and exhibit it as a function on the sample space of the experiment.\n\n**Solution** X is a number whose values are defined on the outcomes of a random experiment. Therefore, X is a random variable.\n\nNow, sample space of the experiment is\n\n$$S = \\{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\\}$$\n\nThen \n$$X \\text{ (HHH)} = \\text{Rs } (2 \\times 3) = \\text{Rs } 6$$\n  \n $X \\text{ (HHT)} = X \\text{ (HTH)} = X \\text{ (THH)} = \\text{Rs } (2 \\times 2 - 1 \\times 1.50) = \\text{Rs } 2.50$   \n $X \\text{ (HTT)} = X \\text{ (THT)} = (\\text{TTH)} = \\text{Rs } (1 \\times 2) - (2 \\times 1.50) = -\\text{Re } 1$   \nand  $X \\text{ (TTT)} = -\\text{Rs } (3 \\times 1.50) = -\\text{Rs } 4.50$ \n\nwhere, minus sign shows the loss to the player. Thus, for each element of the sample space, X takes a unique value, hence, X is a function on the sample space whose range is\n\n$$\\{-1, 2.50, -4.50, 6\\}$$",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Worked Example",
+        "Calculating Random Variable Values",
+        "Sample Space Enumeration",
+        "Financial Outcomes as Random Variables"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Sample Space",
+        "Basic Arithmetic",
+        "Definition of Random Variable"
+      ]
+    }
+  },
+  {
+    "id": "1b67d49d-a158-4dac-ad81-5bcb145d16dc",
+    "text": "**Example 23** A bag contains 2 white and 1 red balls. One ball is drawn at random and then put back in the box after noting its colour. The process is repeated again. If X denotes the number of red balls recorded in the two draws, describe X.\n\n**Solution** Let the balls in the bag be denoted by  $w_1, w_2, r$ . Then the sample space is\n\n$$S = \\{w_1 \\ w_1, \\ w_1 \\ w_2, \\ w_2 \\ w_2, \\ w_2 \\ w_1, \\ w_1 \\ r, \\ w_2 \\ r, \\ r \\ w_1, \\ r \\ w_2, \\ r \\ r\\}$$\n  \n$$\\omega \\in S$$\n\nNow, for\n\n $X(\\omega)$  = number of red balls\n\nTherefore\n\n$$X(\\{w_1 \\ w_1\\}) = X(\\{w_1 \\ w_2\\}) = X(\\{w_2 \\ w_2\\}) = X(\\{w_2 \\ w_1\\}) = 0$$\n  \n $X(\\{w_1 \\ r\\}) = X(\\{w_2 \\ r\\}) = X(\\{r \\ w_1\\}) = X(\\{r \\ w_2\\}) = 1 \\text{ and } X(\\{r \\ r\\}) = 2$ \n\nThus, X is a random variable which can take values 0, 1 or 2.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Worked Example",
+        "Calculating Random Variable Values",
+        "Sample Space with Replacement",
+        "Discrete Random Variables"
+      ],
+      "chunk_type": "worked_solution",
+      "difficulty_level": "intermediate",
+      "prerequisites": [
+        "Sample Space",
+        "Definition of Random Variable",
+        "Probability with Replacement"
+      ]
+    }
+  },
+  {
+    "id": "217b4d54-a8b4-4a5d-ab61-dbaf2d124936",
+    "text": "## 13.6.1 Probability distribution of a random variable\n\nLet us look at the experiment of selecting one family out of ten families  $f_1$ ,  $f_2$ ,..., $f_{10}$  in such a manner that each family is equally likely to be selected. Let the families  $f_1$ ,  $f_2$ , ...,  $f_{10}$  have 3, 4, 3, 2, 5, 4, 3, 6, 4, 5 members, respectively.\n\nLet us select a family and note down the number of members in the family denoting X. Clearly, X is a random variable defined as below:\n\n$$X(f_1) = 3$$\n,  $X(f_2) = 4$ ,  $X(f_3) = 3$ ,  $X(f_4) = 2$ ,  $X(f_5) = 5$ ,  $X(f_6) = 4$ ,  $X(f_7) = 3$ ,  $X(f_8) = 6$ ,  $X(f_9) = 4$ ,  $X(f_{10}) = 5$ \n\nThus, X can take any value 2,3,4,5 or 6 depending upon which family is selected.\n\nNow, X will take the value 2 when the family  $f_4$  is selected. X can take the value 3 when any one of the families  $f_1$ ,  $f_3$ ,  $f_7$  is selected.\n\nSimilarly, X = 4, when family  $f_2$ ,  $f_6$  or",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables",
+        "Probability Distribution"
+      ],
+      "subtopics": [
+        "Introduction to Probability Distribution",
+        "Discrete Random Variables",
+        "Mapping Outcomes to Random Variable Values"
+      ],
+      "chunk_type": "explanation",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Random Variables",
+        "Sample Space",
+        "Basic Counting"
+      ]
+    }
+  },
+  {
+    "id": "e2edcfed-6232-4fd0-8846-264843c5ea9a",
+    "text": "ly, X is a random variable defined as below:\n\n$$X(f_1) = 3$$\n,  $X(f_2) = 4$ ,  $X(f_3) = 3$ ,  $X(f_4) = 2$ ,  $X(f_5) = 5$ ,  $X(f_6) = 4$ ,  $X(f_7) = 3$ ,  $X(f_8) = 6$ ,  $X(f_9) = 4$ ,  $X(f_{10}) = 5$ \n\nThus, X can take any value 2,3,4,5 or 6 depending upon which family is selected.\n\nNow, X will take the value 2 when the family  $f_4$  is selected. X can take the value 3 when any one of the families  $f_1$ ,  $f_3$ ,  $f_7$  is selected.\n\nSimilarly, X = 4, when family  $f_2$ ,  $f_6$  or  $f_9$  is selected, X = 5, when family  $f_5$  or  $f_{10}$  is selected\n\nand X = 6, when family  $f_8$  is selected.",
+    "metadata": {
+      "source_url": "class12_ncert_textbook.pdf",
+      "source_type": "textbook",
+      "topics": [
+        "Probability",
+        "Random Variables"
+      ],
+      "subtopics": [
+        "Definition of a Random Variable",
+        "Values of a Random Variable",
+        "Mapping Outcomes to Values"
+      ],
+      "chunk_type": "example",
+      "difficulty_level": "basic",
+      "prerequisites": [
+        "Basic Probability",
+        "Sample Space",
+        "Outcomes"
+      ]
+    }
+  }
+]

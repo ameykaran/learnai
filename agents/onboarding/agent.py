@@ -25,7 +25,7 @@ from agents.onboarding.tools import (
     finalize_assessment,
     onboarding_tools  # Import the tools instance
 )
-from agents.onboarding.backend.database import initialize_database
+from database.database import initialize_database
 from shared.models import UserProfile
 
 # Set up logger

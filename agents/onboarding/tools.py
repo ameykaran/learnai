@@ -17,7 +17,7 @@ from datetime import datetime
 import uuid
 
 # Import existing backend components
-from agents.onboarding.backend.database import get_db, create_tables
+from database.database import get_db, create_tables
 from agents.onboarding.backend.models import QuizSession, User
 from agents.onboarding.backend.adaptive_algorithm import ImprovedAdaptiveQuizAlgorithm
 from shared.models import UserProfile

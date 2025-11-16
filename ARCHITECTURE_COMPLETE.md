@@ -280,7 +280,7 @@ Final Response: Synthesized explanation with references
 
 ```python
 # Lifespan: Initialize orchestrator
-orchestrator = create_workflow_orchestrator(rag_system=rag_system)
+orchestrator = create_workflow_orchestrator()
 
 # Chat endpoint: Route to appropriate handler
 if mode == "onboarding":

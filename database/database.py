@@ -6,7 +6,7 @@ from agents.onboarding.backend.questions_data import questions_data
 import logging
 logger = logging.getLogger(__name__)
 
-DATABASE_URL = "sqlite:///./quiz.db"
+DATABASE_URL = "sqlite:///./database/quiz.db"
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

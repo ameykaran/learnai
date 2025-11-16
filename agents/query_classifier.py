@@ -125,8 +125,7 @@ Respond with ONLY the category name, nothing else.""",
                 # Check if the response matches any category
                 for category in self.query_types.keys():
                     if category in choice or choice in category:
-                        logger.info(
-                            "llm_classification_result",
+                        logger.info(f"llm_classification_result - {query} classified as {category}",
                             extra={"extra_json": {"query": query, "llm_choice": category}},
                         )
                         # Return with empty scores dict to indicate LLM classification

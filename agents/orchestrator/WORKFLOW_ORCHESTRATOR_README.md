@@ -61,7 +61,7 @@ from agents.retrieval.backend.rag_system import RAGSystem
 
 # Initialize with RAG system
 rag = RAGSystem()
-orchestrator = create_workflow_orchestrator(rag_system=rag)
+orchestrator = create_workflow_orchestrator()
 
 # Process a query
 result = orchestrator.process_query(
@@ -109,7 +109,7 @@ Update your `api_server/main.py`:
 from agents.orchestrator.workflow_orchestrator import create_workflow_orchestrator
 
 # In lifespan function
-orchestrator_agent = create_workflow_orchestrator(rag_system=rag_system)
+orchestrator_agent = create_workflow_orchestrator()
 
 # In handle_orchestrator function
 async def handle_orchestrator(user_id: str, message: str, session: dict):

@@ -105,7 +105,7 @@ UserProfile:
 from agents.orchestrator.orchestrator import create_orchestrator
 
 # Create orchestrator (optionally with RAG system)
-orchestrator = create_orchestrator(rag_system=my_rag)
+orchestrator = create_orchestrator()
 
 # Simple chat
 response = orchestrator.chat("Hello! What can you help me with?")
@@ -166,7 +166,7 @@ from fastapi import FastAPI
 from agents.orchestrator.orchestrator import create_orchestrator
 
 app = FastAPI()
-orchestrator = create_orchestrator(rag_system=rag)
+orchestrator = create_orchestrator()
 
 @app.post("/chat")
 async def chat(message: str, user_id: Optional[str] = None):
@@ -280,7 +280,7 @@ python orchestrator.py
 
 **Modifying RAG Integration:**
 - Implement RAG system with `.query()` method
-- Pass to orchestrator: `create_orchestrator(rag_system=your_rag)`
+- Pass to orchestrator: `create_orchestrator()`
 - Update `retrieve_knowledge` tool if needed
 
 ## Files

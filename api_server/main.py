@@ -83,7 +83,7 @@ async def lifespan(app: FastAPI):
     # Initialize Workflow Orchestrator
     try:
         print("🤖 Initializing Workflow Orchestrator...")
-        orchestrator_agent = create_workflow_orchestrator(rag_system=rag_system)
+        orchestrator_agent = create_workflow_orchestrator()
         print("✅ Workflow Orchestrator ready")
         print(f"   - Registered agents: {list(orchestrator_agent.agents.keys())}")
         print(f"   - Query types: {list(orchestrator_agent.classifier.query_types.keys())}")
@@ -535,31 +535,6 @@ async def handle_onboarding(user_id: str, session_id: str, message: str, session
 
 
 async def handle_orchestrator(user_id: str, message: str, session: dict):
-    # """Process messages via Orchestrator unless onboarding required."""
-    # profile = session_manager.get_profile(user_id)
-
-    # if not profile:
-    #     return (
-    #         "You must complete onboarding first. Shall I start the assessment?",
-    #         {"agent": "Orchestrator", "needs_onboarding": True}
-    #     )
-
-    # if orchestrator_agent is None:
-    #     return (
-    #         "Orchestrator not available. Showing profile only.",
-    #         {"fallback": True}
-    #     )
-
-    # try:
-    #     # Ensure profile loaded into orchestrator memory
-    #     orchestrator_agent.user_profiles.setdefault(user_id, profile)
-
-    #     resp = orchestrator_agent.chat(message, user_id=user_id)
-    #     return resp, {"agent": "Orchestrator"}
-
-    # except Exception as exc:
-    #     logger.error(f"Orchestrator error: {exc}")
-    #     return "Error in orchestrator.", {"error": str(exc)}
     return await handle_workflow_orchestrator(
         user_id=user_id,
         message=message,

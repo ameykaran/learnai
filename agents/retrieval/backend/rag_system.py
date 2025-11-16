@@ -38,7 +38,7 @@ class RAGSystem:
     LIST_FIELDS = {"topics", "prerequisites"}
     SCALAR_FIELDS = {"source_url", "source_type", "chunk_type", "difficulty_level"}
     
-    def __init__(self, db_path: str = "./chroma_db", model_name: str = 'all-MiniLM-L6-v2'):
+    def __init__(self, db_path: str = f"{RETRIEVAL_BACKEND_PATH}/vector_db", model_name: str = 'all-MiniLM-L6-v2'):
         """
         Initialize the RAG system with embedding model and vector database.
         
@@ -50,7 +50,7 @@ class RAGSystem:
             >>> rag = RAGSystem(db_path="./my_db")
             Initializing RAG System...
             Embedding model loaded.
-            ChromaDB collection 'educational_chunks' loaded/created from ./my_db.
+            ChromaDB collection 'educational_chunks' loaded/created from ./chroma.sqlite3.
             0 chunks currently in the database.
         """        
         # Initialize the embedding model
@@ -484,6 +484,7 @@ def initialize_rag_system(rag_system: RAGSystem, chunks_dir: str = f"{RETRIEVAL_
         print(f"No JSON chunk files found in {chunks_dir}. Initialization aborted.")
         return
     
+    print(f"Found {len(json_files)} JSON files in {chunks_dir}.")
     for json_file in json_files:
         chunks_file = os.path.join(chunks_dir, json_file)
         print(f"\nLoading chunks from {chunks_file}...")
@@ -502,7 +503,7 @@ def initialize_rag_system(rag_system: RAGSystem, chunks_dir: str = f"{RETRIEVAL_
 
 if __name__ == "__main__":
     # Initialize the system
-    rag_system = RAGSystem(db_path="./vector_db")
+    rag_system = RAGSystem(db_path=f"{RETRIEVAL_BACKEND_PATH}/vector_db")
     
     # Load data (comment out if collection is already populated)
     initialize_rag_system(rag_system)

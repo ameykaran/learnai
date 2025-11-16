@@ -85,7 +85,7 @@ class Orchestrator:
 
         qtype, scores = self.classifier.classify(query)
         log.info(
-            "classification",
+            f"classification result - {query} classified as {qtype}",
             extra={"extra_json": {"query": query, "query_type": qtype, "scores": scores}},
         )
 
