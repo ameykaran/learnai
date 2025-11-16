@@ -15,9 +15,9 @@ from pathlib import Path
 shared_path = Path(__file__).parent.parent.parent / "shared"
 sys.path.insert(0, str(shared_path))
 
-from .config import OnboardingConfig
-from .prompts import AGENT_INSTRUCTIONS
-from .tools import (
+from agents.onboarding.config import OnboardingConfig
+from agents.onboarding.prompts import AGENT_INSTRUCTIONS
+from agents.onboarding.tools import (
     start_assessment,
     get_next_question,
     submit_answer,
@@ -25,6 +25,7 @@ from .tools import (
     finalize_assessment,
     onboarding_tools  # Import the tools instance
 )
+from agents.onboarding.backend.database import initialize_database
 from shared.models import UserProfile
 
 # Set up logger
@@ -52,6 +53,9 @@ class OnboardingAgent:
         self.current_user_id = None
         self.current_session_id = None
         self.tools_instance = onboarding_tools  # Expose tools instance for profile access
+
+        # Initialize the database (create tables if not exist)
+        initialize_database()
     
     def _create_agent(self) -> Agent:
         """Create and configure the Strands agent."""

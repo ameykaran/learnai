@@ -25,7 +25,7 @@ import shutil
 import subprocess
 import tempfile
 
-from prompts import AGENT_INSTRUCTIONS
+from agents.content_generation.prompts import AGENT_INSTRUCTIONS
 
 logger = logging.getLogger(__name__)
 

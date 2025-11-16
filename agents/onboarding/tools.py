@@ -17,13 +17,13 @@ from datetime import datetime
 import uuid
 
 # Import existing backend components
-from database import get_db, create_tables
-from models import QuizSession, User
-from adaptive_algorithm import ImprovedAdaptiveQuizAlgorithm
+from agents.onboarding.backend.database import get_db, create_tables
+from agents.onboarding.backend.models import QuizSession, User
+from agents.onboarding.backend.adaptive_algorithm import ImprovedAdaptiveQuizAlgorithm
 from shared.models import UserProfile
 
 # Import prompts
-from .prompts import (
+from agents.onboarding.prompts import (
     USER_GREETING,
     COMPLETION_MESSAGE,
     get_question_prompt,

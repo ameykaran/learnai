@@ -6,7 +6,7 @@ from typing import List, Dict, Tuple, Optional
 from datetime import datetime
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from models import Question, QuizSession, UserResponse
+from agents.onboarding.backend.models import Question, QuizSession, UserResponse
 from dotenv import load_dotenv
 
 # Load environment variables
