@@ -6,7 +6,7 @@ Drop-in replacement for handle_orchestrator in api_server/main.py
 import logging
 from typing import Tuple, Dict, Any
 from shared.models import UserProfile
-from agents.orchestrator.workflow_orchestrator import WorkflowOrchestrator
+from agents.orchestrator.orchestrator import Orchestrator
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +15,7 @@ async def handle_workflow_orchestrator(
     user_id: str,
     message: str,
     session: dict,
-    orchestrator: WorkflowOrchestrator,
+    orchestrator: Orchestrator,
     session_manager
 ) -> Tuple[str, Dict[str, Any]]:
     """
@@ -137,56 +137,3 @@ def _build_context_from_history(
     
     return "\n".join(context_parts)
 
-
-# ============================================================================
-# UPDATED LIFESPAN FOR API SERVER
-# ============================================================================
-
-def get_updated_lifespan():
-    """
-    Example of updated lifespan function for api_server/main.py
-    
-    Replace your existing lifespan function with this.
-    """
-    from contextlib import asynccontextmanager
-    from fastapi import FastAPI
-    from agents.retrieval.backend.rag_system import RAGSystem
-    from agents.orchestrator.workflow_orchestrator import create_workflow_orchestrator
-    
-    @asynccontextmanager
-    async def lifespan(app: FastAPI):
-        global orchestrator_agent, rag_system
-
-        print("=" * 70)
-        print("  Learning Management API Server Starting")
-        print("=" * 70)
-        print("REST API:       http://localhost:8000")
-        print("WebSocket:      ws://localhost:8000/ws/<session_id>")
-        print("Docs:           http://localhost:8000/docs")
-        print("=" * 70)
-
-        # Initialize RAG
-        try:
-            print("📚 Initializing RAG system...")
-            rag_system = RAGSystem()
-            print("✅ RAG initialized")
-        except Exception as exc:
-            print(f"⚠️ RAG init failed: {exc}")
-            rag_system = None
-
-        # Initialize Workflow Orchestrator
-        try:
-            print("🤖 Initializing Workflow Orchestrator...")
-            orchestrator_agent = create_workflow_orchestrator(rag_system=rag_system)
-            print("✅ Workflow Orchestrator ready")
-            print(f"   - Registered agents: {list(orchestrator_agent.agents.keys())}")
-            print(f"   - Query types: {list(orchestrator_agent.classifier.query_types.keys())}")
-        except Exception as exc:
-            print(f"⚠️ Orchestrator init failed: {exc}")
-            orchestrator_agent = None
-
-        yield
-
-        print("Shutting down server...")
-    
-    return lifespan

@@ -1,379 +1,521 @@
 """
-Orchestrator Agent - Multi-agent coordination using agents-as-tools pattern.
-
-This orchestrator manages multiple specialized agents:
-1. Onboarding Agent - User assessment and profiling
-2. Content Generation Agent - PDF/Slides generation
-3. RAG System - Knowledge retrieval (external)
-
-The orchestrator intelligently routes requests to the appropriate agents based on user intent.
+Enhanced Workflow-Based Orchestrator
+Consolidates classifier-based routing with structured agent coordination.
 """
 
-import os
-import sys
+import time
 import logging
+from typing import Dict, Any, List, Optional
 from pathlib import Path
-from typing import Optional, Dict, Any, List
+import sys
 
-from strands import Agent, tool
-from strands.models import BedrockModel
-
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from agents.onboarding.agent import OnboardingAgent
+from agents.orchestrator.classifier import Classifier
+from agents.retrieval.agent import RAGChatAgent
 from agents.content_generation.agent import ContentGenerator
-from agents.orchestrator.adapter import create_content_generation_request
 from shared.models import UserProfile
-from agents.retrieval.backend.schema import Chunk
 
 logger = logging.getLogger(__name__)
 
 
-class OrchestratorAgent:
+class Orchestrator:
     """
-    Main orchestrator that coordinates multiple specialized agents.
+    Production-ready orchestrator using classifier-based workflow routing.
     
-    Uses the agents-as-tools pattern where each specialized agent is wrapped
-    as a tool that the orchestrator can invoke.
+    Features:
+    - Rule-based + LLM classification
+    - Predefined workflows per query type
+    - Structured logging with traces
+    - User profile management
+    - Sequential agent execution with context passing
     """
     
-    def __init__(self, rag_system=None):
+    def __init__(self):
         """
-        Initialize the orchestrator with access to specialized agents.
+        Initialize orchestrator with specialized agents.
         
         Args:
-            rag_system: Optional RAG system instance for knowledge retrieval
+            rag_system: Optional RAG system for retrieval agent
         """
-        self.rag_system = rag_system
+        self.classifier = Classifier(llm_enabled=True)
         self.user_profiles: Dict[str, UserProfile] = {}
         
-        # Initialize specialized agents
-        self.onboarding_agent = OnboardingAgent()
+        # Initialize agents
+        self.retriever = RAGChatAgent()
         self.content_agent = ContentGenerator()
         
-        # Create orchestrator agent with agents-as-tools
-        self.agent = self._create_orchestrator()
+        # Agent registry for dynamic invocation
+        self.agents = {
+            "retriever": self.retriever,
+            "content_generation": self.content_agent,
+            # Add other agents here as they're implemented
+            # "quiz": QuizAgent(),
+            # "report": ReportAgent(),
+        }
         
-        logger.info("✅ Orchestrator initialized with onboarding and content generation agents")
+        logger.info("✅ WorkflowOrchestrator initialized with %d agents", len(self.agents))
     
-    def _create_orchestrator_tools(self):
-        """Create tools that wrap specialized agents."""
-        
-        @tool
-        def assess_new_user(user_id: str, total_questions: int = 10) -> Dict[str, Any]:
-            """
-            Assess a new user's knowledge level through adaptive testing.
-            
-            Use this tool when:
-            - A new user needs to be onboarded
-            - User asks to take an assessment or quiz
-            - You need to determine user's competence level
-            
-            Args:
-                user_id: Unique identifier for the user
-                total_questions: Number of questions (default 10)
-                
-            Returns:
-                User profile with competence level, strengths, weaknesses
-            """
-            try:
-                logger.info(f"🔧 Orchestrator invoking onboarding agent for user: {user_id}")
-                profile = self.onboarding_agent.assess_user(user_id, total_questions)
-                
-                # Store profile in memory
-                self.user_profiles[user_id] = profile
-                
-                return {
-                    "success": True,
-                    "user_id": user_id,
-                    "competence_level": profile.competence_level,
-                    "ability_score": profile.ability_score,
-                    "final_score": profile.final_score,
-                    "strengths": profile.strengths,
-                    "weaknesses": profile.weaknesses,
-                    "recommended_level": profile.recommended_starting_level
-                }
-            except Exception as e:
-                logger.error(f"❌ Error in assess_new_user: {e}")
-                return {"success": False, "error": str(e)}
-        
-        @tool
-        def retrieve_knowledge(query: str, user_id: Optional[str] = None, 
-                              max_chunks: int = 5) -> List[Dict[str, Any]]:
-            """
-            Retrieve relevant knowledge chunks from the RAG system.
-            
-            Use this tool when:
-            - User asks a question that requires factual information
-            - You need to gather content for PDF/slide generation
-            - You need to provide explanations or examples
-            
-            Args:
-                query: The search query or topic
-                user_id: Optional user ID to personalize results based on their profile
-                max_chunks: Maximum number of chunks to retrieve (default 5)
-                
-            Returns:
-                List of relevant knowledge chunks with metadata
-            """
-            try:
-                if not self.rag_system:
-                    return {"success": False, "error": "RAG system not configured"}
-                
-                logger.info(f"🔧 Orchestrator querying RAG system: {query}")
-                
-                # Get user profile for personalization if available
-                user_profile = None
-                if user_id and user_id in self.user_profiles:
-                    user_profile = self.user_profiles[user_id]
-                
-                # Query RAG system (this is a placeholder - replace with actual RAG call)
-                chunks = self.rag_system.query(
-                    query=query,
-                    user_profile=user_profile,
-                    max_results=max_chunks
-                )
-                
-                # Convert Chunk objects to dictionaries
-                results = []
-                for chunk in chunks:
-                    if isinstance(chunk, Chunk):
-                        results.append({
-                            "id": chunk.id,
-                            "text": chunk.text,
-                            "topics": chunk.metadata.topics,
-                            "chunk_type": chunk.metadata.chunk_type,
-                            "difficulty_level": chunk.metadata.difficulty_level,
-                            "prerequisites": chunk.metadata.prerequisites,
-                            "source_url": chunk.metadata.source_url
-                        })
-                    else:
-                        results.append(chunk)
-                
-                return {
-                    "success": True,
-                    "query": query,
-                    "chunks": results,
-                    "count": len(results)
-                }
-                
-            except Exception as e:
-                logger.error(f"❌ Error in retrieve_knowledge: {e}")
-                return {"success": False, "error": str(e)}
-        
-        @tool
-        def generate_content(request_type: str, topic: str, user_id: Optional[str] = None,
-                           num_slides: Optional[int] = None, 
-                           include_exercises: bool = False) -> Dict[str, Any]:
-            """
-            Generate PDF documents or presentation slides using retrieved knowledge.
-            
-            Use this tool when:
-            - User asks to create slides, presentation, or PPT
-            - User asks to generate a PDF, document, or report
-            - User wants structured learning materials
-            
-            Args:
-                request_type: Type of content ('slides' or 'pdf')
-                topic: The topic or title for the content
-                user_id: Optional user ID to personalize content
-                num_slides: Number of slides (for presentations, default 10)
-                include_exercises: Whether to include practice problems
-                
-            Returns:
-                Path to generated file and metadata
-            """
-            try:
-                logger.info(f"🔧 Orchestrator generating {request_type} for topic: {topic}")
-                
-                # 1. Retrieve relevant knowledge from RAG
-                rag_response = retrieve_knowledge(
-                    query=topic,
-                    user_id=user_id,
-                    max_chunks=10
-                )
-                
-                if not rag_response.get("success"):
-                    return {"success": False, "error": "Failed to retrieve knowledge"}
-                
-                chunks = rag_response.get("chunks", [])
-                
-                # 2. Get user profile if available
-                user_profile = None
-                if user_id and user_id in self.user_profiles:
-                    user_profile = self.user_profiles[user_id]
-                
-                # 3. Use adapter to create agent-ready request
-                agent_request = create_content_generation_request(
-                    topic=topic,
-                    request_type=request_type,
-                    rag_chunks=chunks,
-                    user_profile=user_profile,
-                    num_slides=num_slides,
-                    include_exercises=include_exercises
-                )
-                
-                # 4. Invoke content generation agent
-                result = self.content_agent.chat(agent_request["prompt"])
-                
-                return {
-                    "success": True,
-                    "request_type": request_type,
-                    "topic": topic,
-                    "result": result,
-                    "metadata": agent_request["metadata"]
-                }
-                
-            except Exception as e:
-                logger.error(f"❌ Error in generate_content: {e}")
-                return {"success": False, "error": str(e)}
-        
-        @tool
-        def get_user_profile(user_id: str) -> Dict[str, Any]:
-            """
-            Retrieve stored user profile information.
-            
-            Use this tool when:
-            - You need to personalize responses for a user
-            - You want to check a user's competence level
-            - You need to understand user's strengths/weaknesses
-            
-            Args:
-                user_id: The user's unique identifier
-                
-            Returns:
-                User profile data or error if not found
-            """
-            if user_id in self.user_profiles:
-                profile = self.user_profiles[user_id]
-                return {
-                    "success": True,
-                    "user_id": user_id,
-                    "competence_level": profile.competence_level,
-                    "ability_score": profile.ability_score,
-                    "strengths": profile.strengths,
-                    "weaknesses": profile.weaknesses,
-                    "recommended_level": profile.recommended_starting_level
-                }
-            else:
-                return {
-                    "success": False,
-                    "error": f"No profile found for user {user_id}"
-                }
-        
-        return [
-            assess_new_user,
-            retrieve_knowledge,
-            generate_content,
-            get_user_profile
-        ]
-    
-    def _create_orchestrator(self) -> Agent:
-        """Create the main orchestrator agent."""
-        
-        system_prompt = """You are an intelligent learning management orchestrator.
-
-Your role is to coordinate multiple specialized agents to help users learn effectively:
-
-1. **Onboarding Agent** - Assesses new users to determine their knowledge level
-2. **RAG System** - Retrieves relevant educational content and explanations  
-3. **Content Generator** - Creates PDF documents and presentation slides
-
-**When to use each tool:**
-
-- **assess_new_user**: When user is new, wants assessment, or you need their competence level
-- **retrieve_knowledge**: When user asks questions or you need content for generation
-- **generate_content**: When user wants slides, presentations, PDFs, or structured materials
-- **get_user_profile**: When you need to personalize responses for a known user
-
-**Best Practices:**
-
-1. For new users, start with assessment to understand their level
-2. Always retrieve knowledge before generating content
-3. Personalize content based on user's competence level and learning pace
-4. Be conversational and guide users through the learning process
-5. If generating content, first gather knowledge, then create structured materials
-
-**Content Generation Guidelines:**
-
-- For slides: Keep each slide focused on one concept
-- For PDFs: Organize into logical sections with clear headings
-- Match difficulty to user's level (if known)
-- Include examples and exercises when appropriate
-
-Be helpful, educational, and always aim to provide the best learning experience."""
-
-        model = BedrockModel(
-            model_id="us.anthropic.claude-sonnet-4-20250514-v1:0",
-            streaming=False,
-        )
-        
-        tools = self._create_orchestrator_tools()
-        
-        agent = Agent(
-            name="Learning Orchestrator",
-            model=model,
-            system_prompt=system_prompt,
-            tools=tools,
-            description="Intelligent orchestrator for multi-agent learning system"
-        )
-        
-        return agent
-    
-    def chat(self, user_message: str, user_id: Optional[str] = None) -> str:
+    def process_query(
+        self,
+        query: str,
+        user_id: Optional[str] = None,
+        context: str = ""
+    ) -> Dict[str, Any]:
         """
-        Process user message through orchestrator.
+        Main entry point for processing user queries.
         
         Args:
-            user_message: The user's message/request
-            user_id: Optional user ID for context
+            query: User's query string
+            user_id: Optional user identifier for personalization
+            context: Optional additional context
             
         Returns:
-            Orchestrator's response
+            Dict containing:
+                - query: Original query
+                - query_type: Classified query type
+                - scores: Classification scores
+                - steps: List of agent execution steps
+                - final_response: Synthesized final response
+                - metadata: Additional metadata (timing, user info, etc.)
         """
-        # Add user context to message if available
-        if user_id and user_id in self.user_profiles:
-            profile = self.user_profiles[user_id]
-            context = f"\n[User Context: {user_id}, Level: {profile.competence_level}]\n"
-            message = context + user_message
-        else:
-            message = user_message
+        start_ts = int(time.time() * 1000)
         
-        logger.info(f"💬 Orchestrator processing: {user_message[:100]}...")
-        response = self.agent.chat(message)
+        logger.info(
+            "incoming_query",
+            extra={"extra_json": {"query": query, "user_id": user_id}}
+        )
         
-        return response
+        # Step 1. Classify query
+        qtype, scores = self.classifier.classify(query)
+        workflow = self.classifier.query_types.get(qtype)
+        
+        logger.info(
+            "classification",
+            extra={
+                "extra_json": {
+                    "query": query,
+                    "query_type": qtype,
+                    "scores": scores,
+                    "workflow": workflow.get("workflow", "unknown")
+                }
+            }
+        )
+        
+        # Step 2. Get user profile if available
+        user_profile = self.user_profiles.get(user_id) if user_id else None
+        
+        # Step 3. Execute workflow
+        steps = []
+        retrieved_context = ""
+        
+        # Step 3.1: Retrieval (if needed)
+        if "retriever" in workflow.get("agents", []):
+            retrieved_context = self._execute_retriever(
+                query=query,
+                context=context,
+                user_profile=user_profile,
+                steps=steps
+            )
+        
+        # Step 3.2: Specialized agents
+        for agent_name in workflow.get("agents", []):
+            if agent_name == "retriever":
+                continue  # Already executed
+                
+            self._execute_agent(
+                agent_name=agent_name,
+                query=query,
+                retrieved_context=retrieved_context,
+                user_id=user_id,
+                user_profile=user_profile,
+                steps=steps
+            )
+        
+        # Step 4. Synthesize final response
+        final_response = self._synthesize_response(steps, qtype)
+        
+        # Step 5. Create structured trace
+        duration_ms = int(time.time() * 1000) - start_ts
+        trace = self._create_trace(
+            start_ts=start_ts,
+            duration_ms=duration_ms,
+            user_id=user_id,
+            query=query,
+            qtype=qtype,
+            scores=scores,
+            steps=steps,
+            final_response=final_response
+        )
+        
+        logger.info("orchestrator_trace", extra={"extra_json": trace})
+        
+        return {
+            "query": query,
+            "query_type": qtype,
+            "scores": scores,
+            "steps": steps,
+            "final_response": final_response,
+            "metadata": {
+                "duration_ms": duration_ms,
+                "user_id": user_id,
+                "workflow": workflow.get("workflow"),
+                "agents_used": [s["agent"] for s in steps]
+            }
+        }
     
-    def set_rag_system(self, rag_system):
-        """Set or update the RAG system instance."""
-        self.rag_system = rag_system
-        logger.info("✅ RAG system configured")
+    def _execute_retriever(
+        self,
+        query: str,
+        context: str,
+        user_profile: Optional[UserProfile],
+        steps: List[Dict[str, Any]]
+    ) -> str:
+        """Execute retriever agent and track results."""
+        if not self.retriever:
+            logger.warning("Retriever not configured, skipping retrieval")
+            return ""
+        
+        t0 = time.time()
+        
+        try:
+            # Build retrieval query with context
+            retrieval_query = f"{context}\n{query}" if context else query
+            
+            # Call retriever with user profile for personalization
+            retrieved = self.retriever.chat(
+                message=retrieval_query,
+                user_profile=user_profile
+            )
+            
+            duration_ms = int((time.time() - t0) * 1000)
+            
+            steps.append({
+                "agent": "retriever",
+                "output": retrieved,
+                "duration_ms": duration_ms,
+                "success": True
+            })
+            
+            logger.info(
+                "agent_step",
+                extra={
+                    "extra_json": {
+                        "agent": "retriever",
+                        "duration_ms": duration_ms,
+                        "output_length": len(str(retrieved))
+                    }
+                }
+            )
+            
+            return retrieved
+            
+        except Exception as e:
+            logger.error(f"Retriever error: {e}", exc_info=True)
+            steps.append({
+                "agent": "retriever",
+                "error": str(e),
+                "success": False
+            })
+            return ""
+    
+    def _execute_agent(
+        self,
+        agent_name: str,
+        query: str,
+        retrieved_context: str,
+        user_id: Optional[str],
+        user_profile: Optional[UserProfile],
+        steps: List[Dict[str, Any]]
+    ):
+        """Execute a specialized agent and track results."""
+        t0 = time.time()
+        
+        try:
+            # Route to appropriate agent
+            if agent_name == "content_generation":
+                output = self._call_content_generation(
+                    query=query,
+                    retrieved=retrieved_context,
+                    user_profile=user_profile
+                )
+            elif agent_name == "quiz":
+                output = self._call_quiz(
+                    query=query,
+                    retrieved=retrieved_context,
+                    user_profile=user_profile
+                )
+            elif agent_name == "report":
+                output = self._call_report(
+                    user_id=user_id or "unknown",
+                    user_profile=user_profile
+                )
+            elif agent_name == "specialist":
+                output = self._call_specialist(
+                    query=query,
+                    retrieved=retrieved_context,
+                    user_profile=user_profile
+                )
+            else:
+                output = f"[Agent '{agent_name}' not yet implemented]"
+                logger.warning(f"Unknown agent: {agent_name}")
+            
+            duration_ms = int((time.time() - t0) * 1000)
+            
+            steps.append({
+                "agent": agent_name,
+                "output": output,
+                "duration_ms": duration_ms,
+                "success": True
+            })
+            
+            logger.info(
+                "agent_step",
+                extra={
+                    "extra_json": {
+                        "agent": agent_name,
+                        "duration_ms": duration_ms,
+                        "output_summary": str(output)[:500]
+                    }
+                }
+            )
+            
+        except Exception as e:
+            logger.error(f"Agent {agent_name} error: {e}", exc_info=True)
+            steps.append({
+                "agent": agent_name,
+                "error": str(e),
+                "success": False
+            })
+    
+    # ========================================================================
+    # AGENT CALL METHODS
+    # ========================================================================
+    
+    def _call_content_generation(
+        self,
+        query: str,
+        retrieved: str,
+        user_profile: Optional[UserProfile]
+    ) -> str:
+        """Call content generation agent."""
+        # Parse intent from query
+        if "slide" in query.lower() or "presentation" in query.lower():
+            request_type = "slides"
+        else:
+            request_type = "pdf"
+        
+        # Extract topic (simplified)
+        topic = query.replace("create", "").replace("generate", "").strip()
+        
+        # Use content agent (placeholder - implement full logic)
+        return f"[Content generation for '{topic}' as {request_type} - Implementation needed]"
+    
+    def _call_quiz(
+        self,
+        query: str,
+        retrieved: str,
+        user_profile: Optional[UserProfile]
+    ) -> str:
+        """Call quiz generation agent."""
+        return "[Quiz generation - Implementation needed]"
+    
+    def _call_report(
+        self,
+        user_id: str,
+        user_profile: Optional[UserProfile]
+    ) -> str:
+        """Call report generation agent."""
+        if not user_profile:
+            return "Cannot generate report: User profile not found. Please complete onboarding first."
+        
+        return "[Report generation - Implementation needed]"
+    
+    def _call_specialist(
+        self,
+        query: str,
+        retrieved: str,
+        user_profile: Optional[UserProfile]
+    ) -> str:
+        """Call specialist/math agent."""
+        return "[Specialist agent - Implementation needed]"
+    
+    # ========================================================================
+    # RESPONSE SYNTHESIS
+    # ========================================================================
+    
+    def _synthesize_response(self, steps: List[Dict[str, Any]], qtype: str) -> str:
+        """
+        Synthesize final response from agent outputs.
+        
+        Args:
+            steps: List of agent execution steps
+            qtype: Query type for context
+            
+        Returns:
+            Synthesized response string
+        """
+        if not steps:
+            return "I couldn't process your query. Please try again."
+        
+        # Collect successful outputs
+        successful_outputs = [
+            step["output"] 
+            for step in steps 
+            if step.get("success", False) and "output" in step
+        ]
+        
+        if not successful_outputs:
+            return "An error occurred while processing your request."
+        
+        # Simple synthesis based on query type
+        if qtype == "concept_explanation":
+            return self._synthesize_explanation(successful_outputs)
+        elif qtype == "assessment":
+            return self._synthesize_assessment(successful_outputs)
+        elif qtype == "performance_report":
+            return successful_outputs[-1]  # Return report directly
+        elif qtype == "content_creation":
+            return self._synthesize_content_creation(successful_outputs)
+        else:
+            # Default: return last output
+            return successful_outputs[-1]
+    
+    def _synthesize_explanation(self, outputs: List[str]) -> str:
+        """Synthesize explanation from retriever + content agent."""
+        if len(outputs) == 1:
+            return outputs[0]
+        
+        # Combine retrieval context with generated explanation
+        retrieval = outputs[0] if outputs else ""
+        explanation = outputs[1] if len(outputs) > 1 else ""
+        
+        return f"{explanation}\n\n**Reference Information:**\n{retrieval}"
+    
+    def _synthesize_assessment(self, outputs: List[str]) -> str:
+        """Synthesize assessment response."""
+        return outputs[-1]  # Quiz agent output
+    
+    def _synthesize_content_creation(self, outputs: List[str]) -> str:
+        """Synthesize content creation response."""
+        return outputs[-1]  # Content agent output
+    
+    # ========================================================================
+    # TRACING & LOGGING
+    # ========================================================================
+    
+    def _create_trace(
+        self,
+        start_ts: int,
+        duration_ms: int,
+        user_id: Optional[str],
+        query: str,
+        qtype: str,
+        scores: Dict,
+        steps: List[Dict[str, Any]],
+        final_response: str
+    ) -> Dict[str, Any]:
+        """Create structured trace for logging."""
+        return {
+            "timestamp_ms": start_ts,
+            "duration_ms": duration_ms,
+            "user_id": user_id,
+            "query": query,
+            "query_type": qtype,
+            "classification_scores": scores,
+            "steps": [
+                {
+                    "agent": s["agent"],
+                    "duration_ms": s.get("duration_ms", 0),
+                    "success": s.get("success", False),
+                    "output_summary": str(s.get("output", ""))[:500],
+                    "error": s.get("error")
+                }
+                for s in steps
+            ],
+            "final_response_length": len(final_response),
+            "final_response_preview": final_response[:500]
+        }
+    
+    # ========================================================================
+    # PROFILE MANAGEMENT
+    # ========================================================================
+    
+    def store_profile(self, user_id: str, profile: UserProfile):
+        """Store user profile for future queries."""
+        self.user_profiles[user_id] = profile
+        logger.info(f"Profile stored for user: {user_id}")
+    
+    def get_profile(self, user_id: str) -> Optional[UserProfile]:
+        """Retrieve user profile."""
+        return self.user_profiles.get(user_id)
+    
+    # ========================================================================
+    # CHAT INTERFACE (for backward compatibility)
+    # ========================================================================
+    
+    def chat(self, message: str, user_id: Optional[str] = None) -> str:
+        """
+        Simple chat interface for backward compatibility.
+        
+        Args:
+            message: User message
+            user_id: Optional user ID
+            
+        Returns:
+            Response string
+        """
+        result = self.process_query(query=message, user_id=user_id)
+        return result["final_response"]
 
 
-# Convenience function for FastAPI integration
-def create_orchestrator(rag_system=None) -> OrchestratorAgent:
+# ============================================================================
+# FACTORY FUNCTION
+# ============================================================================
+
+def create_workflow_orchestrator(rag_system=None) -> Orchestrator:
     """
-    Factory function to create orchestrator instance.
+    Factory function to create WorkflowOrchestrator instance.
     
     Args:
         rag_system: Optional RAG system instance
         
     Returns:
-        Configured OrchestratorAgent
+        Configured WorkflowOrchestrator
     """
-    return OrchestratorAgent(rag_system=rag_system)
+    return Orchestrator(rag_system=rag_system)
 
+
+# ============================================================================
+# TESTING
+# ============================================================================
 
 if __name__ == "__main__":
-    # Simple test
-    logging.basicConfig(level=logging.INFO)
+    import logging
+    logger.basicConfig(
+        level=logger.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
     
-    print("Creating orchestrator...")
-    orchestrator = create_orchestrator()
+    print("=" * 70)
+    print("Testing WorkflowOrchestrator")
+    print("=" * 70)
     
-    print("\nTest 1: Simple query")
-    response = orchestrator.chat("Hello! I'm new here.")
-    print(f"Response: {response}")
+    orchestrator = create_workflow_orchestrator()
     
-    print("\nOrchestrator test complete!")
+    test_queries = [
+        "Explain how probability works",
+        "Generate a quiz on statistics",
+        "Create slides about linear algebra",
+        "Show me my performance report"
+    ]
+    
+    for query in test_queries:
+        print(f"\n{'='*70}")
+        print(f"Query: {query}")
+        print(f"{'='*70}")
+        
+        result = orchestrator.process_query(query, user_id="test_user")
+        
+        print(f"Query Type: {result['query_type']}")
+        print(f"Agents Used: {result['metadata']['agents_used']}")
+        print(f"Duration: {result['metadata']['duration_ms']}ms")
+        print(f"\nResponse:\n{result['final_response']}")

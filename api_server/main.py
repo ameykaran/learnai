@@ -15,7 +15,7 @@ from agents.content_generation.agent import (
     generate_presentation_slides,
 )
 from agents.orchestrator.adapter import create_content_generation_request
-from agents.orchestrator.workflow_orchestrator import create_workflow_orchestrator
+from agents.orchestrator.orchestrator import create_workflow_orchestrator
 from api_server.orchestrator_handler import handle_workflow_orchestrator
 from agents.onboarding import OnboardingAgent
 import sys

@@ -85,32 +85,95 @@ class RAGChatAgent:
         
         return agent
     
-    def chat(self, message: str, **kwargs) -> str:
+    def chat(self, message: str, user_profile=None, **kwargs) -> str:
         """
         Chat interface for educational tutoring.
         
         Args:
             message: User's message/question
+            user_profile: Optional UserProfile object for personalization
             **kwargs: Additional arguments passed to agent
         
         Returns:
             Agent's response
         """
-        response = self.agent(message, **kwargs)
+        # Enhance message with user profile context if available
+        if user_profile:
+            profile_context = self._build_profile_context(user_profile)
+            enhanced_message = f"{profile_context}\n\nUser Query: {message}"
+        else:
+            enhanced_message = message
+        
+        response = self.agent(enhanced_message, **kwargs)
         return str(response)
     
-    async def chat_async(self, message: str, **kwargs) -> str:
+    def _build_profile_context(self, user_profile) -> str:
+        """
+        Build context string from user profile for personalized retrieval.
+        
+        Args:
+            user_profile: UserProfile object
+            
+        Returns:
+            Formatted context string
+        """
+        context_parts = [
+            "[User Profile Context for Personalized Content Retrieval]"
+        ]
+        
+        # Add competence level
+        if hasattr(user_profile, 'competence_level') and user_profile.competence_level:
+            level_map = {
+                'beginner': 'basic',
+                'intermediate': 'intermediate',
+                'advanced': 'advanced',
+                'basic': 'basic',
+                'medium': 'intermediate',
+                'high': 'advanced'
+            }
+            difficulty = level_map.get(user_profile.competence_level.lower(), 'intermediate')
+            context_parts.append(f"Student Level: {user_profile.competence_level.title()} (retrieve '{difficulty}' difficulty content)")
+        
+        # # Add ability score
+        # if hasattr(user_profile, 'ability_score') and user_profile.ability_score is not None:
+        #     context_parts.append(f"Ability Score: {user_profile.ability_score:.2f}")
+        
+        # Add strengths
+        if hasattr(user_profile, 'strengths') and user_profile.strengths:
+            strengths_str = ", ".join(user_profile.strengths[:3])  # Limit to top 3
+            context_parts.append(f"Strong Topics: {strengths_str}")
+        
+        # Add weaknesses
+        if hasattr(user_profile, 'weaknesses') and user_profile.weaknesses:
+            weaknesses_str = ", ".join(user_profile.weaknesses[:3])  # Limit to top 3
+            context_parts.append(f"Areas for Improvement: {weaknesses_str}")
+            context_parts.append("(Provide extra support and simpler explanations for these topics)")
+        
+        context_parts.append("\nIMPORTANT: Use the search_knowledge_base tool with the appropriate 'difficulty_level' parameter based on the student's level.")
+        context_parts.append("For weak topics, consider retrieving prerequisite concepts first.")
+        
+        return "\n".join(context_parts)
+    
+    async def chat_async(self, message: str, user_profile=None, **kwargs) -> str:
         """
         Async chat interface for educational tutoring.
         
         Args:
             message: User's message/question
+            user_profile: Optional UserProfile object for personalization
             **kwargs: Additional arguments passed to agent
         
         Returns:
             Agent's response
         """
-        response = await self.agent.invoke_async(message, **kwargs)
+        # Enhance message with user profile context if available
+        if user_profile:
+            profile_context = self._build_profile_context(user_profile)
+            enhanced_message = f"{profile_context}\n\nUser Query: {message}"
+        else:
+            enhanced_message = message
+        
+        response = await self.agent.invoke_async(enhanced_message, **kwargs)
         return str(response)
     
     def welcome(self) -> str:
