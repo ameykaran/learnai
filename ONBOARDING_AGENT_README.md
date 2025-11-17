@@ -1,6 +1,6 @@
 # 🎓 Onboarding Agent - Adaptive Assessment Service
 
-A Strands-based agentic service that administers adaptive probability assessments for student onboarding in the Learning Management System.
+A Strands-based agentic service that administers adaptive probability assessments for student onboarding in the Learning System.
 
 ## Overview
 
@@ -397,7 +397,7 @@ After implementing the onboarding agent:
 
 ## License
 
-Part of the LMA Major Project - Learning Management Assistant
+Part of the LMA Major Project - Learning Assistant
 
 ## Support
 

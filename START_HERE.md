@@ -36,7 +36,7 @@ cd /home/amey/Academics/LMA/lma-major-project-moya-moye
 ./start-api-server.sh
 
 # Should see:
-# "Learning Management API Server Starting"
+# "Learning API Server Starting"
 # "REST API: http://localhost:8000"
 # "Docs: http://localhost:8000/docs"
 ```

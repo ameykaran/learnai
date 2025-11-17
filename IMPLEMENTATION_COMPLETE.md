@@ -2,7 +2,7 @@
 
 ## ✅ What Was Built
 
-I've implemented a **complete chat interface system** for your Learning Management Assistant with support for both **orchestrator-mediated** and **direct agent connections**.
+I've implemented a **complete chat interface system** for your Learning Assistant with support for both **orchestrator-mediated** and **direct agent connections**.
 
 ## 📦 Components Created
 

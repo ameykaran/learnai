@@ -2,7 +2,7 @@
 
 ## What We Built
 
-A complete **Strands Agent-based onboarding service** that administers adaptive probability assessments and generates user profiles for your learning management system's orchestrator.
+A complete **Strands Agent-based onboarding service** that administers adaptive probability assessments and generates user profiles for your learning system's orchestrator.
 
 ---
 
@@ -420,7 +420,7 @@ You now have a **production-ready onboarding agent** that:
 ✅ Has CLI for testing
 ✅ Is well-documented
 
-The agent is ready to be the **first mandatory step** in your learning management system, ensuring all users are properly assessed before personalized learning begins!
+The agent is ready to be the **first mandatory step** in your learning system, ensuring all users are properly assessed before personalized learning begins!
 
 ---
 

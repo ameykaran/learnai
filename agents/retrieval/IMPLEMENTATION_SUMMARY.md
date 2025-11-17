@@ -214,7 +214,7 @@ BEDROCK_MODEL_ID=us.anthropic.claude-sonnet-4-20250514-v1:0
 
 # RAG System
 RAG_DB_PATH=./rag/prob_db
-RAG_MODEL_NAME=all-MiniLM-L6-v2
+RAG_MODEL_NAME=BAAI/bge-m3
 RAG_DEFAULT_K=3
 
 # Keyword Extraction

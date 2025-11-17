@@ -1,5 +1,5 @@
 """
-Shared data models for the learning management system.
+Shared data models for the learning system.
 These models are used across agents and stored in the orchestrator's memory.
 """
 

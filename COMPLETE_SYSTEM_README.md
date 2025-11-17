@@ -1,8 +1,8 @@
-# 🎓 Learning Management Assistant - Complete System
+# 🎓 Learning Assistant - Complete System
 
 ## 🌟 Overview
 
-A comprehensive AI-powered learning management system with:
+A comprehensive AI-powered learning system with:
 - **Adaptive Assessment**: IRT-based onboarding quiz to determine student competence
 - **Agentic Architecture**: Strands Agent framework with orchestrator pattern
 - **Chat Interface**: Modern React/Next.js frontend with WebSocket support

@@ -1,4 +1,4 @@
-# Chat Interface for Learning Management System
+# Chat Interface for Learning System
 
 Complete chat interface implementation with support for both orchestrator-mediated interactions and direct agent connections.
 

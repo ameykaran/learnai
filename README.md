@@ -1,6 +1,6 @@
-# Learning Management Assistant (LMA)
+# Learning Assistant
 
-A comprehensive AI-powered learning management system with adaptive assessment, agentic architecture, and modern chat interface.
+A comprehensive AI-powered learning system with adaptive assessment, agentic architecture, and modern chat interface.
 
 > 🚀 **NEW**: Complete chat interface with orchestrator + direct agent support now available!
 

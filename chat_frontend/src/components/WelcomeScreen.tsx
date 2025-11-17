@@ -52,7 +52,7 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             <span className="text-6xl">🎓</span>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Learning Management Assistant
+            Learning Assistant
           </h1>
           <p className="text-gray-600 text-lg">
             Your personalized AI tutor for probability and statistics

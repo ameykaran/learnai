@@ -199,9 +199,40 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
                 )
               },
               // Custom styling for links
-              a({ node, children, ...props }) {
+              a({ node, children, href, ...props }) {
+                // Check if it's a generated content link (PDF/slides)
+                const isGeneratedContent = href?.includes('/generated/') || href?.includes('/public/')
+                const isContentFile = href?.match(/\.(pdf|pptx?|docx?)$/i)
+                
+                // Replace localhost:3001 with localhost:8000 if present
+                if (href) {
+                  href = href.replace('localhost:3001', 'localhost:8000')
+                }
+
+                if (isGeneratedContent && isContentFile) {
+                  return (
+                    <a
+                      href={href}
+                      className={`inline-flex items-center gap-2 ${
+                        isUser 
+                          ? 'bg-blue-500 hover:bg-blue-400 text-white' 
+                          : 'bg-blue-600 hover:bg-blue-700 text-white'
+                      } px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all my-2`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      {...props}
+                    >
+                      <span>🔗</span>
+                      <span>{children}</span>
+                      <span className="text-xs opacity-75">↗</span>
+                    </a>
+                  )
+                }
+                
+                // Regular links
                 return (
                   <a
+                    href={href}
                     className={`${
                       isUser ? 'text-blue-200' : 'text-blue-600'
                     } hover:underline`}
