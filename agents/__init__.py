@@ -1,4 +1,4 @@
 """
-Agents package for the learning management system.
+Agents package for the learning system.
 Contains various specialized agents for different tasks.
 """

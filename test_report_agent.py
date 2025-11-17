@@ -272,40 +272,54 @@ def test_report_generation(user_session_id: str):
     agent = ReportAgent()
     print("✓ Report Agent created")
     
-    # Test 1: Comprehensive Report
-    print("\n" + "=" * 80)
-    print("TEST 1: COMPREHENSIVE REPORT (7 days)")
-    print("=" * 80)
-    report = agent.generate_report(user_session_id, days=7, report_type="comprehensive")
-    print(report)
+    # # Test 1: Comprehensive Report
+    # print("\n" + "=" * 80)
+    # print("TEST 1: COMPREHENSIVE REPORT (7 days)")
+    # print("=" * 80)
+    # report = agent.generate_report(user_session_id, days=7, report_type="comprehensive")
+    # print(report)
     
-    # Test 2: Quick Summary
-    print("\n" + "=" * 80)
-    print("TEST 2: QUICK SUMMARY (7 days)")
-    print("=" * 80)
-    report = agent.generate_report(user_session_id, days=7, report_type="quick")
-    print(report)
+    # # Test 2: Quick Summary
+    # print("\n" + "=" * 80)
+    # print("TEST 2: QUICK SUMMARY (7 days)")
+    # print("=" * 80)
+    # report = agent.generate_report(user_session_id, days=7, report_type="quick")
+    # print(report)
     
-    # Test 3: Progress Analysis
-    print("\n" + "=" * 80)
-    print("TEST 3: PROGRESS ANALYSIS (14 days)")
-    print("=" * 80)
-    analysis = agent.analyze_progress(user_session_id, days=14)
-    print(analysis)
+    # # Test 3: Progress Analysis
+    # print("\n" + "=" * 80)
+    # print("TEST 3: PROGRESS ANALYSIS (14 days)")
+    # print("=" * 80)
+    # analysis = agent.analyze_progress(user_session_id, days=14)
+    # print(analysis)
     
-    # Test 4: Recommendations
-    print("\n" + "=" * 80)
-    print("TEST 4: PERSONALIZED RECOMMENDATIONS")
-    print("=" * 80)
-    recommendations = agent.get_recommendations(user_session_id)
-    print(recommendations)
+    # # Test 4: Recommendations
+    # print("\n" + "=" * 80)
+    # print("TEST 4: PERSONALIZED RECOMMENDATIONS")
+    # print("=" * 80)
+    # recommendations = agent.get_recommendations(user_session_id)
+    # print(recommendations)
     
-    # Test 5: Period Comparison
+    # # Test 5: Period Comparison
+    # print("\n" + "=" * 80)
+    # print("TEST 5: TIME PERIOD COMPARISON")
+    # print("=" * 80)
+    # comparison = agent.compare_periods(user_session_id, recent_days=7, previous_days=14)
+    # print(comparison)
+    
+    # Test 6: Visualizations (Text Format)
     print("\n" + "=" * 80)
-    print("TEST 5: TIME PERIOD COMPARISON")
+    print("TEST 6: PROGRESS VISUALIZATIONS (Text Format)")
     print("=" * 80)
-    comparison = agent.compare_periods(user_session_id, recent_days=7, previous_days=14)
-    print(comparison)
+    visualizations = agent.get_visualizations(user_session_id, days=14, format="markdown")
+    print(visualizations)
+    
+    # Test 7: Visualizations (JSON Format)
+    print("\n" + "=" * 80)
+    print("TEST 7: VISUALIZATION DATA (JSON Format)")
+    print("=" * 80)
+    viz_json = agent.get_visualizations(user_session_id, days=14, format="json")
+    print(viz_json[:1000] + "..." if len(viz_json) > 1000 else viz_json)  # Truncate for readability
 
 
 def main():

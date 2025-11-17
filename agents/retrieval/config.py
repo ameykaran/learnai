@@ -29,6 +29,7 @@ class RAGChatConfig:
     # RAG System Configuration
     RAG_DB_PATH = os.getenv("RAG_DB_PATH", f"{RETRIEVAL_BACKEND_PATH}/vector_db")
     RAG_MODEL_NAME = os.getenv("RAG_MODEL_NAME", "all-MiniLM-L6-v2")
+    # RAG_MODEL_NAME = os.getenv("RAG_MODEL_NAME", "BAAI/bge-m3")
     
     # Keyword Extractor Configuration
     KEYWORDS_FILE = os.getenv("KEYWORDS_FILE", f"{RETRIEVAL_BACKEND_PATH}/probability_keywords.csv")

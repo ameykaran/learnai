@@ -1,5 +1,5 @@
 """
-API Server for Learning Management System
+API Server for Learning System
 Provides REST and WebSocket endpoints for orchestrator + onboarding agents.
 """
 
@@ -64,7 +64,7 @@ async def lifespan(app: FastAPI):
     global orchestrator_agent, rag_system
 
     print("=" * 70)
-    print("  Learning Management API Server Starting")
+    print("  Learning API Server Starting")
     print("=" * 70)
     print("REST API:       http://localhost:8000")
     print("WebSocket:      ws://localhost:8000/ws/<session_id>")
@@ -102,7 +102,7 @@ async def lifespan(app: FastAPI):
 # ============================================================================
 
 app = FastAPI(
-    title="Learning Management API",
+    title="Learning API",
     version="1.0.0",
     description="REST & WebSocket API providing orchestrator + agent chat",
     lifespan=lifespan
@@ -259,7 +259,7 @@ ws_manager = ConnectionManager()
 
 @app.get("/")
 async def root():
-    return {"status": "running", "service": "Learning Management API"}
+    return {"status": "running", "service": "Learning API"}
 
 
 # ============================================================================

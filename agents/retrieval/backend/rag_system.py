@@ -37,8 +37,8 @@ class RAGSystem:
     # Define which metadata fields are lists vs scalars
     LIST_FIELDS = {"topics", "prerequisites"}
     SCALAR_FIELDS = {"source_url", "source_type", "chunk_type", "difficulty_level"}
-    
-    def __init__(self, db_path: str = f"{RETRIEVAL_BACKEND_PATH}/vector_db", model_name: str = 'all-MiniLM-L6-v2'):
+    def __init__(self, db_path: str = f"{RETRIEVAL_BACKEND_PATH}/vector_db", model_name: str = 'all-MiniLM-L6-v2'):    
+    # def __init__(self, db_path: str = f"{RETRIEVAL_BACKEND_PATH}/vector_db", model_name: str = 'BAAI/bge-m3'):
         """
         Initialize the RAG system with embedding model and vector database.
         

@@ -61,6 +61,11 @@ async def handle_workflow_orchestrator(
         
         # Extract response and build metadata
         response_text = result["final_response"]
+        
+        # Extract chart URLs if present
+        import re
+        chart_urls = re.findall(r'/generated/report_.*?\.png', response_text)
+        
         metadata = {
             "agent": "Orchestrator",
             "query_type": result["query_type"],
@@ -70,6 +75,11 @@ async def handle_workflow_orchestrator(
             "workflow": result["metadata"]["workflow"],
             "success": True
         }
+        
+        # Add chart URLs to metadata if found
+        if chart_urls:
+            metadata["chart_urls"] = chart_urls
+            logger.info(f"Detected {len(chart_urls)} chart(s) in response")
         
         # Add step details for debugging (optional)
         if logger.isEnabledFor(logging.DEBUG):

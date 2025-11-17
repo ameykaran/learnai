@@ -1,5 +1,5 @@
 """
-Shared utilities and models for the learning management system.
+Shared utilities and models for the learning system.
 Used across multiple agents and the orchestrator.
 """
 
