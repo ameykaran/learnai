@@ -10,4 +10,4 @@ echo "Docs: http://localhost:8000/docs"
 echo "WebSocket: ws://localhost:8000/ws/{session_id}"
 echo ""
 
-python -m api_server.main
+python3 -m api_server.main
