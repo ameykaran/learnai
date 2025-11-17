@@ -11,7 +11,7 @@ import sys
 
 from agents.orchestrator.classifier import Classifier
 from agents.retrieval.agent import RAGChatAgent
-from agents.content_generation.agent import ContentGenerator
+from agents.content_generation.agent import ContentGenerationAgent
 from agents.specialist import get_specialist_agent
 from agents.report.agent import ReportAgent
 from shared.models import UserProfile
@@ -43,21 +43,28 @@ class Orchestrator:
         
         # Initialize agents
         self.retriever = RAGChatAgent()
-        self.content_agent = ContentGenerator()
+        self.content_agent = None  # Lazy load content generation agent
         self.specialist_agent = None  # Lazy load specialist (heavy model)
         self.report_agent = None  # Lazy load report agent
         
         # Agent registry for dynamic invocation
         self.agents = {
             "retriever": self.retriever,
-            "content_generation": self.content_agent,
+            "content_generation": lambda: self._get_content_agent(),
             "specialist": lambda: self._get_specialist_agent(),
             "report": lambda: self._get_report_agent(),
             # Add other agents here as they're implemented
             # "quiz": QuizAgent(),
         }
         
-        logger.info("✅ WorkflowOrchestrator initialized with %d agents", len(self.agents))
+        logger.info("✅ WorkflowOrchestrator initialized")
+    
+    def _get_content_agent(self):
+        """Lazy load the content generation agent (only when needed)."""
+        if self.content_agent is None:
+            logger.info("Loading content generation agent (first use)...")
+            self.content_agent = ContentGenerationAgent()
+        return self.content_agent
     
     def _get_specialist_agent(self):
         """Lazy load the specialist agent (only when needed)."""
@@ -315,18 +322,48 @@ class Orchestrator:
         retrieved: str,
         user_profile: Optional[UserProfile]
     ) -> str:
-        """Call content generation agent."""
-        # Parse intent from query
-        if "slide" in query.lower() or "presentation" in query.lower():
-            request_type = "slides"
-        else:
-            request_type = "pdf"
+        """Call content generation agent.
         
-        # Extract topic (simplified)
-        topic = query.replace("create", "").replace("generate", "").strip()
+        The agent has access to these tools:
+        - generate_pdf_document: Create professional PDF documents
+        - generate_presentation_slides: Create presentation slides
+        - convert_markdown_file: Convert markdown files to PDF/slides
         
-        # Use content agent (placeholder - implement full logic)
-        return f"[Content generation for '{topic}' as {request_type} - Implementation needed]"
+        Args:
+            query: User's request (e.g., "Create a PDF about linear algebra")
+            retrieved: Context from RAG retrieval (textbook content, examples)
+            user_profile: User profile for personalization
+            
+        Returns:
+            Agent's response with file paths or instructions
+        """
+        try:
+            # Get the content generation agent (lazy loaded)
+            content_agent = self._get_content_agent()
+            
+            # Build enhanced prompt with retrieved context
+            if retrieved:
+                enhanced_query = f"""Context from knowledge base:
+{retrieved}
+
+---
+
+User request: {query}
+
+Please use the above context to help generate the requested content. Include relevant information, examples, and explanations from the context."""
+            else:
+                enhanced_query = query
+            
+            # Call the agent - it will use its tools to generate content
+            logger.info("Calling content generation agent with query: %s", query[:100])
+            response = content_agent.chat(enhanced_query)
+            
+            logger.info("Content generation agent response received (%d chars)", len(str(response)))
+            return str(response)
+            
+        except Exception as e:
+            logger.error("Content generation agent error: %s", e, exc_info=True)
+            return f"I encountered an error while generating content: {str(e)}\n\nPlease try:\n- Being more specific about what you want (e.g., 'Create a PDF document about probability theory')\n- Specifying the output file path (e.g., 'Generate slides about calculus and save to output/slides.pdf')"
     
     def _call_quiz(
         self,

@@ -3,7 +3,7 @@ Tools for the Report Agent.
 Provides functions for retrieving and analyzing student progress data.
 """
 
-from typing import Optional, List, Dict, Any
+from typing import Optional
 from datetime import datetime, timedelta
 from strands import tool
 import logging
@@ -11,7 +11,10 @@ import logging
 from database.database import SessionLocal
 from agents.report.backend.analytics import ProgressAnalyzer, create_learning_report
 from agents.report.backend.chart_renderer import ChartRenderer
-from shared.models import LearningReport
+from agents.report.backend.visualizations import (
+    generate_all_visualizations,
+    format_chart_data_as_markdown
+)
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +84,7 @@ def get_user_progress_history(
         return json.dumps(result, indent=2)
         
     except Exception as e:
-        logger.error(f"Error getting progress history: {e}", exc_info=True)
+        logger.error("Error getting progress history: %s", e, exc_info=True)
         return f"Error retrieving progress history: {str(e)}"
 
 
@@ -139,7 +142,7 @@ def get_quiz_performance_trends(
         return json.dumps(result, indent=2)
         
     except Exception as e:
-        logger.error(f"Error analyzing quiz trends: {e}", exc_info=True)
+        logger.error("Error analyzing quiz trends: %s", e, exc_info=True)
         return f"Error analyzing quiz trends: {str(e)}"
 
 
@@ -186,7 +189,7 @@ def get_topic_mastery_analysis(
         return json.dumps(result, indent=2)
         
     except Exception as e:
-        logger.error(f"Error analyzing topic mastery: {e}", exc_info=True)
+        logger.error("Error analyzing topic mastery: %s", e, exc_info=True)
         return f"Error analyzing topic mastery: {str(e)}"
 
 
@@ -240,7 +243,7 @@ def get_learning_time_stats(
         return json.dumps(result, indent=2)
         
     except Exception as e:
-        logger.error(f"Error calculating learning time: {e}", exc_info=True)
+        logger.error("Error calculating learning time: %s", e, exc_info=True)
         return f"Error calculating learning time: {str(e)}"
 
 
@@ -271,7 +274,7 @@ def generate_comprehensive_report(
         return report.get_summary()
         
     except Exception as e:
-        logger.error(f"Error generating report: {e}", exc_info=True)
+        logger.error("Error generating report: %s", e, exc_info=True)
         return f"Error generating comprehensive report: {str(e)}"
 
 
@@ -341,7 +344,7 @@ def compare_time_periods(
         return json.dumps(result, indent=2)
         
     except Exception as e:
-        logger.error(f"Error comparing periods: {e}", exc_info=True)
+        logger.error("Error comparing periods: %s", e, exc_info=True)
         return f"Error comparing time periods: {str(e)}"
 
 
@@ -349,7 +352,7 @@ def compare_time_periods(
 def generate_progress_visualizations(
     user_session_id: str,
     days: int = 7,
-    format: str = "json"
+    output_format: str = "json"
 ) -> str:
     """
     Generate visualization data for progress charts and graphs.
@@ -357,7 +360,7 @@ def generate_progress_visualizations(
     Args:
         user_session_id: The user's session ID
         days: Number of days to include (default: 7)
-        format: Output format - "json" for chart data or "markdown" for text visualization
+        output_format: Output format - "json" for chart data or "markdown" for text visualization
     
     Returns:
         JSON string with chart data for:
@@ -397,13 +400,13 @@ def generate_progress_visualizations(
             consistency_score
         )
         
-        if format == "markdown":
+        if output_format == "markdown":
             # Format as text visualization
             output = ["\n" + "="*80]
             output.append("PROGRESS VISUALIZATIONS")
             output.append("="*80)
             
-            for chart_name, chart_data in viz_data.items():
+            for _chart_name, chart_data in viz_data.items():
                 output.append(format_chart_data_as_markdown(chart_data))
                 output.append("\n" + "-"*80)
             
@@ -414,7 +417,7 @@ def generate_progress_visualizations(
             return json.dumps(viz_data, indent=2)
         
     except Exception as e:
-        logger.error(f"Error generating visualizations: {e}", exc_info=True)
+        logger.error("Error generating visualizations: %s", e, exc_info=True)
         return f"Error generating visualizations: {str(e)}"
 
 
@@ -558,7 +561,7 @@ def render_progress_charts(
             return json.dumps(result, indent=2)
         
     except Exception as e:
-        logger.error(f"Error rendering charts: {e}", exc_info=True)
+        logger.error("Error rendering charts: %s", e, exc_info=True)
         return f"Error rendering charts: {str(e)}"
 
 

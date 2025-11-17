@@ -13,7 +13,7 @@ QUERY_TYPES: Dict[str, Dict] = {
     "concept_explanation": {
         "description": "Requests for explanations of concepts or topics.",
         "keywords": ["explain", "what is", "how does", "teach me", "understand"],
-        "agents": ["retriever", "content_generation"],
+        "agents": ["retriever"],
         "workflow": "sequential",
     },
     "assessment": {

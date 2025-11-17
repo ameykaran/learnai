@@ -86,7 +86,10 @@ def convert_math(text: str) -> str:
     text = text.replace(ESC, r"\$")
 
     # 2) Create Node renderer
-    tmp_dir = Path.cwd() / "_katex_node"
+
+    logging.info(f"Setting up Node KaTeX renderer at {Path.cwd() / '_katex_node'}")
+
+    tmp_dir = Path(f"{os.environ.get('NODE_RENDERER_JS')}/_katex_node")
     tmp_dir.mkdir(exist_ok=True)
     renderer = tmp_dir / "katex_renderer.js"
     renderer.write_text(NODE_RENDERER_JS)
@@ -440,46 +443,96 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; pa
 
 generator = ContentGenerator()
 
+# Default output directory - can be overridden via environment variable
+DEFAULT_OUTPUT_DIR = Path(os.environ.get(
+    'CONTENT_OUTPUT_DIR',
+    Path(__file__).parent.parent.parent / "api_server" / "public"
+))
+DEFAULT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+logger.info(f"Content generation output directory: {DEFAULT_OUTPUT_DIR}")
+
 @tool
 def generate_pdf_document(markdown_content: str, output_file: str,
                           title: str = "Document",
                           author: str = "LearnAI",
                           date: str = "") -> str:
-
+    """
+    Generate a professional PDF document from markdown content.
+    
+    Args:
+        markdown_content: Markdown text to convert
+        output_file: Output filename (will be saved to the server's public directory)
+        title: Document title
+        author: Document author
+        date: Document date
+        
+    Returns:
+        Success message with file URL for accessing via the API server
+    """
     try:
         pdf_base64 = generator.create_document(markdown_content, title, author, date)
-        output_path = Path(output_file)
+        
+        # Use just the filename if a full path is provided
+        filename = Path(output_file).name
+        output_path = DEFAULT_OUTPUT_DIR / filename
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         import base64
         with open(output_path, 'wb') as f:
             f.write(base64.b64decode(pdf_base64))
 
-        return f"✅ Generated PDF at: {output_path.absolute()}"
+        # Return URL that can be accessed via API server
+        file_url = f"/generated/{filename}"
+        return f"✅ PDF document generated successfully!\n\n📄 **[Click here to open: {filename}]({file_url})**\n\n_The file will open in a new tab._"
     except Exception as e:
         return f"❌ Error generating PDF: {e}"
 
 
 @tool
 def generate_presentation_slides(markdown_content: str, output_file: str) -> str:
-
+    """
+    Generate presentation slides from markdown content.
+    
+    Args:
+        markdown_content: Markdown text with slide content (use --- to separate slides)
+        output_file: Output filename (will be saved to the server's public directory)
+        
+    Returns:
+        Success message with file URL for accessing via the API server
+    """
     try:
         pdf_base64 = generator.create_slides(markdown_content)
-        output_path = Path(output_file)
+        
+        # Use just the filename if a full path is provided
+        filename = Path(output_file).name
+        output_path = DEFAULT_OUTPUT_DIR / filename
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         import base64
         with open(output_path, 'wb') as f:
             f.write(base64.b64decode(pdf_base64))
 
-        return f"✅ Slides saved to: {output_path.absolute()}"
+        # Return URL that can be accessed via API server
+        file_url = f"/generated/{filename}"
+        return f"✅ Presentation slides generated successfully!\n\n📊 **[Click here to open: {filename}]({file_url})**\n\n_The file will open in a new tab._"
     except Exception as e:
         return f"❌ Error generating slides: {e}"
 
 
 @tool
 def convert_markdown_file(input_file: str, output_file: str, format_type: str) -> str:
-
+    """
+    Convert a markdown file to PDF or slides.
+    
+    Args:
+        input_file: Path to input markdown file
+        output_file: Output filename (will be saved to the server's public directory)
+        format_type: "pdf" or "slides"
+        
+    Returns:
+        Success message with file URL for accessing via the API server
+    """
     try:
         path = Path(input_file)
         if not path.exists():

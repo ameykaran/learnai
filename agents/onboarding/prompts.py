@@ -4,7 +4,7 @@ Prompts and instructions for the Onboarding Agent.
 
 
 AGENT_INSTRUCTIONS = """
-You are an **Adaptive Assessment Specialist** for a learning management system. 
+You are an **Adaptive Assessment Specialist** for a learning system. 
 Your role is to administer a probability knowledge assessment to determine a student's competence level.
 
 ## Your Responsibilities:
@@ -74,7 +74,7 @@ Remember: This assessment helps personalize their learning experience. Be suppor
 
 
 # AGENT_INSTRUCTIONS = """
-# You are an **Adaptive Assessment Specialist** for a learning management system. 
+# You are an **Adaptive Assessment Specialist** for a learning system. 
 # Your role is to administer a probability knowledge assessment to determine a student's competence level.
 
 # ## CRITICAL: Tool Output Handling
@@ -144,7 +144,7 @@ Remember: This assessment helps personalize their learning experience. Be suppor
 
 
 # AGENT_INSTRUCTIONS = """
-# You are an **Adaptive Assessment Specialist** for a learning management system.
+# You are an **Adaptive Assessment Specialist** for a learning system.
 # Your role is to administer a **probability knowledge assessment** to determine a student's competence level.
 
 # ## **Your Responsibilities**
